@@ -1,0 +1,2429 @@
+
+# Dependencies for C++ files
+
+main.o: main.cc /usr/include/stdc-predef.h /usr/include/c++/4.8/iostream \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
+ /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
+ /usr/include/c++/4.8/ostream /usr/include/c++/4.8/ios \
+ /usr/include/c++/4.8/iosfwd /usr/include/c++/4.8/bits/stringfwd.h \
+ /usr/include/c++/4.8/bits/memoryfwd.h \
+ /usr/include/c++/4.8/bits/postypes.h /usr/include/c++/4.8/cwchar \
+ /usr/include/wchar.h /usr/include/stdio.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/xlocale.h /usr/include/c++/4.8/exception \
+ /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/4.8/bits/char_traits.h \
+ /usr/include/c++/4.8/bits/stl_algobase.h \
+ /usr/include/c++/4.8/bits/functexcept.h \
+ /usr/include/c++/4.8/bits/exception_defines.h \
+ /usr/include/c++/4.8/bits/cpp_type_traits.h \
+ /usr/include/c++/4.8/ext/type_traits.h \
+ /usr/include/c++/4.8/ext/numeric_traits.h \
+ /usr/include/c++/4.8/bits/stl_pair.h /usr/include/c++/4.8/bits/move.h \
+ /usr/include/c++/4.8/bits/concept_check.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.8/debug/debug.h \
+ /usr/include/c++/4.8/bits/stl_iterator.h \
+ /usr/include/c++/4.8/bits/localefwd.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++locale.h \
+ /usr/include/c++/4.8/clocale /usr/include/locale.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/4.8/cctype \
+ /usr/include/ctype.h /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/c++/4.8/bits/ios_base.h \
+ /usr/include/c++/4.8/ext/atomicity.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/bits/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/bits/timex.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+ /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h \
+ /usr/include/c++/4.8/bits/locale_classes.h /usr/include/c++/4.8/string \
+ /usr/include/c++/4.8/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
+ /usr/include/c++/4.8/ext/new_allocator.h /usr/include/c++/4.8/new \
+ /usr/include/c++/4.8/bits/ostream_insert.h \
+ /usr/include/c++/4.8/bits/cxxabi_forced.h \
+ /usr/include/c++/4.8/bits/stl_function.h \
+ /usr/include/c++/4.8/backward/binders.h \
+ /usr/include/c++/4.8/bits/range_access.h \
+ /usr/include/c++/4.8/bits/basic_string.h \
+ /usr/include/c++/4.8/bits/basic_string.tcc \
+ /usr/include/c++/4.8/bits/locale_classes.tcc \
+ /usr/include/c++/4.8/streambuf /usr/include/c++/4.8/bits/streambuf.tcc \
+ /usr/include/c++/4.8/bits/basic_ios.h \
+ /usr/include/c++/4.8/bits/locale_facets.h /usr/include/c++/4.8/cwctype \
+ /usr/include/wctype.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_base.h \
+ /usr/include/c++/4.8/bits/streambuf_iterator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_inline.h \
+ /usr/include/c++/4.8/bits/locale_facets.tcc \
+ /usr/include/c++/4.8/bits/basic_ios.tcc \
+ /usr/include/c++/4.8/bits/ostream.tcc /usr/include/c++/4.8/istream \
+ /usr/include/c++/4.8/bits/istream.tcc /usr/include/c++/4.8/fstream \
+ /usr/include/c++/4.8/bits/codecvt.h /usr/include/c++/4.8/cstdio \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++io.h \
+ /usr/include/c++/4.8/bits/fstream.tcc common.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif_copyright.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine_dependent.h \
+ /usr/include/string.h /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/cmdparse.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/misc.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/bitset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/xarray.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/glist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/dlist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/mtflist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/alist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/hash.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/stringtable.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/tree_string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ts_ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/initsuif.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifstreams.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/aman.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifobj.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/operand.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symaddr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/immed.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/annote.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/types.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symbols.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/vardef.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symtab.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/fileset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/opcodes.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/instruction.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/trees.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/inumbers.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/basic.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/walk.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/operand_operators.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/annoteHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/archInfo.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/eaHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineDefs.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alpha.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mips.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Ops.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Instr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineUtil.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/graph.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/node.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/util.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/operand_bit_manager.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var_more.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/unset_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_teller.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_catalog.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/reaching_def.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bitset_function.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa_plus.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_varAD.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/instr_catalog.h \
+ user_options.h partition.h da_cfg.h super_block.h loop_block.h
+user_options.o: user_options.cc /usr/include/stdc-predef.h \
+ /usr/include/c++/4.8/fstream /usr/include/c++/4.8/istream \
+ /usr/include/c++/4.8/ios /usr/include/c++/4.8/iosfwd \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
+ /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
+ /usr/include/c++/4.8/bits/stringfwd.h \
+ /usr/include/c++/4.8/bits/memoryfwd.h \
+ /usr/include/c++/4.8/bits/postypes.h /usr/include/c++/4.8/cwchar \
+ /usr/include/wchar.h /usr/include/stdio.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/xlocale.h /usr/include/c++/4.8/exception \
+ /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/4.8/bits/char_traits.h \
+ /usr/include/c++/4.8/bits/stl_algobase.h \
+ /usr/include/c++/4.8/bits/functexcept.h \
+ /usr/include/c++/4.8/bits/exception_defines.h \
+ /usr/include/c++/4.8/bits/cpp_type_traits.h \
+ /usr/include/c++/4.8/ext/type_traits.h \
+ /usr/include/c++/4.8/ext/numeric_traits.h \
+ /usr/include/c++/4.8/bits/stl_pair.h /usr/include/c++/4.8/bits/move.h \
+ /usr/include/c++/4.8/bits/concept_check.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.8/debug/debug.h \
+ /usr/include/c++/4.8/bits/stl_iterator.h \
+ /usr/include/c++/4.8/bits/localefwd.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++locale.h \
+ /usr/include/c++/4.8/clocale /usr/include/locale.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/4.8/cctype \
+ /usr/include/ctype.h /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/c++/4.8/bits/ios_base.h \
+ /usr/include/c++/4.8/ext/atomicity.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/bits/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/bits/timex.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+ /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h \
+ /usr/include/c++/4.8/bits/locale_classes.h /usr/include/c++/4.8/string \
+ /usr/include/c++/4.8/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
+ /usr/include/c++/4.8/ext/new_allocator.h /usr/include/c++/4.8/new \
+ /usr/include/c++/4.8/bits/ostream_insert.h \
+ /usr/include/c++/4.8/bits/cxxabi_forced.h \
+ /usr/include/c++/4.8/bits/stl_function.h \
+ /usr/include/c++/4.8/backward/binders.h \
+ /usr/include/c++/4.8/bits/range_access.h \
+ /usr/include/c++/4.8/bits/basic_string.h \
+ /usr/include/c++/4.8/bits/basic_string.tcc \
+ /usr/include/c++/4.8/bits/locale_classes.tcc \
+ /usr/include/c++/4.8/streambuf /usr/include/c++/4.8/bits/streambuf.tcc \
+ /usr/include/c++/4.8/bits/basic_ios.h \
+ /usr/include/c++/4.8/bits/locale_facets.h /usr/include/c++/4.8/cwctype \
+ /usr/include/wctype.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_base.h \
+ /usr/include/c++/4.8/bits/streambuf_iterator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_inline.h \
+ /usr/include/c++/4.8/bits/locale_facets.tcc \
+ /usr/include/c++/4.8/bits/basic_ios.tcc /usr/include/c++/4.8/ostream \
+ /usr/include/c++/4.8/bits/ostream.tcc \
+ /usr/include/c++/4.8/bits/istream.tcc \
+ /usr/include/c++/4.8/bits/codecvt.h /usr/include/c++/4.8/cstdio \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++io.h \
+ /usr/include/c++/4.8/bits/fstream.tcc /usr/include/c++/4.8/iostream \
+ common.h /home/keyming/Prophet/x86_64-linux-gnu/include/suif1.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif_copyright.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine_dependent.h \
+ /usr/include/string.h /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/cmdparse.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/misc.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/bitset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/xarray.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/glist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/dlist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/mtflist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/alist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/hash.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/stringtable.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/tree_string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ts_ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/initsuif.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifstreams.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/aman.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifobj.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/operand.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symaddr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/immed.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/annote.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/types.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symbols.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/vardef.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symtab.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/fileset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/opcodes.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/instruction.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/trees.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/inumbers.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/basic.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/walk.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/operand_operators.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/annoteHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/archInfo.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/eaHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineDefs.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alpha.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mips.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Ops.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Instr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineUtil.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/graph.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/node.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/util.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/operand_bit_manager.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var_more.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/unset_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_teller.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_catalog.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/reaching_def.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bitset_function.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa_plus.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_varAD.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/instr_catalog.h \
+ user_options.h
+partition.o: partition.cc /usr/include/stdc-predef.h partition.h \
+ /usr/include/c++/4.8/iostream \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
+ /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
+ /usr/include/c++/4.8/ostream /usr/include/c++/4.8/ios \
+ /usr/include/c++/4.8/iosfwd /usr/include/c++/4.8/bits/stringfwd.h \
+ /usr/include/c++/4.8/bits/memoryfwd.h \
+ /usr/include/c++/4.8/bits/postypes.h /usr/include/c++/4.8/cwchar \
+ /usr/include/wchar.h /usr/include/stdio.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/xlocale.h /usr/include/c++/4.8/exception \
+ /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/4.8/bits/char_traits.h \
+ /usr/include/c++/4.8/bits/stl_algobase.h \
+ /usr/include/c++/4.8/bits/functexcept.h \
+ /usr/include/c++/4.8/bits/exception_defines.h \
+ /usr/include/c++/4.8/bits/cpp_type_traits.h \
+ /usr/include/c++/4.8/ext/type_traits.h \
+ /usr/include/c++/4.8/ext/numeric_traits.h \
+ /usr/include/c++/4.8/bits/stl_pair.h /usr/include/c++/4.8/bits/move.h \
+ /usr/include/c++/4.8/bits/concept_check.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.8/debug/debug.h \
+ /usr/include/c++/4.8/bits/stl_iterator.h \
+ /usr/include/c++/4.8/bits/localefwd.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++locale.h \
+ /usr/include/c++/4.8/clocale /usr/include/locale.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/4.8/cctype \
+ /usr/include/ctype.h /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/c++/4.8/bits/ios_base.h \
+ /usr/include/c++/4.8/ext/atomicity.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/bits/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/bits/timex.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+ /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h \
+ /usr/include/c++/4.8/bits/locale_classes.h /usr/include/c++/4.8/string \
+ /usr/include/c++/4.8/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
+ /usr/include/c++/4.8/ext/new_allocator.h /usr/include/c++/4.8/new \
+ /usr/include/c++/4.8/bits/ostream_insert.h \
+ /usr/include/c++/4.8/bits/cxxabi_forced.h \
+ /usr/include/c++/4.8/bits/stl_function.h \
+ /usr/include/c++/4.8/backward/binders.h \
+ /usr/include/c++/4.8/bits/range_access.h \
+ /usr/include/c++/4.8/bits/basic_string.h \
+ /usr/include/c++/4.8/bits/basic_string.tcc \
+ /usr/include/c++/4.8/bits/locale_classes.tcc \
+ /usr/include/c++/4.8/streambuf /usr/include/c++/4.8/bits/streambuf.tcc \
+ /usr/include/c++/4.8/bits/basic_ios.h \
+ /usr/include/c++/4.8/bits/locale_facets.h /usr/include/c++/4.8/cwctype \
+ /usr/include/wctype.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_base.h \
+ /usr/include/c++/4.8/bits/streambuf_iterator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_inline.h \
+ /usr/include/c++/4.8/bits/locale_facets.tcc \
+ /usr/include/c++/4.8/bits/basic_ios.tcc \
+ /usr/include/c++/4.8/bits/ostream.tcc /usr/include/c++/4.8/istream \
+ /usr/include/c++/4.8/bits/istream.tcc /usr/include/c++/4.8/fstream \
+ /usr/include/c++/4.8/bits/codecvt.h /usr/include/c++/4.8/cstdio \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++io.h \
+ /usr/include/c++/4.8/bits/fstream.tcc common.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif_copyright.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine_dependent.h \
+ /usr/include/string.h /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/cmdparse.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/misc.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/bitset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/xarray.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/glist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/dlist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/mtflist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/alist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/hash.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/stringtable.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/tree_string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ts_ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/initsuif.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifstreams.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/aman.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifobj.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/operand.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symaddr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/immed.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/annote.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/types.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symbols.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/vardef.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symtab.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/fileset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/opcodes.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/instruction.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/trees.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/inumbers.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/basic.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/walk.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/operand_operators.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/annoteHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/archInfo.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/eaHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineDefs.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alpha.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mips.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Ops.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Instr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineUtil.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/graph.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/node.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/util.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/operand_bit_manager.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var_more.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/unset_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_teller.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_catalog.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/reaching_def.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bitset_function.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa_plus.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_varAD.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/instr_catalog.h \
+ user_options.h da_cfg.h super_block.h loop_block.h procedure.h \
+ /usr/include/c++/4.8/vector /usr/include/c++/4.8/bits/stl_construct.h \
+ /usr/include/c++/4.8/ext/alloc_traits.h \
+ /usr/include/c++/4.8/bits/stl_uninitialized.h \
+ /usr/include/c++/4.8/bits/stl_vector.h \
+ /usr/include/c++/4.8/bits/stl_bvector.h \
+ /usr/include/c++/4.8/bits/vector.tcc super_block_cfg.h thread.h \
+ super_block_path.h
+procedure.o: procedure.cc /usr/include/stdc-predef.h procedure.h \
+ /usr/include/c++/4.8/vector /usr/include/c++/4.8/bits/stl_algobase.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
+ /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
+ /usr/include/c++/4.8/bits/functexcept.h \
+ /usr/include/c++/4.8/bits/exception_defines.h \
+ /usr/include/c++/4.8/bits/cpp_type_traits.h \
+ /usr/include/c++/4.8/ext/type_traits.h \
+ /usr/include/c++/4.8/ext/numeric_traits.h \
+ /usr/include/c++/4.8/bits/stl_pair.h /usr/include/c++/4.8/bits/move.h \
+ /usr/include/c++/4.8/bits/concept_check.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.8/debug/debug.h \
+ /usr/include/c++/4.8/bits/stl_iterator.h \
+ /usr/include/c++/4.8/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
+ /usr/include/c++/4.8/ext/new_allocator.h /usr/include/c++/4.8/new \
+ /usr/include/c++/4.8/exception \
+ /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/4.8/bits/memoryfwd.h \
+ /usr/include/c++/4.8/bits/stl_construct.h \
+ /usr/include/c++/4.8/ext/alloc_traits.h \
+ /usr/include/c++/4.8/bits/stl_uninitialized.h \
+ /usr/include/c++/4.8/bits/stl_vector.h \
+ /usr/include/c++/4.8/bits/stl_bvector.h \
+ /usr/include/c++/4.8/bits/range_access.h \
+ /usr/include/c++/4.8/bits/vector.tcc common.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif_copyright.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine_dependent.h \
+ /usr/include/string.h /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/xlocale.h /usr/include/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/cmdparse.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/misc.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/bitset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/xarray.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/glist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/dlist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/mtflist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/alist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/hash.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/stringtable.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/tree_string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ts_ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/initsuif.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifstreams.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/aman.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifobj.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/operand.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symaddr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/immed.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/annote.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/types.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symbols.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/vardef.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symtab.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/fileset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/opcodes.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/instruction.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/trees.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/inumbers.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/basic.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/walk.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/operand_operators.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/annoteHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/archInfo.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/eaHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineDefs.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alpha.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mips.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Ops.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Instr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineUtil.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/graph.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/node.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/util.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/operand_bit_manager.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var_more.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/unset_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_teller.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_catalog.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/reaching_def.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bitset_function.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa_plus.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_varAD.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/instr_catalog.h \
+ da_cfg.h super_block.h loop_block.h super_block_cfg.h thread.h \
+ super_block_path.h user_options.h /usr/include/c++/4.8/iostream \
+ /usr/include/c++/4.8/ostream /usr/include/c++/4.8/ios \
+ /usr/include/c++/4.8/iosfwd /usr/include/c++/4.8/bits/stringfwd.h \
+ /usr/include/c++/4.8/bits/postypes.h /usr/include/c++/4.8/cwchar \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/include/c++/4.8/bits/char_traits.h \
+ /usr/include/c++/4.8/bits/localefwd.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++locale.h \
+ /usr/include/c++/4.8/clocale /usr/include/locale.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/4.8/cctype \
+ /usr/include/ctype.h /usr/include/c++/4.8/bits/ios_base.h \
+ /usr/include/c++/4.8/ext/atomicity.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/timex.h \
+ /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h \
+ /usr/include/c++/4.8/bits/locale_classes.h /usr/include/c++/4.8/string \
+ /usr/include/c++/4.8/bits/ostream_insert.h \
+ /usr/include/c++/4.8/bits/cxxabi_forced.h \
+ /usr/include/c++/4.8/bits/stl_function.h \
+ /usr/include/c++/4.8/backward/binders.h \
+ /usr/include/c++/4.8/bits/basic_string.h \
+ /usr/include/c++/4.8/bits/basic_string.tcc \
+ /usr/include/c++/4.8/bits/locale_classes.tcc \
+ /usr/include/c++/4.8/streambuf /usr/include/c++/4.8/bits/streambuf.tcc \
+ /usr/include/c++/4.8/bits/basic_ios.h \
+ /usr/include/c++/4.8/bits/locale_facets.h /usr/include/c++/4.8/cwctype \
+ /usr/include/wctype.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_base.h \
+ /usr/include/c++/4.8/bits/streambuf_iterator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_inline.h \
+ /usr/include/c++/4.8/bits/locale_facets.tcc \
+ /usr/include/c++/4.8/bits/basic_ios.tcc \
+ /usr/include/c++/4.8/bits/ostream.tcc /usr/include/c++/4.8/istream \
+ /usr/include/c++/4.8/bits/istream.tcc misc.h thread_partition.h \
+ procedure_path.h
+loop_block.o: loop_block.cpp /usr/include/stdc-predef.h loop_block.h \
+ common.h /home/keyming/Prophet/x86_64-linux-gnu/include/suif1.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif_copyright.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine_dependent.h \
+ /usr/include/string.h /usr/include/features.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/xlocale.h /usr/include/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
+ /usr/include/c++/4.8/new \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
+ /usr/include/c++/4.8/exception \
+ /usr/include/c++/4.8/bits/atomic_lockfree_defines.h /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/cmdparse.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/misc.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/bitset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/xarray.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/glist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/dlist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/mtflist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/alist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/hash.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/stringtable.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/tree_string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ts_ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/initsuif.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifstreams.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/aman.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifobj.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/operand.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symaddr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/immed.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/annote.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/types.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symbols.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/vardef.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symtab.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/fileset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/opcodes.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/instruction.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/trees.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/inumbers.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/basic.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/walk.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/operand_operators.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/annoteHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/archInfo.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/eaHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineDefs.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alpha.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mips.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Ops.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Instr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineUtil.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/graph.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/node.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/util.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/operand_bit_manager.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var_more.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/unset_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_teller.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_catalog.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/reaching_def.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bitset_function.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa_plus.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_varAD.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/instr_catalog.h \
+ super_block.h spmt_instr.h misc.h user_options.h \
+ /usr/include/c++/4.8/iostream /usr/include/c++/4.8/ostream \
+ /usr/include/c++/4.8/ios /usr/include/c++/4.8/iosfwd \
+ /usr/include/c++/4.8/bits/stringfwd.h \
+ /usr/include/c++/4.8/bits/memoryfwd.h \
+ /usr/include/c++/4.8/bits/postypes.h /usr/include/c++/4.8/cwchar \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/include/c++/4.8/bits/char_traits.h \
+ /usr/include/c++/4.8/bits/stl_algobase.h \
+ /usr/include/c++/4.8/bits/functexcept.h \
+ /usr/include/c++/4.8/bits/exception_defines.h \
+ /usr/include/c++/4.8/bits/cpp_type_traits.h \
+ /usr/include/c++/4.8/ext/type_traits.h \
+ /usr/include/c++/4.8/ext/numeric_traits.h \
+ /usr/include/c++/4.8/bits/stl_pair.h /usr/include/c++/4.8/bits/move.h \
+ /usr/include/c++/4.8/bits/concept_check.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.8/debug/debug.h \
+ /usr/include/c++/4.8/bits/stl_iterator.h \
+ /usr/include/c++/4.8/bits/localefwd.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++locale.h \
+ /usr/include/c++/4.8/clocale /usr/include/locale.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/4.8/cctype \
+ /usr/include/ctype.h /usr/include/c++/4.8/bits/ios_base.h \
+ /usr/include/c++/4.8/ext/atomicity.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/timex.h \
+ /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h \
+ /usr/include/c++/4.8/bits/locale_classes.h /usr/include/c++/4.8/string \
+ /usr/include/c++/4.8/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
+ /usr/include/c++/4.8/ext/new_allocator.h \
+ /usr/include/c++/4.8/bits/ostream_insert.h \
+ /usr/include/c++/4.8/bits/cxxabi_forced.h \
+ /usr/include/c++/4.8/bits/stl_function.h \
+ /usr/include/c++/4.8/backward/binders.h \
+ /usr/include/c++/4.8/bits/range_access.h \
+ /usr/include/c++/4.8/bits/basic_string.h \
+ /usr/include/c++/4.8/bits/basic_string.tcc \
+ /usr/include/c++/4.8/bits/locale_classes.tcc \
+ /usr/include/c++/4.8/streambuf /usr/include/c++/4.8/bits/streambuf.tcc \
+ /usr/include/c++/4.8/bits/basic_ios.h \
+ /usr/include/c++/4.8/bits/locale_facets.h /usr/include/c++/4.8/cwctype \
+ /usr/include/wctype.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_base.h \
+ /usr/include/c++/4.8/bits/streambuf_iterator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_inline.h \
+ /usr/include/c++/4.8/bits/locale_facets.tcc \
+ /usr/include/c++/4.8/bits/basic_ios.tcc \
+ /usr/include/c++/4.8/bits/ostream.tcc /usr/include/c++/4.8/istream \
+ /usr/include/c++/4.8/bits/istream.tcc
+da_cfg.o: da_cfg.cpp /usr/include/stdc-predef.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif_copyright.h \
+ /usr/include/stdio.h /usr/include/features.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine_dependent.h \
+ /usr/include/string.h /usr/include/xlocale.h /usr/include/c++/4.8/new \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
+ /usr/include/c++/4.8/exception \
+ /usr/include/c++/4.8/bits/atomic_lockfree_defines.h /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/cmdparse.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/misc.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/bitset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/xarray.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/glist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/dlist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/mtflist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/alist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/hash.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/stringtable.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/tree_string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ts_ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/initsuif.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifstreams.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/aman.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifobj.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/operand.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symaddr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/immed.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/annote.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/types.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symbols.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/vardef.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symtab.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/fileset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/opcodes.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/instruction.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/trees.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/annoteHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/archInfo.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/eaHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineDefs.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alpha.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mips.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Ops.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Instr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineUtil.h \
+ da_cfg.h common.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/inumbers.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/basic.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/walk.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/operand_operators.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/graph.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/node.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/util.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/operand_bit_manager.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var_more.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/unset_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_teller.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_catalog.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/reaching_def.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bitset_function.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa_plus.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_varAD.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/instr_catalog.h \
+ super_block.h loop_block.h spmt_utility.h misc.h
+misc.o: misc.cpp /usr/include/stdc-predef.h /usr/include/string.h \
+ /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/xlocale.h common.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif_copyright.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine_dependent.h \
+ /usr/include/stdio.h /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
+ /usr/include/c++/4.8/new \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
+ /usr/include/c++/4.8/exception \
+ /usr/include/c++/4.8/bits/atomic_lockfree_defines.h /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/cmdparse.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/misc.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/bitset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/xarray.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/glist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/dlist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/mtflist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/alist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/hash.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/stringtable.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/tree_string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ts_ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/initsuif.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifstreams.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/aman.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifobj.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/operand.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symaddr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/immed.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/annote.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/types.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symbols.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/vardef.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symtab.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/fileset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/opcodes.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/instruction.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/trees.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/inumbers.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/basic.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/walk.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/operand_operators.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/annoteHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/archInfo.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/eaHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineDefs.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alpha.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mips.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Ops.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Instr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineUtil.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/graph.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/node.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/util.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/operand_bit_manager.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var_more.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/unset_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_teller.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_catalog.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/reaching_def.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bitset_function.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa_plus.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_varAD.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/instr_catalog.h \
+ super_block.h user_options.h /usr/include/c++/4.8/iostream \
+ /usr/include/c++/4.8/ostream /usr/include/c++/4.8/ios \
+ /usr/include/c++/4.8/iosfwd /usr/include/c++/4.8/bits/stringfwd.h \
+ /usr/include/c++/4.8/bits/memoryfwd.h \
+ /usr/include/c++/4.8/bits/postypes.h /usr/include/c++/4.8/cwchar \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/include/c++/4.8/bits/char_traits.h \
+ /usr/include/c++/4.8/bits/stl_algobase.h \
+ /usr/include/c++/4.8/bits/functexcept.h \
+ /usr/include/c++/4.8/bits/exception_defines.h \
+ /usr/include/c++/4.8/bits/cpp_type_traits.h \
+ /usr/include/c++/4.8/ext/type_traits.h \
+ /usr/include/c++/4.8/ext/numeric_traits.h \
+ /usr/include/c++/4.8/bits/stl_pair.h /usr/include/c++/4.8/bits/move.h \
+ /usr/include/c++/4.8/bits/concept_check.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.8/debug/debug.h \
+ /usr/include/c++/4.8/bits/stl_iterator.h \
+ /usr/include/c++/4.8/bits/localefwd.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++locale.h \
+ /usr/include/c++/4.8/clocale /usr/include/locale.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/4.8/cctype \
+ /usr/include/ctype.h /usr/include/c++/4.8/bits/ios_base.h \
+ /usr/include/c++/4.8/ext/atomicity.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/timex.h \
+ /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h \
+ /usr/include/c++/4.8/bits/locale_classes.h /usr/include/c++/4.8/string \
+ /usr/include/c++/4.8/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
+ /usr/include/c++/4.8/ext/new_allocator.h \
+ /usr/include/c++/4.8/bits/ostream_insert.h \
+ /usr/include/c++/4.8/bits/cxxabi_forced.h \
+ /usr/include/c++/4.8/bits/stl_function.h \
+ /usr/include/c++/4.8/backward/binders.h \
+ /usr/include/c++/4.8/bits/range_access.h \
+ /usr/include/c++/4.8/bits/basic_string.h \
+ /usr/include/c++/4.8/bits/basic_string.tcc \
+ /usr/include/c++/4.8/bits/locale_classes.tcc \
+ /usr/include/c++/4.8/streambuf /usr/include/c++/4.8/bits/streambuf.tcc \
+ /usr/include/c++/4.8/bits/basic_ios.h \
+ /usr/include/c++/4.8/bits/locale_facets.h /usr/include/c++/4.8/cwctype \
+ /usr/include/wctype.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_base.h \
+ /usr/include/c++/4.8/bits/streambuf_iterator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_inline.h \
+ /usr/include/c++/4.8/bits/locale_facets.tcc \
+ /usr/include/c++/4.8/bits/basic_ios.tcc \
+ /usr/include/c++/4.8/bits/ostream.tcc /usr/include/c++/4.8/istream \
+ /usr/include/c++/4.8/bits/istream.tcc procedure.h \
+ /usr/include/c++/4.8/vector /usr/include/c++/4.8/bits/stl_construct.h \
+ /usr/include/c++/4.8/ext/alloc_traits.h \
+ /usr/include/c++/4.8/bits/stl_uninitialized.h \
+ /usr/include/c++/4.8/bits/stl_vector.h \
+ /usr/include/c++/4.8/bits/stl_bvector.h \
+ /usr/include/c++/4.8/bits/vector.tcc da_cfg.h loop_block.h \
+ super_block_cfg.h thread.h super_block_path.h
+spawn_pos_trace.o: spawn_pos_trace.cpp /usr/include/stdc-predef.h \
+ spawn_pos_trace.h /usr/include/c++/4.8/vector \
+ /usr/include/c++/4.8/bits/stl_algobase.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
+ /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
+ /usr/include/c++/4.8/bits/functexcept.h \
+ /usr/include/c++/4.8/bits/exception_defines.h \
+ /usr/include/c++/4.8/bits/cpp_type_traits.h \
+ /usr/include/c++/4.8/ext/type_traits.h \
+ /usr/include/c++/4.8/ext/numeric_traits.h \
+ /usr/include/c++/4.8/bits/stl_pair.h /usr/include/c++/4.8/bits/move.h \
+ /usr/include/c++/4.8/bits/concept_check.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.8/debug/debug.h \
+ /usr/include/c++/4.8/bits/stl_iterator.h \
+ /usr/include/c++/4.8/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
+ /usr/include/c++/4.8/ext/new_allocator.h /usr/include/c++/4.8/new \
+ /usr/include/c++/4.8/exception \
+ /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/4.8/bits/memoryfwd.h \
+ /usr/include/c++/4.8/bits/stl_construct.h \
+ /usr/include/c++/4.8/ext/alloc_traits.h \
+ /usr/include/c++/4.8/bits/stl_uninitialized.h \
+ /usr/include/c++/4.8/bits/stl_vector.h \
+ /usr/include/c++/4.8/bits/stl_bvector.h \
+ /usr/include/c++/4.8/bits/range_access.h \
+ /usr/include/c++/4.8/bits/vector.tcc common.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif_copyright.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine_dependent.h \
+ /usr/include/string.h /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/xlocale.h /usr/include/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/cmdparse.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/misc.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/bitset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/xarray.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/glist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/dlist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/mtflist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/alist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/hash.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/stringtable.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/tree_string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ts_ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/initsuif.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifstreams.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/aman.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifobj.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/operand.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symaddr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/immed.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/annote.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/types.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symbols.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/vardef.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symtab.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/fileset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/opcodes.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/instruction.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/trees.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/inumbers.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/basic.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/walk.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/operand_operators.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/annoteHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/archInfo.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/eaHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineDefs.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alpha.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mips.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Ops.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Instr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineUtil.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/graph.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/node.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/util.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/operand_bit_manager.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var_more.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/unset_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_teller.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_catalog.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/reaching_def.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bitset_function.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa_plus.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_varAD.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/instr_catalog.h \
+ super_block.h super_block_cfg.h thread.h super_block_path.h
+super_block_cfg.o: super_block_cfg.cpp /usr/include/stdc-predef.h \
+ super_block_cfg.h common.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif_copyright.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine_dependent.h \
+ /usr/include/string.h /usr/include/features.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/xlocale.h /usr/include/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
+ /usr/include/c++/4.8/new \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
+ /usr/include/c++/4.8/exception \
+ /usr/include/c++/4.8/bits/atomic_lockfree_defines.h /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/cmdparse.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/misc.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/bitset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/xarray.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/glist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/dlist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/mtflist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/alist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/hash.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/stringtable.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/tree_string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ts_ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/initsuif.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifstreams.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/aman.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifobj.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/operand.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symaddr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/immed.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/annote.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/types.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symbols.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/vardef.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symtab.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/fileset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/opcodes.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/instruction.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/trees.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/inumbers.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/basic.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/walk.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/operand_operators.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/annoteHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/archInfo.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/eaHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineDefs.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alpha.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mips.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Ops.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Instr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineUtil.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/graph.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/node.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/util.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/operand_bit_manager.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var_more.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/unset_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_teller.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_catalog.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/reaching_def.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bitset_function.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa_plus.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_varAD.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/instr_catalog.h \
+ super_block.h
+super_block_path.o: super_block_path.cpp /usr/include/stdc-predef.h \
+ super_block_path.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif_copyright.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine_dependent.h \
+ /usr/include/string.h /usr/include/features.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/xlocale.h /usr/include/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
+ /usr/include/c++/4.8/new \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
+ /usr/include/c++/4.8/exception \
+ /usr/include/c++/4.8/bits/atomic_lockfree_defines.h /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/cmdparse.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/misc.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/bitset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/xarray.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/glist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/dlist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/mtflist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/alist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/hash.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/stringtable.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/tree_string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ts_ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/initsuif.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifstreams.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/aman.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifobj.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/operand.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symaddr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/immed.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/annote.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/types.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symbols.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/vardef.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symtab.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/fileset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/opcodes.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/instruction.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/trees.h \
+ super_block.h common.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/inumbers.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/basic.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/walk.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/operand_operators.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/annoteHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/archInfo.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/eaHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineDefs.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alpha.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mips.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Ops.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Instr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineUtil.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/graph.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/node.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/util.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/operand_bit_manager.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var_more.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/unset_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_teller.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_catalog.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/reaching_def.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bitset_function.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa_plus.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_varAD.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/instr_catalog.h \
+ loop_block.h
+super_block.o: super_block.cpp /usr/include/stdc-predef.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif_copyright.h \
+ super_block.h common.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine_dependent.h \
+ /usr/include/string.h /usr/include/features.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/xlocale.h /usr/include/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
+ /usr/include/c++/4.8/new \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
+ /usr/include/c++/4.8/exception \
+ /usr/include/c++/4.8/bits/atomic_lockfree_defines.h /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/cmdparse.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/misc.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/bitset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/xarray.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/glist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/dlist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/mtflist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/alist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/hash.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/stringtable.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/tree_string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ts_ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/initsuif.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifstreams.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/aman.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifobj.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/operand.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symaddr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/immed.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/annote.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/types.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symbols.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/vardef.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symtab.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/fileset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/opcodes.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/instruction.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/trees.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/inumbers.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/basic.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/walk.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/operand_operators.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/annoteHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/archInfo.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/eaHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineDefs.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alpha.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mips.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Ops.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Instr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineUtil.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/graph.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/node.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/util.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/operand_bit_manager.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var_more.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/unset_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_teller.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_catalog.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/reaching_def.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bitset_function.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa_plus.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_varAD.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/instr_catalog.h \
+ procedure.h /usr/include/c++/4.8/vector \
+ /usr/include/c++/4.8/bits/stl_algobase.h \
+ /usr/include/c++/4.8/bits/functexcept.h \
+ /usr/include/c++/4.8/bits/exception_defines.h \
+ /usr/include/c++/4.8/bits/cpp_type_traits.h \
+ /usr/include/c++/4.8/ext/type_traits.h \
+ /usr/include/c++/4.8/ext/numeric_traits.h \
+ /usr/include/c++/4.8/bits/stl_pair.h /usr/include/c++/4.8/bits/move.h \
+ /usr/include/c++/4.8/bits/concept_check.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.8/debug/debug.h \
+ /usr/include/c++/4.8/bits/stl_iterator.h \
+ /usr/include/c++/4.8/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
+ /usr/include/c++/4.8/ext/new_allocator.h \
+ /usr/include/c++/4.8/bits/memoryfwd.h \
+ /usr/include/c++/4.8/bits/stl_construct.h \
+ /usr/include/c++/4.8/ext/alloc_traits.h \
+ /usr/include/c++/4.8/bits/stl_uninitialized.h \
+ /usr/include/c++/4.8/bits/stl_vector.h \
+ /usr/include/c++/4.8/bits/stl_bvector.h \
+ /usr/include/c++/4.8/bits/range_access.h \
+ /usr/include/c++/4.8/bits/vector.tcc da_cfg.h loop_block.h \
+ super_block_cfg.h thread.h super_block_path.h
+thread.o: thread.cpp /usr/include/stdc-predef.h thread.h super_block.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif_copyright.h common.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine_dependent.h \
+ /usr/include/string.h /usr/include/features.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/xlocale.h /usr/include/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
+ /usr/include/c++/4.8/new \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
+ /usr/include/c++/4.8/exception \
+ /usr/include/c++/4.8/bits/atomic_lockfree_defines.h /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/cmdparse.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/misc.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/bitset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/xarray.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/glist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/dlist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/mtflist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/alist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/hash.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/stringtable.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/tree_string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ts_ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/initsuif.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifstreams.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/aman.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifobj.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/operand.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symaddr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/immed.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/annote.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/types.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symbols.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/vardef.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symtab.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/fileset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/opcodes.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/instruction.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/trees.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/inumbers.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/basic.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/walk.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/operand_operators.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/annoteHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/archInfo.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/eaHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineDefs.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alpha.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mips.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Ops.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Instr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineUtil.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/graph.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/node.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/util.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/operand_bit_manager.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var_more.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/unset_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_teller.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_catalog.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/reaching_def.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bitset_function.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa_plus.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_varAD.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/instr_catalog.h \
+ super_block_path.h /usr/include/c++/4.8/vector \
+ /usr/include/c++/4.8/bits/stl_algobase.h \
+ /usr/include/c++/4.8/bits/functexcept.h \
+ /usr/include/c++/4.8/bits/exception_defines.h \
+ /usr/include/c++/4.8/bits/cpp_type_traits.h \
+ /usr/include/c++/4.8/ext/type_traits.h \
+ /usr/include/c++/4.8/ext/numeric_traits.h \
+ /usr/include/c++/4.8/bits/stl_pair.h /usr/include/c++/4.8/bits/move.h \
+ /usr/include/c++/4.8/bits/concept_check.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.8/debug/debug.h \
+ /usr/include/c++/4.8/bits/stl_iterator.h \
+ /usr/include/c++/4.8/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
+ /usr/include/c++/4.8/ext/new_allocator.h \
+ /usr/include/c++/4.8/bits/memoryfwd.h \
+ /usr/include/c++/4.8/bits/stl_construct.h \
+ /usr/include/c++/4.8/ext/alloc_traits.h \
+ /usr/include/c++/4.8/bits/stl_uninitialized.h \
+ /usr/include/c++/4.8/bits/stl_vector.h \
+ /usr/include/c++/4.8/bits/stl_bvector.h \
+ /usr/include/c++/4.8/bits/range_access.h \
+ /usr/include/c++/4.8/bits/vector.tcc spmt_instr.h user_options.h \
+ /usr/include/c++/4.8/iostream /usr/include/c++/4.8/ostream \
+ /usr/include/c++/4.8/ios /usr/include/c++/4.8/iosfwd \
+ /usr/include/c++/4.8/bits/stringfwd.h \
+ /usr/include/c++/4.8/bits/postypes.h /usr/include/c++/4.8/cwchar \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/include/c++/4.8/bits/char_traits.h \
+ /usr/include/c++/4.8/bits/localefwd.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++locale.h \
+ /usr/include/c++/4.8/clocale /usr/include/locale.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/4.8/cctype \
+ /usr/include/ctype.h /usr/include/c++/4.8/bits/ios_base.h \
+ /usr/include/c++/4.8/ext/atomicity.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/timex.h \
+ /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h \
+ /usr/include/c++/4.8/bits/locale_classes.h /usr/include/c++/4.8/string \
+ /usr/include/c++/4.8/bits/ostream_insert.h \
+ /usr/include/c++/4.8/bits/cxxabi_forced.h \
+ /usr/include/c++/4.8/bits/stl_function.h \
+ /usr/include/c++/4.8/backward/binders.h \
+ /usr/include/c++/4.8/bits/basic_string.h \
+ /usr/include/c++/4.8/bits/basic_string.tcc \
+ /usr/include/c++/4.8/bits/locale_classes.tcc \
+ /usr/include/c++/4.8/streambuf /usr/include/c++/4.8/bits/streambuf.tcc \
+ /usr/include/c++/4.8/bits/basic_ios.h \
+ /usr/include/c++/4.8/bits/locale_facets.h /usr/include/c++/4.8/cwctype \
+ /usr/include/wctype.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_base.h \
+ /usr/include/c++/4.8/bits/streambuf_iterator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_inline.h \
+ /usr/include/c++/4.8/bits/locale_facets.tcc \
+ /usr/include/c++/4.8/bits/basic_ios.tcc \
+ /usr/include/c++/4.8/bits/ostream.tcc /usr/include/c++/4.8/istream \
+ /usr/include/c++/4.8/bits/istream.tcc
+threshold.o: threshold.cpp /usr/include/stdc-predef.h \
+ /usr/include/c++/4.8/iostream \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
+ /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
+ /usr/include/c++/4.8/ostream /usr/include/c++/4.8/ios \
+ /usr/include/c++/4.8/iosfwd /usr/include/c++/4.8/bits/stringfwd.h \
+ /usr/include/c++/4.8/bits/memoryfwd.h \
+ /usr/include/c++/4.8/bits/postypes.h /usr/include/c++/4.8/cwchar \
+ /usr/include/wchar.h /usr/include/stdio.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/xlocale.h /usr/include/c++/4.8/exception \
+ /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/4.8/bits/char_traits.h \
+ /usr/include/c++/4.8/bits/stl_algobase.h \
+ /usr/include/c++/4.8/bits/functexcept.h \
+ /usr/include/c++/4.8/bits/exception_defines.h \
+ /usr/include/c++/4.8/bits/cpp_type_traits.h \
+ /usr/include/c++/4.8/ext/type_traits.h \
+ /usr/include/c++/4.8/ext/numeric_traits.h \
+ /usr/include/c++/4.8/bits/stl_pair.h /usr/include/c++/4.8/bits/move.h \
+ /usr/include/c++/4.8/bits/concept_check.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.8/debug/debug.h \
+ /usr/include/c++/4.8/bits/stl_iterator.h \
+ /usr/include/c++/4.8/bits/localefwd.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++locale.h \
+ /usr/include/c++/4.8/clocale /usr/include/locale.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/4.8/cctype \
+ /usr/include/ctype.h /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/c++/4.8/bits/ios_base.h \
+ /usr/include/c++/4.8/ext/atomicity.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/bits/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/bits/timex.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+ /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h \
+ /usr/include/c++/4.8/bits/locale_classes.h /usr/include/c++/4.8/string \
+ /usr/include/c++/4.8/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
+ /usr/include/c++/4.8/ext/new_allocator.h /usr/include/c++/4.8/new \
+ /usr/include/c++/4.8/bits/ostream_insert.h \
+ /usr/include/c++/4.8/bits/cxxabi_forced.h \
+ /usr/include/c++/4.8/bits/stl_function.h \
+ /usr/include/c++/4.8/backward/binders.h \
+ /usr/include/c++/4.8/bits/range_access.h \
+ /usr/include/c++/4.8/bits/basic_string.h \
+ /usr/include/c++/4.8/bits/basic_string.tcc \
+ /usr/include/c++/4.8/bits/locale_classes.tcc \
+ /usr/include/c++/4.8/streambuf /usr/include/c++/4.8/bits/streambuf.tcc \
+ /usr/include/c++/4.8/bits/basic_ios.h \
+ /usr/include/c++/4.8/bits/locale_facets.h /usr/include/c++/4.8/cwctype \
+ /usr/include/wctype.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_base.h \
+ /usr/include/c++/4.8/bits/streambuf_iterator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_inline.h \
+ /usr/include/c++/4.8/bits/locale_facets.tcc \
+ /usr/include/c++/4.8/bits/basic_ios.tcc \
+ /usr/include/c++/4.8/bits/ostream.tcc /usr/include/c++/4.8/istream \
+ /usr/include/c++/4.8/bits/istream.tcc /usr/include/c++/4.8/fstream \
+ /usr/include/c++/4.8/bits/codecvt.h /usr/include/c++/4.8/cstdio \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++io.h \
+ /usr/include/c++/4.8/bits/fstream.tcc threshold.h
+spmt_utility.o: spmt_utility.cpp /usr/include/stdc-predef.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif_copyright.h \
+ /usr/include/stdio.h /usr/include/features.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h spmt_utility.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine_dependent.h \
+ /usr/include/string.h /usr/include/xlocale.h /usr/include/c++/4.8/new \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
+ /usr/include/c++/4.8/exception \
+ /usr/include/c++/4.8/bits/atomic_lockfree_defines.h /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/cmdparse.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/misc.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/bitset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/xarray.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/glist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/dlist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/mtflist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/alist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/hash.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/stringtable.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/tree_string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ts_ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/initsuif.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifstreams.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/aman.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifobj.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/operand.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symaddr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/immed.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/annote.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/types.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symbols.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/vardef.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symtab.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/fileset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/opcodes.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/instruction.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/trees.h
+spmt_instr.o: spmt_instr.cpp /usr/include/stdc-predef.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif_copyright.h \
+ /usr/include/string.h /usr/include/features.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/xlocale.h common.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine_dependent.h \
+ /usr/include/stdio.h /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
+ /usr/include/c++/4.8/new \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
+ /usr/include/c++/4.8/exception \
+ /usr/include/c++/4.8/bits/atomic_lockfree_defines.h /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/cmdparse.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/misc.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/bitset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/xarray.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/glist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/dlist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/mtflist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/alist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/hash.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/stringtable.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/tree_string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ts_ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/initsuif.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifstreams.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/aman.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifobj.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/operand.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symaddr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/immed.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/annote.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/types.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symbols.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/vardef.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symtab.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/fileset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/opcodes.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/instruction.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/trees.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/inumbers.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/basic.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/walk.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/operand_operators.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/annoteHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/archInfo.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/eaHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineDefs.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alpha.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mips.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Ops.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Instr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineUtil.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/graph.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/node.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/util.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/operand_bit_manager.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var_more.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/unset_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_teller.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_catalog.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/reaching_def.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bitset_function.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa_plus.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_varAD.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/instr_catalog.h \
+ procedure.h /usr/include/c++/4.8/vector \
+ /usr/include/c++/4.8/bits/stl_algobase.h \
+ /usr/include/c++/4.8/bits/functexcept.h \
+ /usr/include/c++/4.8/bits/exception_defines.h \
+ /usr/include/c++/4.8/bits/cpp_type_traits.h \
+ /usr/include/c++/4.8/ext/type_traits.h \
+ /usr/include/c++/4.8/ext/numeric_traits.h \
+ /usr/include/c++/4.8/bits/stl_pair.h /usr/include/c++/4.8/bits/move.h \
+ /usr/include/c++/4.8/bits/concept_check.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.8/debug/debug.h \
+ /usr/include/c++/4.8/bits/stl_iterator.h \
+ /usr/include/c++/4.8/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
+ /usr/include/c++/4.8/ext/new_allocator.h \
+ /usr/include/c++/4.8/bits/memoryfwd.h \
+ /usr/include/c++/4.8/bits/stl_construct.h \
+ /usr/include/c++/4.8/ext/alloc_traits.h \
+ /usr/include/c++/4.8/bits/stl_uninitialized.h \
+ /usr/include/c++/4.8/bits/stl_vector.h \
+ /usr/include/c++/4.8/bits/stl_bvector.h \
+ /usr/include/c++/4.8/bits/range_access.h \
+ /usr/include/c++/4.8/bits/vector.tcc da_cfg.h super_block.h loop_block.h \
+ super_block_cfg.h thread.h super_block_path.h
+thread_partition.o: thread_partition.cc /usr/include/stdc-predef.h \
+ thread_partition.h /usr/include/c++/4.8/vector \
+ /usr/include/c++/4.8/bits/stl_algobase.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
+ /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
+ /usr/include/c++/4.8/bits/functexcept.h \
+ /usr/include/c++/4.8/bits/exception_defines.h \
+ /usr/include/c++/4.8/bits/cpp_type_traits.h \
+ /usr/include/c++/4.8/ext/type_traits.h \
+ /usr/include/c++/4.8/ext/numeric_traits.h \
+ /usr/include/c++/4.8/bits/stl_pair.h /usr/include/c++/4.8/bits/move.h \
+ /usr/include/c++/4.8/bits/concept_check.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.8/debug/debug.h \
+ /usr/include/c++/4.8/bits/stl_iterator.h \
+ /usr/include/c++/4.8/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
+ /usr/include/c++/4.8/ext/new_allocator.h /usr/include/c++/4.8/new \
+ /usr/include/c++/4.8/exception \
+ /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/4.8/bits/memoryfwd.h \
+ /usr/include/c++/4.8/bits/stl_construct.h \
+ /usr/include/c++/4.8/ext/alloc_traits.h \
+ /usr/include/c++/4.8/bits/stl_uninitialized.h \
+ /usr/include/c++/4.8/bits/stl_vector.h \
+ /usr/include/c++/4.8/bits/stl_bvector.h \
+ /usr/include/c++/4.8/bits/range_access.h \
+ /usr/include/c++/4.8/bits/vector.tcc super_block.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif_copyright.h common.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine_dependent.h \
+ /usr/include/string.h /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/xlocale.h /usr/include/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/cmdparse.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/misc.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/bitset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/xarray.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/glist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/dlist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/mtflist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/alist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/hash.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/stringtable.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/tree_string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ts_ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/initsuif.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifstreams.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/aman.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifobj.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/operand.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symaddr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/immed.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/annote.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/types.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symbols.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/vardef.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symtab.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/fileset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/opcodes.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/instruction.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/trees.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/inumbers.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/basic.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/walk.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/operand_operators.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/annoteHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/archInfo.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/eaHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineDefs.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alpha.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mips.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Ops.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Instr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineUtil.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/graph.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/node.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/util.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/operand_bit_manager.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var_more.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/unset_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_teller.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_catalog.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/reaching_def.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bitset_function.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa_plus.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_varAD.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/instr_catalog.h \
+ thread.h super_block_path.h
+procedure_path.o: procedure_path.cc /usr/include/stdc-predef.h \
+ procedure_path.h /usr/include/c++/4.8/vector \
+ /usr/include/c++/4.8/bits/stl_algobase.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
+ /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
+ /usr/include/c++/4.8/bits/functexcept.h \
+ /usr/include/c++/4.8/bits/exception_defines.h \
+ /usr/include/c++/4.8/bits/cpp_type_traits.h \
+ /usr/include/c++/4.8/ext/type_traits.h \
+ /usr/include/c++/4.8/ext/numeric_traits.h \
+ /usr/include/c++/4.8/bits/stl_pair.h /usr/include/c++/4.8/bits/move.h \
+ /usr/include/c++/4.8/bits/concept_check.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.8/debug/debug.h \
+ /usr/include/c++/4.8/bits/stl_iterator.h \
+ /usr/include/c++/4.8/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
+ /usr/include/c++/4.8/ext/new_allocator.h /usr/include/c++/4.8/new \
+ /usr/include/c++/4.8/exception \
+ /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/4.8/bits/memoryfwd.h \
+ /usr/include/c++/4.8/bits/stl_construct.h \
+ /usr/include/c++/4.8/ext/alloc_traits.h \
+ /usr/include/c++/4.8/bits/stl_uninitialized.h \
+ /usr/include/c++/4.8/bits/stl_vector.h \
+ /usr/include/c++/4.8/bits/stl_bvector.h \
+ /usr/include/c++/4.8/bits/range_access.h \
+ /usr/include/c++/4.8/bits/vector.tcc procedure.h common.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif_copyright.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine_dependent.h \
+ /usr/include/string.h /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/xlocale.h /usr/include/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/cmdparse.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/misc.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/bitset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/xarray.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/glist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/dlist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/mtflist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/alist.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/hash.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/stringtable.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/tree_string_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/ts_ptr_index.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/initsuif.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifstreams.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/aman.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/suifobj.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/operand.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symaddr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/immed.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/annote.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/types.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symbols.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/vardef.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/symtab.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/fileset.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/opcodes.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/instruction.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/trees.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/inumbers.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/basic.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/walk.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/useful/operand_operators.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/annoteHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/archInfo.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/eaHelper.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineDefs.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alpha.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/alphaInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsOps.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mips.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/mipsInstr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Ops.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86.data \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/x86Instr.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine/machineUtil.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/graph.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/node.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/cfg/util.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/operand_bit_manager.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_var_more.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/unset_var.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_teller.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/def_catalog.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/reaching_def.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bitset_function.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa_plus.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_varAD.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/instr_catalog.h \
+ da_cfg.h super_block.h loop_block.h super_block_cfg.h thread.h \
+ super_block_path.h
+
