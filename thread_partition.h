@@ -14,16 +14,21 @@ class Procedure;
 class thread;
 class super_block;
 class super_block_path;
+class ProcedurePath;
+
 
 class ThreadPartition{
 private:
 	std::vector<thread*>* threadList;
+	ProcedurePath* procPath;
+	thread* currentThread, *futureThread;
+	unsigned int curThreadNum;
 
 protected:
 
 public:
-	ThreadPartition();
-	thread *partition_thread(super_block * start, super_block * end, thread * curr_thread);
+	ThreadPartition(ProcedurePath* theProcPath);
+	void partition_thread();
 	~ThreadPartition();
 
 	static super_block_path *find_most_likely_path(super_block * begin, super_block * end);

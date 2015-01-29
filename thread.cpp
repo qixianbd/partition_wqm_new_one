@@ -192,3 +192,7 @@ thread* thread::create_new_thread(super_block* first_block){
     t->add_super_block(first_block);
     return t;
 }
+
+void thread::finish_construction(void){
+	return ;
+}

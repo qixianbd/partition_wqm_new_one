@@ -13,6 +13,8 @@
 #include "super_block.h"
 #include "super_block_cfg.h"
 #include "thread.h"
+#include <iostream>
+#include <ostream>
 
 
 class ProcedurePath;
@@ -33,12 +35,15 @@ private:
 	std::vector < loop_block * >* loops;
 
 	std::vector<ProcedurePath*>* pathList;
+	std::vector<super_block* >* dominatorBlockList;
 
 	static Procedure* currentProcedure;
 
 
 protected:
 	void init_dacfg(proc_sym *cur_psym);
+	loop_block *construct_loop(cfg_node * loop_entry);
+	loop_block * partition_loop(cfg_node * loop_entry);
 public:
 	Procedure(proc_sym *the_cur_psym);
 	super_block_cfg*  consturct_super_block_cfg();
@@ -58,11 +63,21 @@ public:		//getters
 	super_block_cfg* getTheScfg() const;
 	reg_def_teller* getTheTeller() const;
 	std::vector<thread*>* getThreads() const;
+	std::vector<super_block*>* getDominatorBlockList()const;
 
 	void processProcedure();
 	void findAllSuitablePathList();
+	void findDominatorList();
+
 public:
 	static Procedure* getCurrentProcedure();
+
+/**
+ * The methods in this section are used to print out the information need to debug in the development time.
+ */
+public:
+	void printDominatorList(std::ostream& os)const;
+
 };
 
 

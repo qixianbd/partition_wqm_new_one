@@ -113,7 +113,7 @@ void UserOptions::parseOptions(int argc, char** argv) {
 	setGenerateDotGraph();
 	setStatisticsFile();
 	setUseXml();		//!!!NotCompleted, need to be completed.
-
+	setNodeNumTestFilePtr();
 	return ;
 }
 
@@ -225,7 +225,7 @@ FILE* UserOptions::getNodeNumTestFilePtr() const {
 
 void UserOptions::setNodeNumTestFilePtr() {
 	const char *test_file_name = addExtentionToFilename(programName, "_node_num_test.txt");
-	if ((this->nodeNumTestFilePtr = fopen(test_file_name, "w")) == NULL) {
+	if ((nodeNumTestFilePtr = fopen(test_file_name, "w")) == NULL) {
 		printf("Cannot open test file .\n");
 		exit(1);
 	}

@@ -71,6 +71,6 @@ int main(int argc, char** argv)
 	readAndProcessFiles();
 
 
-	std::cerr << "End of the Partition Program. " << std::endl;
+	std::cout << "End of the Partition Program. " << std::endl;
 	return 0;
 }

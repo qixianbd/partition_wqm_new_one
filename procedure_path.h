@@ -9,9 +9,10 @@
 #define PROCEDURE_PATH_H_
 
 #include <vector>
+#include <ostream>
+#include <iostream>
 class super_block;
 class super_block_path;
-
 /*
 struct SubPathProperty{
 	std::vector<super_block*>* subPath;
@@ -51,15 +52,34 @@ private:
 	std::vector<super_block*> *path;
 	std::vector<super_block*> *cqip_block_list;
 
+	typedef std::vector<super_block*> thread_block;
+	std::vector<thread_block*>* thread_list;
+
+protected:
+	void fillCqipList();
+	bool isDominator(super_block* block)const;
+	void determineThreadSize();
+	void addToThreadList(std::vector<super_block*>* block_list);
 public:
 	ProcedurePath(super_block_path* sbpath);
 	void addSuperBlock(super_block* );
 	unsigned int  blockNumber();
 	unsigned int size();
 
-	unsigned int getCqipNumber();
-	super_block*  getCqipBlock(int n);
+	unsigned int getCqipNumber()const;
+	super_block*  getCqipBlock(int n)const;
 
+	std::vector<thread_block*>* getThreadList()const{
+		return thread_list;
+	}
+
+/**
+ * debug information. print out the object's content.
+ */
+public:
+	void printCqipList(std::ostream& os)const;
+	void printPath(std::ostream& os)const;
+	void printThreadBlock(std::ostream& os)const;
 };
 
 

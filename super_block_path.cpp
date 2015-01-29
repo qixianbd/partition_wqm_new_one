@@ -83,6 +83,13 @@ bool super_block_path::contains(super_block *sb)
     return false;
 }
 
+void super_block_path::add_super_block_vector(std::vector<super_block*>* super_block_list){
+	for(std::vector<super_block*>::iterator it = super_block_list->begin(); it !=super_block_list->end(); it++){
+		path->append(*it);
+	}
+	return ;
+}
+
 unsigned int super_block_path::size()
 {
     unsigned int size = 0;

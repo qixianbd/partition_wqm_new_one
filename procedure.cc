@@ -4,6 +4,7 @@
  *  Created on: 2014年12月28日
  *      Author: keyming
  */
+#include <stack>
 #include "procedure.h"
 #include "user_options.h"
 #include "misc.h"
@@ -29,7 +30,6 @@ Procedure* Procedure::getCurrentProcedure(){
 
 
 void Procedure::init_dacfg(proc_sym *cur_psym) {
-
 	/*deal with procedure symbol ; make sure its legal*/
 			Process_symtab(cur_psym->block()->proc_syms(), TRUE, stdout);
 			/*init procedure cfg which contained data flow analysis */
@@ -85,6 +85,10 @@ void Procedure::init_dacfg(proc_sym *cur_psym) {
 			threads = new std::vector<thread*>();
 			loops = new std::vector<loop_block*>();
 			the_scfg = this->consturct_super_block_cfg();
+			pathList = new std::vector<ProcedurePath*>();
+			dominatorBlockList = new std::vector<super_block*>();
+			findDominatorList();
+			printDominatorList(std::cout);
 }
 /**
 * 2011-4-25 注释 by SYJ
@@ -121,9 +125,9 @@ static void Process_symtab(base_symtab * st, boolean descend, FILE * o_fd)
 }
 
 
-Procedure::Procedure(proc_sym *cur_psym) : cur_psym(NULL), cur_psymtab(NULL), the_cfg(NULL), the_bit_mgr(NULL),
+Procedure::Procedure(proc_sym *the_cur_psym) : cur_psym(the_cur_psym), cur_psymtab(NULL), the_cfg(NULL), the_bit_mgr(NULL),
 		the_full_cnl(NULL), the_teller(NULL), the_reach(NULL), the_scfg(NULL),
-		threads(NULL), loops(NULL), pathList(NULL){
+		threads(NULL), loops(NULL), pathList(NULL), dominatorBlockList(NULL){
 	init_dacfg(cur_psym);
 	currentProcedure = this;
 }
@@ -170,15 +174,41 @@ std::vector<thread*>*Procedure::getThreads() const {
 	return threads;
 }
 
+std::vector<super_block*>* Procedure::getDominatorBlockList() const{
+	return dominatorBlockList;
+}
+
 void Procedure::findAllSuitablePathList(){
-	super_block *entry_block = the_scfg->entry();
-	 super_block *start_block = entry_block->fall_succ();
+	super_block *start_block = the_scfg->entry();
 	 super_block *end_block = the_scfg->exit();
 	super_block* pdom = start_block->immed_pdom();
 	super_block_path* likely_path = ThreadPartition::find_most_likely_path(start_block, end_block);
 	ProcedurePath *procPath = new ProcedurePath(likely_path);
+	procPath->printCqipList(std::cout);
+	procPath->printPath(std::cout);
 	pathList->push_back(procPath);
 	return ;
+}
+
+void Procedure::findDominatorList(){
+	super_block *entry_block = the_scfg->entry();
+	super_block *end_block = the_scfg->exit();
+
+	super_block *block = entry_block->fall_succ();
+	while(block != end_block){
+		dominatorBlockList->push_back(block);
+		block = block->immed_pdom();
+	}
+	return ;
+}
+
+void Procedure::printDominatorList(std::ostream& os)const{
+	int listSize = dominatorBlockList->size();
+	os << "The Number of dominator blocks In the procedure [" << cur_psym->name() << "] is " << listSize << " : \n";
+	for(int i = 0; i < listSize; i++){
+		os << (*dominatorBlockList)[i]->block_num() << "\t";
+	}
+	os << "\n";
 }
 
 void Procedure::processProcedure(){
@@ -190,11 +220,16 @@ void Procedure::processProcedure(){
 		//------test for min_cut.h --------------------
 
 		fprintf(options->getNodeNumTestFilePtr(), "\n当前访问函数:%s:\n", cur_psym->name());
-
+		std::cout << "当前正在访问函数:" << cur_psym->name() << std::endl;
+		if(strcmp(cur_psym->name(), "walksub") == 0){
+			std::cout << "当前正在访问函数:" << cur_psym->name() << std::endl;
+		}
 		this->findAllSuitablePathList();
 		ProcedurePath *theProcPath = NULL;
 		for(int i = 0; i < pathList->size(); i++){
 				theProcPath = (*pathList)[i];
+				ThreadPartition tp(theProcPath);
+				tp.partition_thread();
 		}
 
 		if (options->getVerbose()) {
@@ -412,13 +447,92 @@ void construct_super_block_relationship(da_cfg* the_cfg, super_block_cfg * sbc)
 }
 
 
+/*
+ *construct_loop() --- construct loop region.创建循环区域
+ */
+loop_block *Procedure::construct_loop(cfg_node * loop_entry)
+{
+    bit_set the_loop(0, the_cfg->num_nodes());
+    printf("the_cfg_num_nodes:");
+    printf("%d\n", the_cfg->num_nodes());
+    std::stack < cfg_node * >node_stack;
+
+    cfg_node *loop_end;
+    cfg_node_list_iter pred_iter(loop_entry->preds());
+
+    //look up the end node of loop region
+    while (!pred_iter.is_empty()) {
+		printf("loop_entry_preds:");
+		cfg_node *pred_cn = pred_iter.step();
+		pred_cn->print(stdout);
+		printf("\n");
+		if (the_cfg->dominates(loop_entry, pred_cn)
+			&& the_cfg->loop_depth(pred_cn) == 1)
+			loop_end = pred_cn;
+    }
+
+    node_stack.push(loop_end);
+    printf("\n");
+    printf("loop_entry_number:");
+    printf("%d\n", loop_entry->number());
+    the_loop.add(loop_entry->number());
+
+    //record the cfg node of loop region
+    while (!node_stack.empty()) {
+	cfg_node *top = node_stack.top();
+	node_stack.pop();
+
+	int num = top->number();
+	if (!the_loop.contains(num)) {
+	    the_loop.add(num);
+	    cfg_node_list_iter top_iter(top->preds());
+	    while (!top_iter.is_empty())
+		node_stack.push(top_iter.step());
+	}
+    }
+
+    //allocate loop block
+    loop_block *loop = new loop_block();
+    loop->set_entry_node(loop_entry);
+    loop->set_end_node(loop_end);
+
+
+    bit_set_iter iter(&the_loop);
+    while (!iter.is_empty()) {
+	the_cfg->set_loop_depth(the_cfg->node(iter.step()), 1);
+    }
+    bit_set_iter iter1(&the_loop);
+    while (!iter1.is_empty()) {
+	int num = iter1.step();
+	cfg_node *node = the_cfg->node(num);
+	loop->add_block(node);
+	if (the_cfg->is_loop_exit(node))
+	    loop->add_exit_node(node);
+
+    }
+
+    /* bit_set_iter iter(&the_loop);
+       while(!iter.is_empty())
+       {
+       int num = iter.step();
+       cfg_node *node = the_cfg->node(num);
+       loop->add_block(node);
+       if(the_cfg->is_loop_exit(node) && the_cfg->loop_depth(node) == 1)
+       loop->add_exit_node(node);
+       }
+     */
+    return loop;
+}
 
 /*
  *partition_loop() --- partition loop region.
  */
-static loop_block *partition_loop(cfg_node * loop_entry)
+loop_block * Procedure::partition_loop(cfg_node * loop_entry)
 {
-	return NULL;
+    //construct loop region
+    loop_block *loop = construct_loop(loop_entry);
+    loop->print();
+	return loop;
 }
 
 

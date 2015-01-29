@@ -58,5 +58,6 @@ public:
 
 public:		//addbykeyming 20141231
     static thread * create_new_thread(super_block * first);
+    void finish_construction();
 };
 #endif

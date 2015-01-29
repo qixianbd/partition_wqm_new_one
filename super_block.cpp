@@ -566,3 +566,25 @@ int block_size_from_instr(cfg_block * cb, machine_instr * mi_instr)
     assert(size != 0);
     return size;
 }
+
+bool super_block::isDominatorOf(super_block* candidate_diminatee) {
+	super_block *dom = candidate_diminatee->immed_dom();
+	while(dom != NULL){
+		if(dom == this){
+			return true;
+		}
+		dom = dom->immed_dom();
+	}
+	return false;
+}
+
+bool super_block::isPdominatorOf(super_block* candidate) {
+	super_block *pdom = candidate->immed_pdom();
+	while(pdom != NULL){
+		if(pdom == this){
+			return true;
+		}
+		pdom = pdom->immed_pdom();
+	}
+	return false;
+}

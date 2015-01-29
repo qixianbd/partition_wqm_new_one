@@ -61,6 +61,12 @@ public:
     void print_relationship(FILE *fp = stdout);
     super_block& operator=(const super_block &other);
 
+  /**
+   * addbykeyming at 20150126
+   */
+public:
+    bool isDominatorOf(super_block* candidate_diminatee);
+    bool isPdominatorOf(super_block* candidate);
 };
 
 DECLARE_LIST_CLASS(super_block_list, super_block *);
