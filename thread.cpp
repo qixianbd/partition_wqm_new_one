@@ -1,6 +1,8 @@
 #include "thread.h"
 #include "spmt_instr.h"
 #include "user_options.h"
+#include "super_block_cfg.h"
+#include "procedure.h"
 
 extern boolean usexml;
 extern int pslice_of_thread;
@@ -194,5 +196,31 @@ thread* thread::create_new_thread(super_block* first_block){
 }
 
 void thread::finish_construction(void){
-	return ;
+    tnle *spawn_pos = this->get_spawned_pos();
+    if (spawn_pos == 0){
+    	return;
+    }
+
 }
+
+void thread::setSpawnBlock(tnle* spawn_pos){
+	assert(spawn_pos != NULL);
+	super_block_cfg* the_scfg = Procedure::getCurrentProcedure()->getTheScfg();
+	super_block *the_spawn_super_block = the_scfg->in_which_super_block(spawn_pos);
+	this->spawned_block = (cfg_block*)the_spawn_super_block->first_block();
+}
+
+void thread::printSpawnPosition(std::ostream &os)const{
+	super_block_cfg* the_scfg = Procedure::getCurrentProcedure()->getTheScfg();
+	super_block *the_spawn_super_block = the_scfg->in_which_super_block(this->spawned_pos);
+
+    tree_instr *first_instr = (tree_instr *)spawned_pos->contents;
+    machine_instr *first_mi = (machine_instr *)first_instr->instr();
+
+
+	os << "The spawn is in the super block " << the_spawn_super_block->block_num() << "\n";
+	os << "The corresponding instruction is " << ":";
+	first_mi->print(stdout);
+}
+
+

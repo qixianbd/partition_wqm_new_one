@@ -4,6 +4,8 @@
 #include "super_block.h"
 #include "super_block_path.h"
 #include <vector>
+#include <ostream>
+
 extern FILE *stat_fp;
 extern boolean statistics;
 
@@ -45,6 +47,7 @@ public:
     tnle* get_cqip_pos();
 
     void set_spawned_block(cfg_block *cb){spawned_block = cb;}
+    void setSpawnBlock(tnle* spawn_pos);
     cfg_block* get_spawned_block();
     void set_cqip_block(cfg_block *cb) {cqip_block = cb;}
     cfg_block* get_cqip_block();
@@ -59,5 +62,11 @@ public:
 public:		//addbykeyming 20141231
     static thread * create_new_thread(super_block * first);
     void finish_construction();
+
+ /**
+  * Print out some key information of the thread object. These methods are used to debug or log the information.
+  */
+public:
+    void printSpawnPosition(std::ostream &os)const;
 };
 #endif

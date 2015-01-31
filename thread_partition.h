@@ -9,6 +9,7 @@
 #define THREADPARTITION_H_
 
 #include <vector>
+#include "da_cfg.h"
 
 class Procedure;
 class thread;
@@ -25,7 +26,9 @@ private:
 	unsigned int curThreadNum;
 
 protected:
-
+	unsigned int find_min_dependence(thread* currentThread, thread* futureThread, tnle* &spawn_ins_pos);
+	unsigned int compute_spawning_distance(super_block * spawn_path, machine_instr * spawn_instr);
+	void pruning_instrs_before_spawn(bit_set * defs, super_block * path, tnle * spawn_pos);
 public:
 	ThreadPartition(ProcedurePath* theProcPath);
 	void partition_thread();

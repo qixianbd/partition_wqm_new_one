@@ -68,7 +68,7 @@ da_cfg::print_dfa(FILE *fp)
 
 /*
  *da_cfg::find_liveins() --- find the super block sb's live-ins.
- *da_cfg::find_liveins() --comment by keyming: 寻找在该超级块有引用而没有定义的变量集合. 通常该超级块指代的就是待分析的线程单元.
+ *da_cfg::find_liveins() --comment by keyming: 寻找在该超级块有引用而没有定义的变量集合, 并把结果存放在liviin 参数指代的变量上. 通常该超级块指代的就是待分析的线程单元.
  *da_cfg::find_liveins() ---commmet by keyming: 通过这个方法可以找到线程的"livein"变量(注意此livein)变量与live variables 不一样.
  */
 void da_cfg::find_liveins(super_block *sb, operand_bit_manager *bit_man, bit_set *livein)
