@@ -167,6 +167,7 @@ void ProcedurePath::printPath(std::ostream& os) const {
 
 
 void ProcedurePath::printThreadBlock(std::ostream& os)const{
+	os << "In procedure " << Procedure::getCurrentProcedure()->getCurPsym()->name() << "\n";
 	os << "This path can be partition into " << (this->getCqipNumber() + 1)  <<  " threads.\n";
 	assert((this->getCqipNumber() + 1) == this->thread_list->size());
 

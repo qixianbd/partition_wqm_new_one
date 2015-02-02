@@ -14,7 +14,7 @@ public:
     super_block_path();
     virtual ~super_block_path();
 
-    super_block_list* super_blocks() {return path;}
+    super_block_list* super_blocks()const {return path;}
     super_block* first_super_block();
     super_block* last_super_block();
     super_block* convert_to_super_block();

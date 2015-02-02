@@ -3,6 +3,7 @@
 #include "super_block.h"
 #include "user_options.h"
 #include "procedure.h"
+#include "misc.h"
 
 /*
  *print_bit_man() --- print the bit manager.

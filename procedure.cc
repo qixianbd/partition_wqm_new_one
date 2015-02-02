@@ -5,11 +5,15 @@
  *      Author: keyming
  */
 #include <stack>
+#include <algorithm>
 #include "procedure.h"
 #include "user_options.h"
 #include "misc.h"
 #include "thread_partition.h"
 #include "procedure_path.h"
+#include "spmt_utility.h"
+
+extern int cfg_node_static_instr_size(cfg_node *node);
 
 Procedure* Procedure::currentProcedure = NULL;
 static void construct_super_block_relationship(da_cfg* the_cfg, super_block_cfg * sbc);
@@ -125,7 +129,7 @@ static void Process_symtab(base_symtab * st, boolean descend, FILE * o_fd)
 }
 
 
-Procedure::Procedure(proc_sym *the_cur_psym) : cur_psym(the_cur_psym), cur_psymtab(NULL), the_cfg(NULL), the_bit_mgr(NULL),
+Procedure::Procedure(mproc_symtab* the_cur_psymtab, proc_sym *the_cur_psym) : cur_psym(the_cur_psym), cur_psymtab(the_cur_psymtab), the_cfg(NULL), the_bit_mgr(NULL),
 		the_full_cnl(NULL), the_teller(NULL), the_reach(NULL), the_scfg(NULL),
 		threads(NULL), loops(NULL), pathList(NULL), dominatorBlockList(NULL){
 	init_dacfg(cur_psym);
@@ -213,6 +217,7 @@ void Procedure::printDominatorList(std::ostream& os)const{
 
 void Procedure::processProcedure(){
 
+	generate_dot(cur_psym->name(), Procedure::BEFORE);
 	UserOptions* options = UserOptions::getUserOptions();
 		if (options->getVerbose()) {
 			//print_all_definee(stdout, the_reach, the_scfg);
@@ -235,7 +240,9 @@ void Procedure::processProcedure(){
 		if (options->getVerbose()) {
 			printf("\n*********After partition************\n\n");
 			the_cfg->print_cfg();
+
 		}
+		generate_dot(cur_psym->name(), Procedure::AFTER);
 }
 
 super_block_cfg*  Procedure::consturct_super_block_cfg() {
@@ -547,3 +554,243 @@ static cfg_node *peek_node(super_block * sb)
     else
 	return 0;
 }
+
+
+
+
+
+void Procedure::generate_dot(char *procedureName, PrintGraphFlag suffixFlag)
+{
+	//addByKeyming 20140513
+	char filename_before_spmt_instr[256];
+	strncpy(filename_before_spmt_instr, "testcase/dot_file/", 256);
+	strncat(filename_before_spmt_instr, procedureName, 256);
+	char suffixStr[32];
+	if(suffixFlag == BEFORE){
+		strncpy(suffixStr, "_prev.dot", strlen("_prev.dot")+1);
+	}
+	else if(suffixFlag == AFTER){
+		strncpy(suffixStr, "_after.dot", strlen("_after.dot")+1);
+	}
+	strncat(filename_before_spmt_instr, suffixStr, strlen(suffixStr));
+	FILE *func_dot = fopen(filename_before_spmt_instr, "w");
+	if(!func_dot){
+		fprintf(stderr, "Cannot create the dotFunction file for the procedure %s", procedureName);
+	}
+	generate_full_instr_dot(func_dot);
+	fclose(func_dot);
+}
+/**
+ * 输出一条指令到fp. 对于普通指令in, 只输出 opcode des_operand src_operand. 对于 标签, 输出标签.
+ * @param in
+ * @param fp
+ * 依赖的全局变量: 无
+ */
+void print_instruction(instruction* in, FILE *fp = stdout)
+{
+	assert(in);
+
+	machine_instr *mi = dynamic_cast<machine_instr *> (in);
+	if(mi != NULL){
+		mi_rr *mirr = dynamic_cast<mi_rr *>(mi);
+		if(mirr != NULL){// if mi is mi_rr
+
+			mi_bj *mibj = dynamic_cast<mi_bj *>(mirr);
+			if(mibj != NULL){
+				//if mi is a jump instruction.
+
+				//1. print the opcode.
+				fprintf(fp, "%s\t", in->op_string());
+
+				//2. print the target lable.
+				if(mibj->target() != NULL){
+					Print_symbol(fp, mibj->target());
+
+				}
+				//mibj->print();
+				fprintf(fp, "\\n");
+				fflush(fp);
+				return ;
+			}// end of if mi is bj instruction.
+
+			//1. print the opcode.
+			fprintf(fp, "%s\t", in->op_string());
+
+			//2. print the dest operand.
+			if(mi->num_dsts() ){
+				operand opd = mi->dst_op(0);
+				if(!opd.is_null()){
+						opd.print(in, fp);
+						fprintf(fp, "\t");
+				}
+			}
+
+			//3. print the all (could be more than one) source operand.
+			int operand_num = mi->num_srcs();
+			for(int i = 0; i < operand_num; i++){
+				operand opd = mi->src_op(i);
+				if(!opd.is_null()){
+					opd.print(in, fp);
+					fprintf(fp, "\t");
+				}
+			}
+			fprintf(fp, "\\n");
+
+		} // end of if mirr != NULL
+		else{
+
+			mi_lab *milab = dynamic_cast<mi_lab *>(mi);
+			if(milab){
+				//milab->print(fp);
+				milab->label()->sym_node::print(fp);
+				fprintf(fp,":\\n");			/* mips-specific ending */
+			   // mips_print_reloc(milab, fp);
+			}
+		}
+	}
+	fflush(fp);
+
+}
+/**
+ * 生成一个打印有全部指令的cfg dot 文件. 该函数会打印处每个基本块的所有指令, 标签.  每一个基本块被当作一个node 处理
+ * @param fp 输出结果的文件指针. Point to the output file.
+ */
+void Procedure::generate_full_instr_dot(FILE* fp)
+{
+
+	char proc_name[32];
+	char temp[16], temp2[16];
+
+	std::vector<int> spawnNodes;
+	std::vector<int> cqipNodes;
+
+
+	fprintf(fp, "digraph G{\n");
+	fprintf(fp, "\tlabel = \"%s\"", this->getCurPsym()->name());
+	fprintf(fp, "\tstyle = \"dashed\";\n");
+	fprintf(fp, "\tcolor = purple;\n");
+
+
+	for(int i = 0; i < the_cfg->num_nodes(); i++){
+		cfg_node *cn = the_cfg->node(i);
+		if (cn->is_begin()) {
+			fprintf(fp, "\tNode%s [label = \"%s\"];\n",
+					itoa(cn->number(), temp, 10), "Begin");
+			//((cfg_begin *) cn)->print();
+
+		} else if (cn->is_end()) {
+			fprintf(fp, "\tNode%s [label = \"%s\"];\n",
+					itoa(cn->number(), temp, 10), "End");
+			//((cfg_end *) cn)->print(fp);
+		} else {
+			fprintf(fp, "\tNode%s [label = \"B%s_%d\\n",
+					itoa(cn->number(), temp, 10),
+					itoa(cn->number(), temp2, 10),
+					cfg_node_static_instr_size(cn));
+	//		((cfg_block *) cn)->print_with_instrs(stdout);
+			//puts("");
+
+		    cfg_node_instr_iter cnii(cn);
+		    while (!cnii.is_empty()) {
+				instruction *in = cnii.step()->instr();
+				//in->instruction::print(fp, 1, 1);
+
+				print_instruction(in, fp);
+				/*
+				fprintf(fp, "%s\t", in->op_string());
+				//print the operand.
+				machine_instr *mi = dynamic_cast<machine_instr *> (in);
+				if(mi != NULL){
+					if(mi->num_dsts() ){
+						operand opd = mi->dst_op(0);
+						if(!opd.is_null()){
+							opd.print(in, fp);
+							fprintf(fp, "\t");
+						}
+					}
+					int operand_num = mi->num_srcs();
+					for(int i = 0; i < operand_num; i++){
+						operand opd = mi->src_op(i);
+						if(!opd.is_null()){
+							opd.print(in, fp);
+							fprintf(fp, "\t");
+						}
+					}
+
+					//fprintf(fp, "%d\t", mi->num_dsts());
+					//fprintf(fp, "\\n");
+				}
+				else{
+					in_lab *inlab = dynamic_cast<in_lab *>(in);
+					if(inlab){
+						inlab->print(fp);
+					}
+				}
+				fprintf(fp, "\\n");
+				fflush(fp);
+
+				*/
+
+
+				/**
+				 * 测试该基本块是否包含spawn, cqip等特殊指令. 如果包含, 则加入到特殊的vector里.
+				 */
+				if(strcmp(in->op_string(), "spawn") == 0){
+					spawnNodes.push_back(cn->number());
+				}
+				else if(strcmp(in->op_string(), "cqip") == 0){
+					cqipNodes.push_back(cn->number());
+				}
+		    }
+		    fprintf(fp, "\"];\n");
+		}
+/**
+ * 下面打印的是节点之间的指向关系.
+ */
+
+		fprintf(fp, "\tNode%s -> {", itoa(cn->number(), temp, 10));
+
+		cfg_node_list_iter cnl_iter(cn->succs());
+		while (!cnl_iter.is_empty()) {
+			cfg_node *succ_cn = cnl_iter.step();
+			//for the begin block, there is edge from begin block to the end block, so we must delete this edge from cfg.
+			if (cn->is_begin() && succ_cn->is_end())
+				continue;
+
+			fprintf(fp, "Node%s ",
+					itoa(succ_cn->number(), temp, 10));
+		}
+		fprintf(fp, "}\n");
+
+	}
+	// 此时已经退出了for loop.
+	/**
+	 * 下面对于包含spawn 和 cqip的点进行特殊颜色 特殊方框的打印处理.
+	 */
+
+	//对于一个基本块, 如果只包含spawn 打red, 只包含cqip打 yellow, contain the both , print blue.
+	for(int i = 0; i < spawnNodes.size(); i++){
+		if(std::find(cqipNodes.begin(), cqipNodes.end(), spawnNodes[i]) == cqipNodes.end()){
+			fprintf(fp, "\tNode%s [shape = box ,style=filled ,color=red];\n",
+					itoa(spawnNodes[i], temp, 10));
+		}
+		else{
+			fprintf(fp, "\tNode%s [shape = ellipse ,style=filled ,color=blue];\n",
+					itoa(spawnNodes[i], temp, 10));
+		}
+	}
+
+	for(int i = 0; i < cqipNodes.size(); i++){
+		if(std::find(spawnNodes.begin(), spawnNodes.end(), cqipNodes[i]) == spawnNodes.end()){
+			fprintf(fp, "\tNode%s [shape = polygon ,style=filled ,color=yellow];\n",
+					itoa(cqipNodes[i], temp, 10));
+		}
+
+	}
+
+
+	fprintf(fp, "}\n");
+}
+
+
+

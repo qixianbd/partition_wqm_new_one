@@ -562,29 +562,17 @@ procedure.o: procedure.cc /usr/include/stdc-predef.h \
  /usr/include/c++/4.8/bits/stl_deque.h \
  /usr/include/c++/4.8/bits/range_access.h \
  /usr/include/c++/4.8/bits/deque.tcc \
- /usr/include/c++/4.8/bits/stl_stack.h procedure.h \
- /usr/include/c++/4.8/vector /usr/include/c++/4.8/bits/stl_vector.h \
- /usr/include/c++/4.8/bits/stl_bvector.h \
- /usr/include/c++/4.8/bits/vector.tcc common.h \
- /home/keyming/Prophet/x86_64-linux-gnu/include/suif1.h \
- /home/keyming/Prophet/x86_64-linux-gnu/include/suif_copyright.h \
- /home/keyming/Prophet/x86_64-linux-gnu/include/machine_dependent.h \
- /usr/include/string.h /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
- /usr/include/xlocale.h /usr/include/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/types.h \
- /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/libio.h \
- /usr/include/_G_config.h /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
- /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /usr/include/x86_64-linux-gnu/bits/sys_errlist.h /usr/include/errno.h \
- /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
- /usr/include/x86_64-linux-gnu/asm/errno.h \
- /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/c++/4.8/bits/stl_stack.h /usr/include/c++/4.8/algorithm \
+ /usr/include/c++/4.8/utility /usr/include/c++/4.8/bits/stl_relops.h \
+ /usr/include/c++/4.8/bits/stl_algo.h /usr/include/c++/4.8/cstdlib \
+ /usr/include/stdlib.h /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endian.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
- /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h /usr/include/xlocale.h \
  /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/time.h \
  /usr/include/x86_64-linux-gnu/sys/select.h \
  /usr/include/x86_64-linux-gnu/bits/select.h \
@@ -593,6 +581,23 @@ procedure.o: procedure.cc /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/c++/4.8/bits/algorithmfwd.h \
+ /usr/include/c++/4.8/bits/stl_heap.h \
+ /usr/include/c++/4.8/bits/stl_tempbuf.h procedure.h \
+ /usr/include/c++/4.8/vector /usr/include/c++/4.8/bits/stl_vector.h \
+ /usr/include/c++/4.8/bits/stl_bvector.h \
+ /usr/include/c++/4.8/bits/vector.tcc common.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif1.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/suif_copyright.h \
+ /home/keyming/Prophet/x86_64-linux-gnu/include/machine_dependent.h \
+ /usr/include/string.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/cmdparse.h \
  /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/misc.h \
  /home/keyming/Prophet/x86_64-linux-gnu/include/suif1/bitset.h \
@@ -707,7 +712,7 @@ procedure.o: procedure.cc /usr/include/stdc-predef.h \
  /usr/include/c++/4.8/bits/basic_ios.tcc \
  /usr/include/c++/4.8/bits/ostream.tcc /usr/include/c++/4.8/iostream \
  /usr/include/c++/4.8/istream /usr/include/c++/4.8/bits/istream.tcc \
- user_options.h misc.h thread_partition.h procedure_path.h
+ user_options.h misc.h thread_partition.h procedure_path.h spmt_utility.h
 loop_block.o: loop_block.cpp /usr/include/stdc-predef.h loop_block.h \
  common.h /home/keyming/Prophet/x86_64-linux-gnu/include/suif1.h \
  /home/keyming/Prophet/x86_64-linux-gnu/include/suif_copyright.h \
@@ -1170,7 +1175,7 @@ misc.o: misc.cpp /usr/include/stdc-predef.h /usr/include/string.h \
  /usr/include/c++/4.8/bits/stl_vector.h \
  /usr/include/c++/4.8/bits/stl_bvector.h \
  /usr/include/c++/4.8/bits/vector.tcc da_cfg.h loop_block.h \
- super_block_cfg.h thread.h super_block_path.h
+ super_block_cfg.h thread.h super_block_path.h misc.h
 spawn_pos_trace.o: spawn_pos_trace.cpp /usr/include/stdc-predef.h \
  spawn_pos_trace.h /usr/include/c++/4.8/vector \
  /usr/include/c++/4.8/bits/stl_algobase.h \
@@ -1957,7 +1962,7 @@ thread.o: thread.cpp /usr/include/stdc-predef.h thread.h super_block.h \
  /usr/include/c++/4.8/bits/ostream.tcc spmt_instr.h user_options.h \
  /usr/include/c++/4.8/iostream /usr/include/c++/4.8/istream \
  /usr/include/c++/4.8/bits/istream.tcc super_block_cfg.h procedure.h \
- da_cfg.h loop_block.h
+ da_cfg.h loop_block.h thread_partition.h threshold.h misc.h
 threshold.o: threshold.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/4.8/iostream \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
@@ -2298,8 +2303,8 @@ thread_partition.o: thread_partition.cc /usr/include/stdc-predef.h \
  /usr/include/linux/limits.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
- /usr/include/x86_64-linux-gnu/bits/stdio_lim.h thread_partition.h \
- /usr/include/c++/4.8/vector /usr/include/c++/4.8/bits/stl_algobase.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h /usr/include/c++/4.8/list \
+ /usr/include/c++/4.8/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
@@ -2320,12 +2325,14 @@ thread_partition.o: thread_partition.cc /usr/include/stdc-predef.h \
  /usr/include/c++/4.8/exception \
  /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
  /usr/include/c++/4.8/bits/memoryfwd.h \
+ /usr/include/c++/4.8/bits/range_access.h \
+ /usr/include/c++/4.8/bits/stl_list.h /usr/include/c++/4.8/bits/list.tcc \
+ thread_partition.h /usr/include/c++/4.8/vector \
  /usr/include/c++/4.8/bits/stl_construct.h \
  /usr/include/c++/4.8/ext/alloc_traits.h \
  /usr/include/c++/4.8/bits/stl_uninitialized.h \
  /usr/include/c++/4.8/bits/stl_vector.h \
  /usr/include/c++/4.8/bits/stl_bvector.h \
- /usr/include/c++/4.8/bits/range_access.h \
  /usr/include/c++/4.8/bits/vector.tcc da_cfg.h \
  /home/keyming/Prophet/x86_64-linux-gnu/include/suif_copyright.h common.h \
  /home/keyming/Prophet/x86_64-linux-gnu/include/suif1.h \
@@ -2461,7 +2468,7 @@ thread_partition.o: thread_partition.cc /usr/include/stdc-predef.h \
  /usr/include/c++/4.8/bits/ostream.tcc threshold.h procedure_path.h \
  /usr/include/c++/4.8/iostream /usr/include/c++/4.8/istream \
  /usr/include/c++/4.8/bits/istream.tcc procedure.h super_block_cfg.h \
- misc.h
+ misc.h spmt_instr.h
 procedure_path.o: procedure_path.cc /usr/include/stdc-predef.h \
  procedure_path.h /usr/include/c++/4.8/vector \
  /usr/include/c++/4.8/bits/stl_algobase.h \

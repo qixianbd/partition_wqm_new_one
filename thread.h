@@ -61,12 +61,14 @@ public:
 
 public:		//addbykeyming 20141231
     static thread * create_new_thread(super_block * first);
-    void finish_construction();
-
+    void finish_construction(thread* future_thread);
+    super_block *find_pslice_path(super_block * spawn_sblock,super_block * cqip_sblock);
+    void fillPslice(super_block *pslice_path);
  /**
   * Print out some key information of the thread object. These methods are used to debug or log the information.
   */
 public:
     void printSpawnPosition(std::ostream &os)const;
+    void printSuperBlocks(std::ostream &os)const;
 };
 #endif

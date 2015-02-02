@@ -25,7 +25,7 @@ void processFile(file_set_entry * fse) {
 
 		cur_psymtab = Read_machine_proc(cur_psym, TRUE, FALSE);		/*read procedure with expression trees */
 
-		Procedure procedure(cur_psym);
+		Procedure procedure(cur_psymtab, cur_psym);
 		procedure.processProcedure();		//process procedure partition.
 
 		Write_machine_proc(cur_psym, fse);		/*write procedure with expressioni trees */

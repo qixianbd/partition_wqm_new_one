@@ -19,6 +19,7 @@ private:
     live_var_problem_more *liveness_more;
 
 public:
+
     da_cfg(tree_block *b,
             boolean build_blocks = TRUE,
             boolean break_at_call = FALSE,

@@ -3,7 +3,7 @@
 #include "procedure.h"
 
 extern char *k_call_overhead;
-
+extern int cfg_node_static_instr_size(cfg_node *node);
 /*
  *super_block::super_block() --- According to block kind, construct super block.
  */
@@ -587,4 +587,24 @@ bool super_block::isPdominatorOf(super_block* candidate) {
 		pdom = pdom->immed_pdom();
 	}
 	return false;
+}
+
+int cfg_node_static_instr_size(cfg_node *node) {
+	assert(node->is_block());
+
+	int counter = 0;
+	cfg_node_instr_iter cnii(node);
+	while (!cnii.is_empty()) {
+		tree_instr *test = cnii.step();
+		machine_instr *mi = (machine_instr *) test->instr();
+		if ((int) mi->opcode() == mo_lab || (int) mi->opcode() == mo_loc
+				|| (int) mi->opcode() == mo_null){
+			continue;
+		}
+		else{
+			counter++;
+		}
+	}
+
+	return counter;
 }

@@ -230,4 +230,3 @@ void da_cfg::generate_dot(FILE *fp /*= stdout*/)
 	Block_base += num_nodes();
 }
 
-

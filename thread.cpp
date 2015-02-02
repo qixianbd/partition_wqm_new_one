@@ -3,9 +3,14 @@
 #include "user_options.h"
 #include "super_block_cfg.h"
 #include "procedure.h"
+#include "thread_partition.h"
+#include "threshold.h"
+#include "misc.h"
 
 extern boolean usexml;
 extern int pslice_of_thread;
+
+
 /*
  *thread::thread() --- constructor of thread.
  */
@@ -194,12 +199,71 @@ thread* thread::create_new_thread(super_block* first_block){
     t->add_super_block(first_block);
     return t;
 }
+super_block *thread::find_pslice_path(super_block * spawn_sblock,super_block * cqip_sblock) {
+	super_block *pslice_path = new super_block(super_block::BLOCK_LIST);
+	super_block *sblock = spawn_sblock;
 
-void thread::finish_construction(void){
+	super_block_list *the_path = this->super_blocks();
+	this->print(stdout);
+	super_block_list_iter it(the_path);
+	bool inPath = false;
+	while(!it.is_empty()){
+		super_block* sblock = it.step();
+		if(sblock == spawn_sblock){
+			inPath = true;
+		}
+		if (sblock->knd() == super_block::BLOCK){
+			if(inPath){
+				pslice_path->add_blocks(sblock->nodes());
+			}
+		}
+		else if (sblock->knd() == super_block::LOOP) {			//如果超级块的类型为循环，什么都不做
+			;
+		} else {
+			assert(0);
+		}
+	}
+
+	return pslice_path;
+}
+
+void thread::finish_construction(thread* future_thread){
+	assert(future_thread != NULL);
     tnle *spawn_pos = this->get_spawned_pos();
     if (spawn_pos == 0){
     	return;
     }
+
+    /**
+     * 1. get the cqip position for this thread.  Insert the cqip instruction and the cqip lable.
+     */
+    super_block *cqip_sblock = future_thread->first_super_block();
+    cqip_block = NULL, cqip_pos = NULL;
+    if (cqip_sblock->knd() == super_block::BLOCK){
+    	cqip_block = (cfg_block *) cqip_sblock->first_block();
+    	cqip_pos = insert_cqip_instr(cqip_block, false);
+    }
+    else if (cqip_sblock->knd() == super_block::LOOP){
+    	assert(0);		// if is Loop , then we do what?  we need do something special.
+    }
+
+    cqip_pos_num = peek_cqip_pos(cqip_pos);
+    printf("\n cqip_pos_num label is:\n");
+    cqip_pos_num->print(stdout);
+    printf("\n");
+
+    /**
+     * 2. get the spawn position for this thread.
+     */
+
+	super_block_cfg* the_scfg = Procedure::getCurrentProcedure()->getTheScfg();
+	super_block *spawn_sblock = the_scfg->in_which_super_block(this->spawned_pos);
+	spawned_block = (cfg_block *) spawn_sblock->first_block();
+
+	/**
+	 * 3. find the pslice segment , and insert the pslice segment instruction sets.
+	 */
+	super_block *pslice_path = this->find_pslice_path(spawn_sblock, cqip_sblock);
 
 }
 
@@ -221,6 +285,16 @@ void thread::printSpawnPosition(std::ostream &os)const{
 	os << "The spawn is in the super block " << the_spawn_super_block->block_num() << "\n";
 	os << "The corresponding instruction is " << ":";
 	first_mi->print(stdout);
+}
+
+void thread::printSuperBlocks(std::ostream &os)const{
+	os << "All the super blocks in this thread is :\n" ;
+	super_block_list_iter iter(this->super_blocks());
+	while(!iter.is_empty()){
+		super_block *block = iter.step();
+		os << block->block_num() << "\t" ;
+	}
+	os << "\n";
 }
 
 

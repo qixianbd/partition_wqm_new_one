@@ -45,7 +45,8 @@ protected:
 	loop_block *construct_loop(cfg_node * loop_entry);
 	loop_block * partition_loop(cfg_node * loop_entry);
 public:
-	Procedure(proc_sym *the_cur_psym);
+	enum PrintGraphFlag{BEFORE = 0, AFTER = 1};
+	Procedure(mproc_symtab* cur_psymtab, proc_sym *the_cur_psym);
 	super_block_cfg*  consturct_super_block_cfg();
 	/*
 	 *partition_thread() --- partition thread for non-loop region.
@@ -71,13 +72,13 @@ public:		//getters
 
 public:
 	static Procedure* getCurrentProcedure();
-
 /**
  * The methods in this section are used to print out the information need to debug in the development time.
  */
 public:
 	void printDominatorList(std::ostream& os)const;
-
+	void generate_full_instr_dot(FILE* fp);
+	void generate_dot(char *procedureName, PrintGraphFlag suffixFlag);
 };
 
 

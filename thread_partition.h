@@ -27,14 +27,21 @@ private:
 
 protected:
 	unsigned int find_min_dependence(thread* currentThread, thread* futureThread, tnle* &spawn_ins_pos);
-	unsigned int compute_spawning_distance(super_block * spawn_path, machine_instr * spawn_instr);
 	void pruning_instrs_before_spawn(bit_set * defs, super_block * path, tnle * spawn_pos);
+	void finish_construction(thread* current_thread, thread* future_thread);
+
+protected:
+	bit_set *search_pslice_instrs(bit_set * liveins, super_block * spawn_path, tnle * spawn_pos, bit_set * defs);
+	void print_bitset_with_instr(reaching_def_problem * r, bit_set * bt);
+	void fillPslice(super_block *pslice_path, thread* current_thread,  label_sym *cqip_pos_num);
+	void pruning_cal_instrs(bit_set * defs, super_block * spawn_path);
 public:
 	ThreadPartition(ProcedurePath* theProcPath);
 	void partition_thread();
 	~ThreadPartition();
 
 	static super_block_path *find_most_likely_path(super_block * begin, super_block * end);
+	static unsigned int compute_spawning_distance(super_block * spawn_path, machine_instr * spawn_instr);
 
 	/**
 	 * getters and setters.
