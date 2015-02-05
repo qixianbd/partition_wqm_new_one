@@ -57,11 +57,13 @@ private:
 
 protected:
 	void fillCqipList();
-	bool isDominator(super_block* block)const;
+
 	void determineThreadSize();
+	void divideToThreadBlock();
 	void addToThreadList(std::vector<super_block*>* block_list);
 public:
-	ProcedurePath(super_block_path* sbpath);
+	ProcedurePath(super_block_path* sbpath, std::vector<super_block*> *the_cqip_block_list);
+	~ProcedurePath();
 	void addSuperBlock(super_block* );
 	unsigned int  blockNumber();
 	unsigned int size();
@@ -72,6 +74,7 @@ public:
 	std::vector<thread_block*>* getThreadList()const{
 		return thread_list;
 	}
+	static bool isDominator(super_block* block);
 
 /**
  * debug information. print out the object's content.

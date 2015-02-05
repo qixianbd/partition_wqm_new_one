@@ -90,6 +90,16 @@ void super_block_path::add_super_block_vector(std::vector<super_block*>* super_b
 	return ;
 }
 
+std::vector<super_block*>* super_block_path::getSuperblockVectorList()const{
+	std::vector<super_block*>* sblockList = new std::vector<super_block*>();
+	 super_block_list_iter iter(path);
+	 while(!iter.is_empty()){
+		 super_block *block = iter.step();
+		 sblockList->push_back(block);
+	 }
+	 return sblockList;
+}
+
 unsigned int super_block_path::size()
 {
     unsigned int size = 0;

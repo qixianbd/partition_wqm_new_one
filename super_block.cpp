@@ -16,6 +16,8 @@ super_block::super_block(super_block_kind block_kind):kind(block_kind)
     taken_probability = 0.001;
     immed_dominator = 0;
     immed_pdominator = 0;
+    fallVisit = false;
+    takenVisit = false;
 }
 
 /*
@@ -405,6 +407,10 @@ super_block *super_block::likely_succ()
 float super_block::taken_prob()
 {
     return taken_probability;
+}
+
+float super_block::fall_prob(){
+	return 1 - taken_probability;
 }
 
 /*

@@ -11,9 +11,9 @@
 #include "threshold.h"
 #include "super_block_cfg.h"
 
-ProcedurePath::ProcedurePath(super_block_path *sbpath):path(NULL),  cqip_block_list(NULL), thread_list(NULL){
+ProcedurePath::ProcedurePath(super_block_path *sbpath, std::vector<super_block*> *the_cqip_block_list):path(NULL),  cqip_block_list(the_cqip_block_list), thread_list(NULL){
 	path = new std::vector<super_block*>();
-	cqip_block_list = new std::vector<super_block*>();
+	//cqip_block_list = new std::vector<super_block*>();
 	thread_list = new std::vector<thread_block*>();
 
 	sbpath->print(stdout);
@@ -28,8 +28,13 @@ ProcedurePath::ProcedurePath(super_block_path *sbpath):path(NULL),  cqip_block_l
 	 fillCqipList();
 }
 
+ProcedurePath::~ProcedurePath(){
+	delete path;
+	delete thread_list;
+}
 
-bool ProcedurePath::isDominator(super_block* block)const{
+
+bool ProcedurePath::isDominator(super_block* block){
 
 	std::vector<super_block*> *dominatorList = Procedure::getCurrentProcedure()->getDominatorBlockList();
 	std::vector<super_block*>::const_iterator cit;
@@ -49,6 +54,29 @@ static unsigned int super_block_list_size(std::vector<super_block*> *sblock_list
 	return list_size;
 }
 
+void ProcedurePath::divideToThreadBlock(){
+	unsigned int threadSize = 0;
+	std::vector<super_block*> super_block_list;
+	std::vector<super_block*>::iterator cqipIter, pathIter;
+	for(pathIter= path->begin(), cqipIter = cqip_block_list->begin();pathIter != path->end(); ){
+		if(cqipIter != cqip_block_list->end()){
+			while(pathIter != path->end() && (*pathIter)->block_num() != (*cqipIter)->block_num() ){
+				super_block_list.push_back(*pathIter);
+				pathIter++;
+			}
+			cqipIter++;
+		}
+		else{
+			while(pathIter != path->end()){
+				super_block_list.push_back(*pathIter);
+				pathIter++;
+			}
+		}
+		addToThreadList(&super_block_list);
+		super_block_list.clear();
+	}
+}
+
 void ProcedurePath::addToThreadList(std::vector<super_block*>* block_list){
 	if(block_list->empty()){
 		std::cout << "Warning: the thread is empty." << std::endl;
@@ -62,6 +90,7 @@ void ProcedurePath::addToThreadList(std::vector<super_block*>* block_list){
 	thread_list->push_back(the_block_list);
 	return ;
 }
+
 void ProcedurePath::determineThreadSize(){
 	if(this->size() < 2* threshold::thread_size_lower){		// this path is too short to cut into at least two threads.
 		return ;
@@ -77,7 +106,7 @@ void ProcedurePath::determineThreadSize(){
 		while(path_pos < path->size()  && super_block_list_size(&pcur_thread) < threshold::thread_size_lower ){
 			pcur_thread.push_back((*path)[path_pos]);				// push back the dominator blocks.
 			path_pos++;
-			while(path_pos < path->size() && !isDominator( (*path)[path_pos] )){
+			while(path_pos < path->size() && !ProcedurePath::isDominator( (*path)[path_pos] )){
 				pcur_thread.push_back( (*path)[path_pos] );			// push back the non-dominator blocks.
 				path_pos++;
 			}
@@ -115,7 +144,8 @@ void ProcedurePath::determineThreadSize(){
 
 void ProcedurePath::fillCqipList(){
 	assert(!path->empty());				// if is empty then it will be have no start block used in the followiing code.
-	determineThreadSize();
+	//determineThreadSize();
+	divideToThreadBlock();
 }
 
 
@@ -169,6 +199,10 @@ void ProcedurePath::printPath(std::ostream& os) const {
 void ProcedurePath::printThreadBlock(std::ostream& os)const{
 	os << "In procedure " << Procedure::getCurrentProcedure()->getCurPsym()->name() << "\n";
 	os << "This path can be partition into " << (this->getCqipNumber() + 1)  <<  " threads.\n";
+	if((this->getCqipNumber() + 1) != this->thread_list->size()){
+		std::cout << "the get cqipNUM is " << this->getCqipNumber() << ", the thread list size is " << this->getThreadList()->size() << std::endl;
+		assert((this->getCqipNumber() + 1) == this->thread_list->size());
+	}
 	assert((this->getCqipNumber() + 1) == this->thread_list->size());
 
 	unsigned int count = 0;

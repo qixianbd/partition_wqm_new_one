@@ -25,6 +25,8 @@ private:
     super_block *immed_dominator;       /*super block's immed dominator*/
     super_block *immed_pdominator;      /*super block's immed postdominator*/
 
+    bool fallVisit;
+    bool takenVisit;
 public:
     super_block(super_block_kind block_kind = BLOCK);
     ~super_block();
@@ -56,6 +58,7 @@ public:
     super_block* likely_succ();
     super_block* take_succ();
     float taken_prob();
+    float fall_prob();
     void flush();
     void print(FILE *fp = stdout);
     void print_relationship(FILE *fp = stdout);
@@ -67,6 +70,29 @@ public:
 public:
     bool isDominatorOf(super_block* candidate_diminatee);
     bool isPdominatorOf(super_block* candidate);
+    bool isHaveTwoBranch(){
+    	if(this->taken_probability >= 0.1 && 1- taken_probability >= 0.1){
+    		return true;
+    	}
+    	return false;
+    }
+
+
+	bool isFallVisit() const {
+		return fallVisit;
+	}
+
+	void setFallVisit(bool fallVisit) {
+		this->fallVisit = fallVisit;
+	}
+
+	bool isTakenVisit() const {
+		return takenVisit;
+	}
+
+	void setTakenVisit(bool takenVisit) {
+		this->takenVisit = takenVisit;
+	}
 };
 
 DECLARE_LIST_CLASS(super_block_list, super_block *);

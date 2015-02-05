@@ -21,6 +21,7 @@ public:
     void add_super_block(super_block *sb);
     void add_super_blocks(super_block_list *sb_list);
     void add_super_block_vector(std::vector<super_block*>* super_block_list);
+    std::vector<super_block*>* getSuperblockVectorList()const;
     bool contains(super_block *sb);
     unsigned int size();
     void print(FILE *fp = stdout);
