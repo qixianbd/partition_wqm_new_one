@@ -38,6 +38,7 @@ private:
 	std::vector<super_block* >* dominatorBlockList;		// the dominator list of super blocks of this procedure.
 	std::vector<super_block*> *cqip_block_list;					// all the super blocks that can be the cqip super block.   			@keyming 20150202
 
+	ProcedurePath *likelyPath;
 	static Procedure* currentProcedure;
 
 
@@ -67,6 +68,7 @@ public:		//getters
 	std::vector<thread*>* getThreads() const;
 	std::vector<super_block*>* getDominatorBlockList()const;
 	std::vector<super_block*>* getCqipBlockList()const;
+	ProcedurePath* getProceurePath()const;
 protected:
 	void addToCqipBlockList(super_block* block);
 public:		// key methods that are exposed to the outer class part.
@@ -74,14 +76,16 @@ public:		// key methods that are exposed to the outer class part.
 	void findAllSuitablePathList();
 	void findAllProcedurePathList();
 	void findAllProcedurePathList__New();
-	void findMostLikelyThreadPath();
-	void pushTheProcedurePath(std::vector<super_block_path*>*& threadPath);
+	void findMostLikelyThreadPath(std::vector<super_block_path*>* &most_likely_thread_path_list);
+	void pushTheProcedurePath(std::vector<super_block_path*>* threadPath, int threadBlockNum);
 	void findDominatorList();
 
 	void determineThreadSize();
 	void findAllPathInThreadBlock(super_block *begin, super_block *end);
 	std::vector<super_block_path*>*  findMostLikelySubPathInThreadBlock(super_block *begin, super_block *end);
 
+	void fillInPathList(std::vector<super_block_path*>* thePathList);
+	ProcedurePath* findMostLikelyPathOfProc();
 public:
 	static Procedure* getCurrentProcedure();
 /**
@@ -90,6 +94,7 @@ public:
 public:
 	void printDominatorList(std::ostream& os)const;
 	void printCqipList(std::ostream& os)const;
+	void printProcedurePathList(std::ostream& os)const;
 	void generate_full_instr_dot(FILE* fp);
 	void generate_dot(char *procedureName, PrintGraphFlag suffixFlag);
 

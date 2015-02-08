@@ -25,6 +25,7 @@ public:
     bool contains(super_block *sb);
     unsigned int size();
     void print(FILE *fp = stdout);
+    void printOnlyBlockNum(FILE *fp = stdout)const;
 };
 
 #endif

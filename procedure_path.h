@@ -83,6 +83,7 @@ public:
 	void printCqipList(std::ostream& os)const;
 	void printPath(std::ostream& os)const;
 	void printThreadBlock(std::ostream& os)const;
+	bool haveTheSamePath(const ProcedurePath* pp)const;
 };
 
 

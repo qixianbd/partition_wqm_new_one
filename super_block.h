@@ -71,7 +71,7 @@ public:
     bool isDominatorOf(super_block* candidate_diminatee);
     bool isPdominatorOf(super_block* candidate);
     bool isHaveTwoBranch(){
-    	if(this->taken_probability >= 0.1 && 1- taken_probability >= 0.1){
+    	if(this->taken_probability >= 0.0001 && 1- taken_probability >= 0.0001){
     		return true;
     	}
     	return false;

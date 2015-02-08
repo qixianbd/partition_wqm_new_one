@@ -574,6 +574,10 @@ int block_size_from_instr(cfg_block * cb, machine_instr * mi_instr)
 }
 
 bool super_block::isDominatorOf(super_block* candidate_diminatee) {
+	if(candidate_diminatee->knd() == CFG_END){
+		return true;
+	}
+
 	super_block *dom = candidate_diminatee->immed_dom();
 	while(dom != NULL){
 		if(dom == this){
@@ -585,6 +589,9 @@ bool super_block::isDominatorOf(super_block* candidate_diminatee) {
 }
 
 bool super_block::isPdominatorOf(super_block* candidate) {
+	if(candidate->knd() == CFG_BEGIN){
+		return true;
+	}
 	super_block *pdom = candidate->immed_pdom();
 	while(pdom != NULL){
 		if(pdom == this){

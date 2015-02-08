@@ -121,3 +121,18 @@ void super_block_path::print(FILE *fp)
         sblock->print_relationship(fp);
     }
 }
+
+void super_block_path::printOnlyBlockNum(FILE *fp)const{
+	if(path->is_empty()){
+		fprintf(fp, "The super block path is Empty.\n");
+		return ;
+	}
+	fprintf(fp, "Path has %d nodes:\t", path->count());
+	super_block_list_iter iter(path);
+	while(!iter.is_empty()){
+		super_block *block = iter.step();
+		fprintf(fp, " %d \t", block->block_num());
+	}
+	fprintf(fp, "\n");
+	return;
+}

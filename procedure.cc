@@ -19,6 +19,13 @@
 
 extern int cfg_node_static_instr_size(cfg_node *node);
 
+static void addHeadBlock(std::vector<super_block_path*> *thePathList, super_block *head);
+static std::vector<super_block_path*> *addListToTail(std::vector<super_block_path*> *theMain, std::vector<super_block_path*> *theTail);
+static std::vector<super_block_path*> *twoSubPath(super_block *begin, super_block *end);
+static std::vector<super_block_path*> *nonDomToDom(super_block *begin, super_block *end);
+
+
+
 Procedure* Procedure::currentProcedure = NULL;
 static void construct_super_block_relationship(da_cfg* the_cfg, super_block_cfg * sbc);
 static void non_loop_partition(super_block_cfg *scfg);
@@ -100,6 +107,11 @@ void Procedure::init_dacfg(proc_sym *cur_psym) {
 			printDominatorList(std::cout);
 			determineThreadSize();
 			printCqipList(std::cout);
+			if(strcmp(cur_psym->name(), "subdivp") == 0){
+				std::cout << "当前正在访问函数:" << cur_psym->name() << std::endl;
+			}
+			findMostLikelyPathOfProc();
+			this->likelyPath->printPath(std::cout);
 }
 /**
 * 2011-4-25 注释 by SYJ
@@ -138,7 +150,7 @@ static void Process_symtab(base_symtab * st, boolean descend, FILE * o_fd)
 
 Procedure::Procedure(mproc_symtab* the_cur_psymtab, proc_sym *the_cur_psym) : cur_psym(the_cur_psym), cur_psymtab(the_cur_psymtab), the_cfg(NULL), the_bit_mgr(NULL),
 		the_full_cnl(NULL), the_teller(NULL), the_reach(NULL), the_scfg(NULL),
-		threads(NULL), loops(NULL), pathList(NULL), dominatorBlockList(NULL){
+		threads(NULL), loops(NULL), pathList(NULL), dominatorBlockList(NULL), likelyPath(NULL){
 	init_dacfg(cur_psym);
 	currentProcedure = this;
 }
@@ -193,6 +205,12 @@ std::vector<super_block*>* Procedure::getCqipBlockList()const{
 	return cqip_block_list;
 }
 
+
+ProcedurePath* Procedure::getProceurePath()const{
+	return this->likelyPath;
+}
+
+
 void Procedure::addToCqipBlockList(super_block* block){
 	this->cqip_block_list->push_back(block);
 	return;
@@ -214,45 +232,195 @@ static double myfabs(double d){
 	return fabs(d);
 }
 
+static std::vector<super_block_path*> *isImParentAndReturn(super_block *begin, super_block *end){
+	assert(begin);
+	assert(end);
+	std::vector<super_block_path*> *thePathList = new std::vector<super_block_path*>();
+
+	// case 1. begin is immediate connect with end. and begin only has one child.
+	if( (begin->take_succ() == end && begin->fall_succ() == NULL) || (begin->fall_succ() == end  && begin->take_succ() == NULL)){
+		super_block_path* subPath = new super_block_path();
+		subPath->add_super_block(begin);
+		thePathList->push_back(subPath);
+		return thePathList;
+	}
+
+	// case 2.  fall=end, taken!= NULL(may be huge)
+	if(begin->fall_succ() == end && begin->take_succ() != NULL){
+		super_block_path* subPath = new super_block_path();
+		subPath->add_super_block(begin);
+		thePathList->push_back(subPath);
+
+		std::vector<super_block_path*> *theBranchPathList = nonDomToDom(begin->take_succ(), end);
+		addHeadBlock(theBranchPathList, begin);
+		addListToTail(thePathList, theBranchPathList);
+		return thePathList;
+	}
+
+	// case 3. taken=end, fall != NULL, fall may be very huge.
+	if(begin->take_succ() == end && begin->fall_succ() != NULL){
+		super_block_path* subPath = new super_block_path();
+		subPath->add_super_block(begin);
+		thePathList->push_back(subPath);
+
+		std::vector<super_block_path*> *theBranchPathList = nonDomToDom(begin->fall_succ(), end);
+		addHeadBlock(theBranchPathList, begin);
+		addListToTail(thePathList, theBranchPathList);
+		return thePathList;
+	}
+
+	assert(begin->fall_succ() != NULL && begin->take_succ() != NULL);
+	// case 4. begin->next->next = end.
+	if(begin->fall_succ()->likely_succ() == end && begin->take_succ()->likely_succ() == end){
+		delete thePathList;
+		return twoSubPath(begin, end);
+	}
+
+	// case 5. others return NULL.
+	return NULL;
+}
+
 static bool isImParent(super_block *begin, super_block *end){
 	assert(begin);
 	assert(end);
 
-	if(begin->take_succ() == end || begin->fall_succ() == end){
+	// case 1. begin is immediate connect with end. and begin only has one child.
+	if( (begin->take_succ() == end && begin->fall_succ() == NULL) || (begin->fall_succ() == end  && begin->take_succ() == NULL)){
 		return true;
 	}
-	if(begin->likely_succ()->likely_succ() == end){
+
+	if(begin->fall_succ() == end && begin->take_succ() != NULL){
 		return true;
 	}
+
+	if(begin->take_succ() == end && begin->fall_succ() != NULL){
+		return true;
+	}
+
 	return false;
 }
 
-static std::vector<super_block_path*> *twoSubPath(super_block *begin, super_block *end){
-	assert(begin->isHaveTwoBranch());
-	std::vector<super_block_path*> *pathList = new std::vector<super_block_path*>();
 
-	if(begin->taken_prob() >= 0.2){
+static std::vector<super_block_path*> *twoSubPath(super_block *begin, super_block *end){
+	//assert(begin->isHaveTwoBranch());
+	std::vector<super_block_path*> *thePathList = new std::vector<super_block_path*>();
+
+//	if(begin->fall_succ() == end && begin->fall_prob() >= 0.001){
+//		super_block_path* subPath = new super_block_path();
+//		subPath->add_super_block(begin);
+//		thePathList->push_back(subPath);
+//		return thePathList;
+//	}
+//
+//	if(begin->likely_succ() == end){
+//		super_block_path* subPath = new super_block_path();
+//		subPath->add_super_block(begin);
+//		thePathList->push_back(subPath);
+//		return thePathList;
+//	}
+
+	if(begin->taken_prob() >= 0.001){
 		super_block_path* subPath = new super_block_path();
 		subPath->add_super_block(begin);
 		subPath->add_super_block(begin->take_succ());
-		pathList->push_back(subPath);
+		thePathList->push_back(subPath);
 	}
-	if(begin->fall_prob() >= 0.2){
+	if(begin->fall_prob() >= 0.001){
 		super_block_path* subPath = new super_block_path();
 		subPath->add_super_block(begin);
 		subPath->add_super_block(begin->fall_succ());
-		pathList->push_back(subPath);
+		thePathList->push_back(subPath);
 	}
-	return pathList;
+	return thePathList;
 }
 
-std::vector<super_block_path*> * findBlockPath(super_block *begin, super_block *end){
-	assert(begin->isDominatorOf(end));
+void printPathList(std::vector<super_block_path*> *thePathList){
+	if(thePathList->empty()){
+		std::cout << "The Path is empty. " << std::endl;
+	}
+	std::cout << "Here have " << thePathList->size() << " paths in this part of the subPath." << std::endl;
+	for(int i = 0; i < thePathList->size(); i++){
+		//std::cout << "The " << i << " path." << std::endl;
+		thePathList->at(i)->printOnlyBlockNum(stdout);
+	}
+	return ;
+}
 
-	if(isImParent(begin, end)){
-		return twoSubPath(begin, end);
+std::vector<super_block_path*> *addRestToTail(std::vector<super_block_path*> * thePathList, super_block_path *theRestPath){
+	if(theRestPath->super_blocks()->is_empty()){
+		return thePathList;
 	}
 
+	for(int i = 0; i < thePathList->size(); i++){
+		thePathList->at(i)->add_super_blocks(theRestPath->super_blocks());
+	}
+	return thePathList;
+}
+
+std::vector<super_block_path*> * findBlockPath(super_block *begin, super_block *end);
+
+static std::vector<super_block_path*> *nonDomToDom(super_block *begin, super_block *end){
+	std::vector<super_block_path*> *ret = NULL;
+	if(begin == end){		// Then this path would be empty.  But we should still keep this path in the vector. Because the path must have a head, and it can be non-empty after inserting the head.
+		super_block_path *thePath = new super_block_path();
+		ret = new std::vector<super_block_path*>();
+		ret->push_back(thePath);			// thePath is empty.
+		return ret;
+	}
+	super_block *pdom = begin->immed_pdom();
+	std::vector<super_block_path*> *theSubPathList = findBlockPath(begin, pdom);
+	printPathList(theSubPathList);
+	super_block_path *theRestSubPath = new super_block_path();
+	super_block *block = pdom;
+	while(block != end){
+		theRestSubPath->add_super_block(block);
+		block = block->likely_succ();
+	}
+
+	ret = addRestToTail(theSubPathList, theRestSubPath);
+	printPathList(ret);
+	return ret;
+}
+
+static std::vector<super_block_path*> *addListToTail(std::vector<super_block_path*> *theMain, std::vector<super_block_path*> *theTail){
+	for(int i = 0; i < theTail->size(); i++){
+		theMain->push_back(theTail->at(i));
+	}
+	return theMain;
+}
+
+void addHeadBlock(std::vector<super_block_path*> *thePathList, super_block *head){
+	assert(head != NULL);
+	for(int i = 0; i < thePathList->size(); i++){
+		super_block_path  *thePath = new super_block_path();
+		thePath->add_super_block(head);
+		thePath->add_super_blocks(thePathList->at(i)->super_blocks());
+		delete thePathList->at(i);
+		thePathList->at(i) = thePath;
+	}
+}
+
+
+std::vector<super_block_path*> * findBlockPath(super_block *begin, super_block *end){
+	if(begin == end){
+		std::cout << "begin =  " << begin->block_num() << ", end = " << end->block_num() << std::endl;
+		assert(begin != end);
+	}
+	if(!end->isPdominatorOf(begin)){
+		std::cout << "begin =  " << begin->block_num() << ", end = " << end->block_num() << std::endl;
+		assert(end->isPdominatorOf(begin));
+	}
+	//assert(begin->isDominatorOf(end));
+	assert(begin != end);
+
+	std::vector<super_block_path*> *pathList = NULL;
+	if(end == begin->immed_pdom()){			// if end is the immediate post dominator of begin, then goto the Imparent function.
+		pathList = isImParentAndReturn(begin, end);
+		if(pathList){
+			return pathList;
+		}
+	}
+	assert(pathList == NULL);
 
 	super_block *block = begin;
 	super_block *the_branch_block = begin, *the_branch_pdom = begin->immed_pdom();
@@ -271,16 +439,16 @@ std::vector<super_block_path*> * findBlockPath(super_block *begin, super_block *
 		block = block->immed_pdom();
 	}
 
-	std::vector<super_block_path*> *pathList = new std::vector<super_block_path*>();
+	pathList = new std::vector<super_block_path*>();
 	super_block_path* subPath = new super_block_path();
 
-	if(diffProbability >= 0.7){			// means that there should be only one sub path from the begin to the end.
+	if(diffProbability  > 0.9995){			// means that there should be only one sub path from the begin to the end.
 		// find the most likely path  from begin  to end.
-		subPath->add_super_block(begin);
+		//subPath->add_super_block(begin);
 		super_block *the_block = begin;
 		while(the_block != end){
-			the_block = the_block->likely_succ();
 			subPath->add_super_block(the_block);
+			the_block = the_block->likely_succ();
 		}
 		pathList->push_back(subPath);
 		return pathList;
@@ -288,24 +456,37 @@ std::vector<super_block_path*> * findBlockPath(super_block *begin, super_block *
 
 	std::vector<super_block_path*>* thePathList = new std::vector<super_block_path*>();
 	the_branch_pdom = the_branch_block->immed_pdom();
-	thePathList = findBlockPath(the_branch_block, the_branch_pdom);
+	{
+
+		std::vector<super_block_path*>* theFallBranch = nonDomToDom(the_branch_block->fall_succ(), the_branch_pdom);
+		std::vector<super_block_path*>* theTakenBranch = nonDomToDom(the_branch_block->take_succ(), the_branch_pdom);
+
+		addListToTail(thePathList, theFallBranch);
+		addListToTail(thePathList, theTakenBranch);
+	}
+	printPathList(thePathList);
+	addHeadBlock(thePathList, the_branch_block);
+	printPathList(thePathList);
+	if(the_branch_block == begin && the_branch_pdom == end){
+		return thePathList;
+	}
+	//thePathList = findBlockPath(the_branch_block, the_branch_pdom);
 
 	super_block_path *otherSubPath = new super_block_path();
 	block = begin;
-	otherSubPath->add_super_block(begin);
-	while(block != the_branch_pdom){
-		block = block->likely_succ();
+	while(block != the_branch_block){
 		otherSubPath->add_super_block(block);
+		block = block->likely_succ();
 	}
 
 	super_block_path *otherEndSubPath = new super_block_path();
 	block = the_branch_pdom;
-	if(the_branch_pdom != end){
-		otherEndSubPath->add_super_block(the_branch_pdom);
-	}
+//	if(the_branch_pdom != end){
+//		otherEndSubPath->add_super_block(the_branch_pdom);
+//	}
 	while(block != end){
-		block = block->likely_succ();
 		otherEndSubPath->add_super_block(block);
+		block = block->likely_succ();
 	}
 	int pathNum = thePathList->size();
 	std::cout << "Have path " << pathNum<< "条" << std::endl;
@@ -321,8 +502,8 @@ std::vector<super_block_path*> * findBlockPath(super_block *begin, super_block *
 }
 
 std::vector<super_block_path*> * Procedure::findSubPathInDoms(super_block *dom_block_begin, super_block* dom_block_end){
-	assert(std::find(this->dominatorBlockList->begin(), this->dominatorBlockList->end(), dom_block_begin) != this->dominatorBlockList->end());
-	assert(std::find(this->dominatorBlockList->begin(), this->dominatorBlockList->end(), dom_block_end) != this->dominatorBlockList->end());
+	assert(std::find(this->dominatorBlockList->begin(), this->dominatorBlockList->end(), dom_block_begin) != this->dominatorBlockList->end() || dom_block_begin->block_num() == the_cfg->entry_node()->number() );
+	assert(std::find(this->dominatorBlockList->begin(), this->dominatorBlockList->end(), dom_block_end) != this->dominatorBlockList->end() || dom_block_end->block_num() == the_cfg->exit_node()->number());
 
 	std::vector<super_block_path*> *subPathList = NULL;
 	subPathList =  findBlockPath(dom_block_begin, dom_block_end);
@@ -390,11 +571,11 @@ void Procedure::findAllPathInThreadBlock(super_block *begin, super_block *end){
 
 }
 
-void Procedure::findMostLikelyThreadPath(){
+void Procedure::findMostLikelyThreadPath(std::vector<super_block_path*>* &most_likely_thread_path_list){
 	super_block *start_block = the_scfg->entry();
 	super_block *end_block = the_scfg->exit();
-	std::vector<super_block_path*>* most_likely_thread_path_list = new std::vector<super_block_path*>();
-	super_block *block = start_block;
+	most_likely_thread_path_list = new std::vector<super_block_path*>();
+	super_block *block = start_block->fall_succ();
 	for(int i = 0; i < this->cqip_block_list->size(); i++){
 		super_block_path *subPath = new super_block_path();
 		subPath->add_super_block(block);
@@ -413,8 +594,62 @@ void Procedure::findMostLikelyThreadPath(){
 	most_likely_thread_path_list->push_back(subPath);
 }
 
-void Procedure::pushTheProcedurePath(std::vector<super_block_path*>*& threadPath){
+void Procedure::fillInPathList(std::vector<super_block_path*>* thePathList){
+	std::cout << "The size of the pathList is " << thePathList->size() << std::endl;
+	for(int i = 0; i < thePathList->size(); i++){
+		ProcedurePath* theProcedurePath =new  ProcedurePath(thePathList->at(i), this->cqip_block_list);
+		pathList->push_back(theProcedurePath);
+	}
+	return ;
+}
 
+void Procedure::pushTheProcedurePath(std::vector<super_block_path*>* threadPath, int threadBlockNum){
+
+	std::vector<super_block_path*>  theProcedurePathList;
+	//1. fill in the theProcedurePathList.
+
+	std::vector<super_block_path*>* most_likely_thread_path_list = NULL;
+	findMostLikelyThreadPath(most_likely_thread_path_list);
+
+	for(int i = 0; i < threadPath->size(); i++){
+		super_block_path *thePath = new super_block_path();
+		for(int j = 0; j < most_likely_thread_path_list->size(); j++){
+			if(j == threadBlockNum){
+				std::cout << "Add the sub path in thread " << j << ":" << std::endl;
+				threadPath->at(i)->printOnlyBlockNum(stdout);
+				thePath->add_super_blocks(threadPath->at(i)->super_blocks());
+			}
+			else{
+				std::cout << "Add the sub path in thread " << j << ":" << std::endl;
+				most_likely_thread_path_list->at(j)->print(stdout);
+				thePath->add_super_blocks(most_likely_thread_path_list->at(j)->super_blocks());
+			}
+		}
+		std::cout << "The path from the entry of the procedure to the exit of the procedure is as the folllowing:" << std::endl;
+		thePath->printOnlyBlockNum(stdout);
+		std::cout << "End the print of this procedure path" << std::endl;
+		theProcedurePathList.push_back(thePath);
+	}
+
+
+	//2. convert the procedurePathList to pathList
+	fillInPathList(&theProcedurePathList);
+	return ;
+}
+
+ProcedurePath* Procedure::findMostLikelyPathOfProc(){
+	super_block *begin = the_scfg->entry();
+	super_block *end = the_scfg->exit();
+	super_block_path *thePath = new super_block_path();
+	super_block *block = begin->fall_succ();		// begin's block number is 0;
+	assert(block != NULL);
+	while(block != end){
+		thePath->add_super_block(block);
+		block = block->likely_succ();
+	}
+	ProcedurePath *pp = new ProcedurePath(thePath, this->cqip_block_list);
+	this->likelyPath = pp;
+	return pp;
 }
 
 void Procedure::findAllProcedurePathList__New(){
@@ -422,11 +657,48 @@ void Procedure::findAllProcedurePathList__New(){
 	super_block *end_block = the_scfg->exit();
 
 	int threadCount = cqip_block_list->size()+1;
-	super_block *begin = start_block;
+	super_block *begin = start_block->fall_succ(), *end = end_block;
 	for(int i = 0; i < threadCount; i++){
-		std::vector<super_block_path*> *threadPathList = findMostLikelySubPathInThreadBlock(begin, cqip_block_list->at(i));
-		pushTheProcedurePath(threadPathList);
+		if(i < cqip_block_list->size()){
+			end = cqip_block_list->at(i);
+		}
+		else{
+			end = end_block;
+		}
+		std::vector<super_block_path*> *threadPathList = findMostLikelySubPathInThreadBlock(begin, end);
+		printPathList(threadPathList);
+		pushTheProcedurePath(threadPathList, i);
+		begin = end;
 	}
+
+
+	// 剔除重复的部分。
+	std::cout << "The Original All ProcedurePath in the PathList is :" << std::endl;
+	this->printProcedurePathList(std::cout);
+	ProcedurePath *mostLikelyProcedurePath = this->likelyPath;
+	int sameCount = 0;
+	for(int i = 0; i < pathList->size(); i++){
+		if(pathList->at(i)->haveTheSamePath(mostLikelyProcedurePath)){
+			sameCount++;
+			if(sameCount != 1){
+				delete pathList->at(i);
+				pathList->at(i) = NULL;
+			}
+		}
+	}
+	if(sameCount == 0){
+		pathList->push_back(mostLikelyProcedurePath);
+	}
+	for(int i = 0; i < pathList->size(); i++){
+		if(pathList->at(i) == NULL){
+			std::cout << "NULL" << std::endl;
+		}
+		else{
+			pathList->at(i)->printPath(std::cout);
+		}
+	}
+	std::vector<ProcedurePath*>::iterator pos = remove(pathList->begin(), pathList->end(), (void*)NULL);
+	pathList->erase(pos, pathList->end());
 	return ;
 }
 
@@ -547,10 +819,18 @@ void Procedure::processProcedure(){
 
 		fprintf(options->getNodeNumTestFilePtr(), "\n当前访问函数:%s:\n", cur_psym->name());
 		std::cout << "当前正在访问函数:" << cur_psym->name() << std::endl;
-		if(strcmp(cur_psym->name(), "walksub") == 0){
+		if(strcmp(cur_psym->name(), "ptree") == 0){
 			std::cout << "当前正在访问函数:" << cur_psym->name() << std::endl;
 		}
-		this->findAllSuitablePathList();
+		//this->findAllSuitablePathList();
+		this->findAllProcedurePathList__New();
+		std::cout << "###########Proc: " << cur_psym->name() <<"All the legal path go through the whole procedure is list as the following:###################" << std::endl;
+		std::cout << "The most likely path is :" << std::endl;
+		this->likelyPath->printPath(std::cout);
+		for(int i = 0; i < pathList->size(); i++){
+			pathList->at(i)->printPath(std::cout);
+		}
+
 		ProcedurePath *theProcPath = NULL;
 		for(int i = 0; i < pathList->size(); i++){
 				theProcPath = (*pathList)[i];
@@ -887,6 +1167,16 @@ void Procedure::printDominatorList(std::ostream& os)const{
 	os << "\n";
 }
 
+
+void Procedure::printProcedurePathList(std::ostream& os)const{
+	assert(!pathList->empty());
+	os << "The Procedure Has " << pathList->size() << " 条 ProcedurePath." << std::endl;
+	for(std::vector<ProcedurePath*>::const_iterator cit = pathList->begin(); cit != pathList->end(); cit++){
+		const ProcedurePath *theProcPath = *cit;
+		theProcPath->printPath(os);
+	}
+	return ;
+}
 void Procedure::printCqipList(std::ostream& os)const {
 	os << "The cqipList size is : " << cqip_block_list->size() << " .\n";
 	for(std::vector<super_block*>::const_iterator cit = cqip_block_list->begin(); cit != cqip_block_list->end(); cit++){

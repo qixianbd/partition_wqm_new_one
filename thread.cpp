@@ -218,9 +218,9 @@ super_block *thread::find_pslice_path(super_block * spawn_sblock,super_block * c
 			}
 		}
 		else if (sblock->knd() == super_block::LOOP) {			//如果超级块的类型为循环，什么都不做
-			;
+			;				//     perhaps bugs here     @@@BugHere
 		} else {
-			assert(0);
+			assert(0);				//Therer is bug here   @@@BugHere
 		}
 	}
 

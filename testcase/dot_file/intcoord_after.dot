@@ -5,11 +5,11 @@ digraph G{
 	Node0 -> {Node2 }
 	Node1 [label = "End"];
 	Node1 -> {}
-	Node2 [label = "B2_33\nspawn	intcoord.L22\nla	r8	nd#1141	\nli	r9	nd#1143	\nsh	nd#1145	r9	\nli	r9	nd#1149	\naddu	r10	r7	r9	\nl.d	r40	nd#1152	\nla	r19	nd#1156	\nli	r20	nd#1158	\naddu	r27	r6	r20	\nl.d	r62	nd#1161	\ns.d	nd#1164	r62	\nla	r21	nd#1168	\nli	r22	nd#1170	\naddu	r23	r6	r22	\nl.d	r32	nd#1173	\ns.d	nd#1176	r32	\nla	r24	nd#1180	\nli	r25	nd#1182	\naddu	r26	r6	r25	\nl.d	r34	nd#1185	\ns.d	nd#1188	r34	\nla	r27	nd#1192	\nl.d	r36	nd#1194	\nmove	r28	r0	\naddu	r26	r7	r28	\nl.d	r38	nd#1199	\nsub.d	r52	r36	r38	\ndiv.d	r54	r52	r40	\nli.d	r56	nd#1205	\nli	r28	nd#1207	\nc.le.d	r56	r54	\nbc1t	intcoord.L13\n"];
+	Node2 [label = "B2_36\nspawn	intcoord.L31\nspawn	intcoord.L28\nspawn	intcoord.L25\nspawn	intcoord.L22\nla	r8	nd#1141	\nli	r9	nd#1143	\nsh	nd#1145	r9	\nli	r9	nd#1149	\naddu	r10	r7	r9	\nl.d	r40	nd#1152	\nla	r19	nd#1156	\nli	r20	nd#1158	\naddu	r27	r6	r20	\nl.d	r62	nd#1161	\ns.d	nd#1164	r62	\nla	r21	nd#1168	\nli	r22	nd#1170	\naddu	r23	r6	r22	\nl.d	r32	nd#1173	\ns.d	nd#1176	r32	\nla	r24	nd#1180	\nli	r25	nd#1182	\naddu	r26	r6	r25	\nl.d	r34	nd#1185	\ns.d	nd#1188	r34	\nla	r27	nd#1192	\nl.d	r36	nd#1194	\nmove	r28	r0	\naddu	r26	r7	r28	\nl.d	r38	nd#1199	\nsub.d	r52	r36	r38	\ndiv.d	r54	r52	r40	\nli.d	r56	nd#1205	\nli	r28	nd#1207	\nc.le.d	r56	r54	\nbc1t	intcoord.L13\n"];
 	Node2 -> {Node3 Node4 }
 	Node3 [label = "B3_1\nmove	r28	r0	\n"];
 	Node3 -> {Node4 }
-	Node4 [label = "B4_5\nintcoord.L13:\ncqip	intcoord.L22\nintcoord.L22:\npslice_entry	intcoord.L22\npslice_exit	intcoord.L22\nspawn	intcoord.L23\nbnez	intcoord.L1\n"];
+	Node4 [label = "B4_17\nintcoord.L13:\ncqip	intcoord.L31\nintcoord.L31:\npslice_entry	intcoord.L31\npslice_exit	intcoord.L31\nspawn	intcoord.L32\ncqip	intcoord.L28\nintcoord.L28:\npslice_entry	intcoord.L28\npslice_exit	intcoord.L28\nspawn	intcoord.L29\ncqip	intcoord.L25\nintcoord.L25:\npslice_entry	intcoord.L25\npslice_exit	intcoord.L25\nspawn	intcoord.L26\ncqip	intcoord.L22\nintcoord.L22:\npslice_entry	intcoord.L22\npslice_exit	intcoord.L22\nspawn	intcoord.L23\nbnez	intcoord.L1\n"];
 	Node4 -> {Node5 Node6 }
 	Node5 [label = "B5_1\nintcoord.L19:\nj	intcoord.__done7\n"];
 	Node5 -> {Node8 }
@@ -23,7 +23,7 @@ digraph G{
 	Node9 -> {Node11 }
 	Node10 [label = "B10_3\nintcoord.L2:\nla	r8	nd#1244	\nmove	r9	r0	\nsh	nd#1247	r9	\n"];
 	Node10 -> {Node11 }
-	Node11 [label = "B11_16\nintcoord.__done8:\ncqip	intcoord.L23\nintcoord.L23:\npslice_entry	intcoord.L23\nmove	r28	r0	\npslice_exit	intcoord.L23\nspawn	intcoord.L24\nla	r10	nd#1252	\nl.d	r52	nd#1254	\nli	r19	nd#1257	\naddu	r20	r7	r19	\nl.d	r54	nd#1260	\nsub.d	r56	r52	r54	\ndiv.d	r54	r56	r40	\nli.d	r58	nd#1266	\nli	r6	nd#1268	\nc.le.d	r58	r54	\nbc1t	intcoord.L15\n"];
+	Node11 [label = "B11_31\nintcoord.__done8:\ncqip	intcoord.L32\nintcoord.L32:\npslice_entry	intcoord.L32\nmove	r28	r0	\npslice_exit	intcoord.L32\nspawn	intcoord.L33\ncqip	intcoord.L29\nintcoord.L29:\npslice_entry	intcoord.L29\nmove	r28	r0	\npslice_exit	intcoord.L29\nspawn	intcoord.L30\ncqip	intcoord.L26\nintcoord.L26:\npslice_entry	intcoord.L26\nmove	r28	r0	\npslice_exit	intcoord.L26\nspawn	intcoord.L27\ncqip	intcoord.L23\nintcoord.L23:\npslice_entry	intcoord.L23\nmove	r28	r0	\npslice_exit	intcoord.L23\nspawn	intcoord.L24\nla	r10	nd#1252	\nl.d	r52	nd#1254	\nli	r19	nd#1257	\naddu	r20	r7	r19	\nl.d	r54	nd#1260	\nsub.d	r56	r52	r54	\ndiv.d	r54	r56	r40	\nli.d	r58	nd#1266	\nli	r6	nd#1268	\nc.le.d	r58	r54	\nbc1t	intcoord.L15\n"];
 	Node11 -> {Node12 Node13 }
 	Node12 [label = "B12_1\nmove	r6	r0	\n"];
 	Node12 -> {Node13 }
@@ -41,7 +41,7 @@ digraph G{
 	Node18 -> {Node20 }
 	Node19 [label = "B19_3\nintcoord.L4:\nla	r24	nd#1305	\nmove	r25	r0	\nsh	nd#1308	r25	\n"];
 	Node19 -> {Node20 }
-	Node20 [label = "B20_14\nintcoord.__done10:\ncqip	intcoord.L24\nintcoord.L24:\npslice_entry	intcoord.L24\npslice_exit	intcoord.L24\nla	r26	nd#1313	\nl.d	r54	nd#1315	\nli	r27	nd#1318	\naddu	r28	r7	r27	\nl.d	r56	nd#1321	\nsub.d	r58	r54	r56	\ndiv.d	r54	r58	r40	\nli.d	r60	nd#1327	\nli	r6	nd#1329	\nc.le.d	r60	r54	\nbc1t	intcoord.L17\n"];
+	Node20 [label = "B20_23\nintcoord.__done10:\ncqip	intcoord.L33\nintcoord.L33:\npslice_entry	intcoord.L33\npslice_exit	intcoord.L33\ncqip	intcoord.L30\nintcoord.L30:\npslice_entry	intcoord.L30\npslice_exit	intcoord.L30\ncqip	intcoord.L27\nintcoord.L27:\npslice_entry	intcoord.L27\npslice_exit	intcoord.L27\ncqip	intcoord.L24\nintcoord.L24:\npslice_entry	intcoord.L24\npslice_exit	intcoord.L24\nla	r26	nd#1313	\nl.d	r54	nd#1315	\nli	r27	nd#1318	\naddu	r28	r7	r27	\nl.d	r56	nd#1321	\nsub.d	r58	r54	r56	\ndiv.d	r54	r58	r40	\nli.d	r60	nd#1327	\nli	r6	nd#1329	\nc.le.d	r60	r54	\nbc1t	intcoord.L17\n"];
 	Node20 -> {Node21 Node22 }
 	Node21 [label = "B21_1\nmove	r6	r0	\n"];
 	Node21 -> {Node22 }
@@ -62,7 +62,19 @@ digraph G{
 	Node29 [label = "B29_11\nintcoord.__done12:\nla	r10	nd#1375	\nla	r19	nd#1377	\nlw	r20	nd#1380	\nlw	r21	nd#1383	\nlw	r22	nd#1386	\nsw	nd#1389	r20	\nsw	nd#1392	r21	\nsw	nd#1395	r22	\nlw	r23	nd#1398	\nsw	nd#1401	r23	\njr	\n"];
 	Node29 -> {Node1 }
 	Node2 [shape = box ,style=filled ,color=red];
+	Node2 [shape = box ,style=filled ,color=red];
+	Node2 [shape = box ,style=filled ,color=red];
+	Node2 [shape = box ,style=filled ,color=red];
+	Node4 [shape = ellipse ,style=filled ,color=blue];
+	Node4 [shape = ellipse ,style=filled ,color=blue];
+	Node4 [shape = ellipse ,style=filled ,color=blue];
 	Node4 [shape = ellipse ,style=filled ,color=blue];
 	Node11 [shape = ellipse ,style=filled ,color=blue];
+	Node11 [shape = ellipse ,style=filled ,color=blue];
+	Node11 [shape = ellipse ,style=filled ,color=blue];
+	Node11 [shape = ellipse ,style=filled ,color=blue];
+	Node20 [shape = polygon ,style=filled ,color=yellow];
+	Node20 [shape = polygon ,style=filled ,color=yellow];
+	Node20 [shape = polygon ,style=filled ,color=yellow];
 	Node20 [shape = polygon ,style=filled ,color=yellow];
 }

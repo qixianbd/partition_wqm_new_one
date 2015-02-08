@@ -217,4 +217,18 @@ void ProcedurePath::printThreadBlock(std::ostream& os)const{
 	return ;
 }
 
+bool ProcedurePath::haveTheSamePath(const ProcedurePath* pp)const{
+	std::vector<super_block*> *ppPath = pp->path;
+	std::vector<super_block*>::const_iterator cit = path->begin(), pcit = ppPath->begin();
+	for(; cit != path->end() && pcit != ppPath->end(); cit++, pcit++){
+		if((*cit)->block_num() != (*pcit)->block_num()){
+			return false;
+		}
+	}
+	if(cit == path->end() && pcit == ppPath->end()){
+		return true;
+	}
+	return false;
+}
+
 
