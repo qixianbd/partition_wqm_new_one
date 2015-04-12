@@ -22,28 +22,31 @@
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.865287624" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
 							<builder buildPath="${workspace_loc:/partition_wqm_new_one}/" id="cdt.managedbuild.builder.gnu.cross.184655691" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="cdt.managedbuild.builder.gnu.cross"/>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.1253122814" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
-								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.2058891495" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" valueType="enumerated"/>
-								<option id="gnu.c.compiler.option.debugging.level.671758005" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.2058891495" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.671758005" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.523739927" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.1017252795" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
-								<option id="gnu.cpp.compiler.option.include.paths.1060946810" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+								<option id="gnu.cpp.compiler.option.include.paths.1060946810" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/keyming/Prophet/x86_64-linux-gnu/include/machine"/>
 									<listOptionValue builtIn="false" value="/home/keyming/Prophet/x86_64-linux-gnu/include"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/home/keyming/Prophet/x86_64-linux-gnu/include/suif1}&quot;"/>
 								</option>
-								<option id="gnu.cpp.compiler.option.optimization.level.1207105038" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
-								<option id="gnu.cpp.compiler.option.debugging.level.2055556976" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.optimization.level.1207105038" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.2055556976" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.680749784" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.1832911478" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker"/>
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.635927218" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker">
 								<option id="gnu.cpp.link.option.libs.1677790839" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="/home/keyming/Prophet/x86_64-linux-gnu/solib/libcfg.so"/>
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="/home/keyming/Prophet/x86_64-linux-gnu/solib/libdfa.so"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="/home/keyming/Prophet/x86_64-linux-gnu/solib/libmachine.so"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="/home/keyming/Prophet/x86_64-linux-gnu/solib/libuseful.so"/>
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="/home/keyming/Prophet/x86_64-linux-gnu/solib/libsuif1.so"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="/home/keyming/Prophet/x86_64-linux-gnu/solib/libcfg.so"/>
 								</option>
 								<option id="gnu.cpp.link.option.paths.1193402074" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="/home/keyming/Prophet/x86_64-linux-gnu/solib_64_bak"/>
 									<listOptionValue builtIn="false" value="/home/keyming/Prophet/x86_64-linux-gnu/solib"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.18941130" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">

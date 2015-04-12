@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding='ISO-8859-1' standalone='yes' ?>
+<static_statistics_information>
+  <program name:>CheckOutside</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>CheckIntersect</program name:>
+  <迭代次数：>4</迭代次数：>
+  <program name:>adj</program name:>
+  <迭代次数：>25</迭代次数：>
+  <program name:>reflect</program name:>
+  <迭代次数：>30</迭代次数：>
+  <program name:>child</program name:>
+  <迭代次数：>20</迭代次数：>
+  <program name:>gtequal_adj_neighbor</program name:>
+  <迭代次数：>30</迭代次数：>
+  <program name:>sum_adjacent</program name:>
+  <迭代次数：>27</迭代次数：>
+  <program name:>MakeTree</program name:>
+  <迭代次数：>12</迭代次数：>
+  <program name:>dealwithargs</program name:>
+  <迭代次数：>1</迭代次数：>
+  <program name:>CountTree</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>perimeter</program name:>
+  <迭代次数：>31</迭代次数：>
+  <program name:>main</program name:>
+  <迭代次数：>56</迭代次数：>
+  <总迭代次数：>242</总迭代次数：>
+  <平均迭代次数：>20</平均迭代次数：>
+</static_statistics_information>

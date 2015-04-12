@@ -1,0 +1,185 @@
+digraph G{
+subgraph cluster_0{
+	label = "dealwithargs"	style = "dashed";
+	color = purple;
+	Node0 [label = "Begin"];
+	Node0 -> {Node2 }
+	Node1 [label = "End"];
+	Node1 -> {}
+	Node2 [label = "B2"];
+	Node2 -> {Node3 Node4 }
+	Node3 [label = "B3"];
+	Node3 -> {Node4 }
+	Node4 [label = "B4"];
+	Node4 -> {Node5 Node6 }
+	Node5 [label = "B5"];
+	Node5 -> {Node6 }
+	Node6 [label = "B6"];
+	Node6 -> {Node1 }
+ }
+subgraph cluster_1{
+	label = "RandTree"	style = "dashed";
+	color = purple;
+	Node7 [label = "Begin"];
+	Node7 -> {Node9 }
+	Node8 [label = "End"];
+	Node8 -> {}
+	Node9 [label = "B2"];
+	Node9 -> {Node10 Node16 }
+	Node10 [label = "B3"];
+	Node10 -> {Node11 }
+	Node11 [label = "B4"];
+	Node11 -> {Node12 }
+	Node12 [label = "B5"];
+	Node12 -> {Node13 }
+	Node13 [label = "B6"];
+	Node13 -> {Node14 }
+	Node14 [label = "B7"];
+	Node14 -> {Node15 }
+	Node15 [label = "B8"];
+	Node15 -> {Node17 }
+	Node16 [label = "B9"];
+	Node16 -> {Node17 }
+	Node17 [label = "B10"];
+	Node17 -> {Node8 }
+ }
+subgraph cluster_2{
+	label = "SwapValue"	style = "dashed";
+	color = purple;
+	Node18 [label = "Begin"];
+	Node18 -> {Node20 }
+	Node19 [label = "End"];
+	Node19 -> {}
+	Node20 [label = "B2"];
+	Node20 -> {Node19 }
+ }
+subgraph cluster_3{
+	label = "SwapValLeft"	style = "dashed";
+	color = purple;
+	Node21 [label = "Begin"];
+	Node21 -> {Node23 }
+	Node22 [label = "End"];
+	Node22 -> {}
+	Node23 [label = "B2"];
+	Node23 -> {Node22 }
+ }
+subgraph cluster_4{
+	label = "SwapValRight"	style = "dashed";
+	color = purple;
+	Node24 [label = "Begin"];
+	Node24 -> {Node26 }
+	Node25 [label = "End"];
+	Node25 -> {}
+	Node26 [label = "B2"];
+	Node26 -> {Node25 }
+ }
+subgraph cluster_5{
+	label = "Bimerge"	style = "dashed";
+	color = purple;
+	Node27 [label = "Begin"];
+	Node27 -> {Node29 }
+	Node28 [label = "End"];
+	Node28 -> {}
+	Node29 [label = "B2"];
+	Node29 -> {Node30 Node31 }
+	Node30 [label = "B3"];
+	Node30 -> {Node31 }
+	Node31 [label = "B4"];
+	Node31 -> {Node32 Node42 }
+	Node32 [label = "B5"];
+	Node32 -> {Node33 Node37 }
+	Node33 [label = "B6"];
+	Node33 -> {Node34 Node36 }
+	Node34 [label = "B7"];
+	Node34 -> {Node35 }
+	Node35 [label = "B8"];
+	Node35 -> {Node41 }
+	Node36 [label = "B9"];
+	Node36 -> {Node41 }
+	Node37 [label = "B10"];
+	Node37 -> {Node38 Node40 }
+	Node38 [label = "B11"];
+	Node38 -> {Node39 }
+	Node39 [label = "B12"];
+	Node39 -> {Node41 }
+	Node40 [label = "B13"];
+	Node40 -> {Node41 }
+	Node41 [label = "B14"];
+	Node41 -> {Node42 Node32 }
+	Node42 [label = "B15"];
+	Node42 -> {Node43 Node46 }
+	Node43 [label = "B16"];
+	Node43 -> {Node44 }
+	Node44 [label = "B17"];
+	Node44 -> {Node45 }
+	Node45 [label = "B18"];
+	Node45 -> {Node46 }
+	Node46 [label = "B19"];
+	Node46 -> {Node28 }
+ }
+subgraph cluster_6{
+	label = "Bisort"	style = "dashed";
+	color = purple;
+	Node47 [label = "Begin"];
+	Node47 -> {Node49 }
+	Node48 [label = "End"];
+	Node48 -> {}
+	Node49 [label = "B2"];
+	Node49 -> {Node50 Node52 }
+	Node50 [label = "B3"];
+	Node50 -> {Node51 Node56 }
+	Node51 [label = "B4"];
+	Node51 -> {Node56 }
+	Node52 [label = "B5"];
+	Node52 -> {Node53 }
+	Node53 [label = "B6"];
+	Node53 -> {Node54 }
+	Node54 [label = "B7"];
+	Node54 -> {Node55 }
+	Node55 [label = "B8"];
+	Node55 -> {Node56 }
+	Node56 [label = "B9"];
+	Node56 -> {Node48 }
+ }
+subgraph cluster_7{
+	label = "InOrder"	style = "dashed";
+	color = purple;
+	Node57 [label = "Begin"];
+	Node57 -> {Node59 }
+	Node58 [label = "End"];
+	Node58 -> {}
+	Node59 [label = "B2"];
+	Node59 -> {Node60 Node63 }
+	Node60 [label = "B3"];
+	Node60 -> {Node61 }
+	Node61 [label = "B4"];
+	Node61 -> {Node62 }
+	Node62 [label = "B5"];
+	Node62 -> {Node63 }
+	Node63 [label = "B6"];
+	Node63 -> {Node58 }
+ }
+subgraph cluster_8{
+	label = "mult"	style = "dashed";
+	color = purple;
+	Node64 [label = "Begin"];
+	Node64 -> {Node66 }
+	Node65 [label = "End"];
+	Node65 -> {}
+	Node66 [label = "B2"];
+	Node66 -> {Node65 }
+ }
+subgraph cluster_9{
+	label = "skiprand"	style = "dashed";
+	color = purple;
+	Node67 [label = "Begin"];
+	Node67 -> {Node69 }
+	Node68 [label = "End"];
+	Node68 -> {}
+	Node69 [label = "B2"];
+	Node69 -> {Node70 Node72 }
+	Node70 [label = "B3"];
+	Node70 -> {Node71 }
+	Node71 [label = "B4"];
+	Node71 -> {Node72 Node70 }
+	Node72 

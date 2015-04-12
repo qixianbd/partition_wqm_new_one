@@ -1,4 +1,5 @@
 #include "spawn_pos_trace.h"
+#include <iostream>
 
 /*
  *spawn_pos_trace::spawn_pos_trace() --- construct of spawn position trace.
@@ -55,7 +56,8 @@ void spawn_pos_trace::analyze_related_cals(reaching_def_problem *the_reach, bit_
         }
         */
         //function call machine instruction
-        if(((int)mi->opcode() == mo_jalr || (int)mi->opcode() == mo_jal) && this->contains(mi))
+        std::cout << " 指令为" << mi->opcode() << std::endl;
+        if( mips_is_call(mi) && this->contains(mi) )
         {
             related_cals->push_back(mi);
         }

@@ -13,6 +13,8 @@ public:
     static unsigned int spawning_distance_lower;
     static unsigned int call_lower_threshold;
 
+    static  float branch_probability_lower;
+
     static void parse_file();
     static void print();
 };

@@ -1,0 +1,77 @@
+Target machine parameters:
+  Little endian
+  Size of addressable units = 8
+  Default char type is signed
+  char type:       size = 8, align = 8
+  short type:      size = 16, align = 16
+  int type:        size = 32, align = 32
+  long type:       size = 32, align = 32
+  longlong type:   size = 32, align = 32
+  float type:      size = 32, align = 32
+  double type:     size = 64, align = 64
+  longdouble type: size = 64, align = 64
+  ptr type:        size = 32, align = 32
+  Array alignment = 8
+  Structure alignment = 8
+  Pointer difference type = 2 (see C_types enum)
+
+Runtime Statistics
+--------------Instructions-----------
+	NEG            : 2946
+	NOT            : 0
+	ADD            : 84174
+	MUL            : 61224
+	AND            : 0
+	IOR            : 0
+	XOR            : 0
+	SUB            : 11948
+	DIV            : 14132
+	REM            : 0
+	ASR            : 0
+	LSR            : 0
+	LSL            : 0
+	SEQ            : 44
+	SNE            : 594
+	SL             : 7300
+	SLE            : 17398
+	CPY            : 2864
+	LOD            : 46328
+	STR            : 18338
+	MEMCPY         : 0
+	LDC            : 148011
+	BFALSE         : 24532
+	BTRUE          : 1090
+	JMP            : 1725
+	CVT            : 407
+	CAL            : 12434
+	RET            : 7502
+
+----------------Functions-------------
+	malloc         : 33        N/A
+	sqrt           : 4848      N/A
+	build_tree     : 1         31 (code size)   	1098 (dynamic cycles)
+	build_lateral  : 10        41 (code size)   	246 (dynamic cycles)
+	build_branch   : 16        48 (code size)   	46 (dynamic cycles)
+	build_leaf     : 16        13 (code size)   	13 (dynamic cycles)
+	Compute_Tree   : 18        52 (code size)   	25493 (dynamic cycles)
+	Compute_Lateral: 144       211 (code size)   	8035 (dynamic cycles)
+	Compute_Branch : 144       241 (code size)   	2940 (dynamic cycles)
+	Compute_Leaf   : 288       23 (code size)   	1290 (dynamic cycles)
+	optimize_node  : 288       209 (code size)   	1269 (dynamic cycles)
+	find_g         : 1520      6 (code size)   	6 (dynamic cycles)
+	find_h         : 1088      4 (code size)   	4 (dynamic cycles)
+	find_gradient_f: 1088      46 (code size)   	72 (dynamic cycles)
+	find_gradient_g: 592       40 (code size)   	66 (dynamic cycles)
+	find_gradient_h: 1152      38 (code size)   	64 (dynamic cycles)
+	find_dd_grad_f : 544       28 (code size)   	28 (dynamic cycles)
+	make_orthogonal: 592       73 (code size)   	123 (dynamic cycles)
+	main           : 1         274 (code size)   	462991 (dynamic cycles)
+	myprintf       : 2         N/A
+	myprintf5      : 50        N/A
+
+ # total number of instructions executed : 462991
+ # total number of instructions in program text(code) : 1378
+ # total number of branches executed : 27347
+ # total number of condition branches executed : 25622
+ # total number of branch takens : 15685
+ # total probability of branch taken occured(takens/branches) : 0.573555

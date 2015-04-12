@@ -1,0 +1,79 @@
+Target machine parameters:
+  Little endian
+  Size of addressable units = 8
+  Default char type is signed
+  char type:       size = 8, align = 8
+  short type:      size = 16, align = 16
+  int type:        size = 32, align = 32
+  long type:       size = 32, align = 32
+  longlong type:   size = 32, align = 32
+  float type:      size = 32, align = 32
+  double type:     size = 64, align = 64
+  longdouble type: size = 64, align = 64
+  ptr type:        size = 32, align = 32
+  Array alignment = 8
+  Structure alignment = 8
+  Pointer difference type = 2 (see C_types enum)
+
+Runtime Statistics
+--------------Instructions-----------
+	NEG            : 0
+	NOT            : 0
+	ADD            : 1530
+	MUL            : 643
+	AND            : 0
+	IOR            : 0
+	XOR            : 0
+	SUB            : 100
+	DIV            : 129
+	REM            : 308
+	ASR            : 0
+	LSR            : 84
+	LSL            : 0
+	SEQ            : 41
+	SNE            : 311
+	SL             : 206
+	SLE            : 92
+	CPY            : 238
+	LOD            : 711
+	STR            : 349
+	MEMCPY         : 0
+	LDC            : 2564
+	BFALSE         : 494
+	BTRUE          : 148
+	JMP            : 68
+	CVT            : 430
+	CAL            : 336
+	RET            : 322
+
+----------------Functions-------------
+	malloc         : 3         N/A
+	rand           : 0         N/A
+	exit           : 1         N/A
+	MakeHash       : 8         39 (code size)   	62 (dynamic cycles)
+	HashLookup     : 28        43 (code size)   	40 (dynamic cycles)
+	HashInsert     : 56        32 (code size)   	44 (dynamic cycles)
+	HashDelete     : 0         44 (code size)   	0 (dynamic cycles)
+	MakeGraph      : 1         107 (code size)   	6514 (dynamic cycles)
+	dealwithargs   : 1         9 (code size)   	9 (dynamic cycles)
+	srand          : 0         N/A
+	main           : 1         23 (code size)   	9104 (dynamic cycles)
+	myprintf       : 8         N/A
+	myprintf1      : 2         N/A
+	localmalloc    : 72        19 (code size)   	6 (dynamic cycles)
+	mult           : 0         18 (code size)   	0 (dynamic cycles)
+	mst_random     : 0         5 (code size)   	0 (dynamic cycles)
+	compute_dist   : 56        31 (code size)   	28 (dynamic cycles)
+	hashfunc       : 84        6 (code size)   	6 (dynamic cycles)
+	AddEdges       : 1         68 (code size)   	5710 (dynamic cycles)
+	BlueRule       : 7         97 (code size)   	337 (dynamic cycles)
+	SetMyVertexList: 0         2 (code size)   	0 (dynamic cycles)
+	Do_all_BlueRule: 7         44 (code size)   	349 (dynamic cycles)
+	ComputeMst     : 1         38 (code size)   	2560 (dynamic cycles)
+
+ # total number of instructions executed : 9104
+ # total number of instructions in program text(code) : 625
+ # total number of branches executed : 710
+ # total number of condition branches executed : 642
+ # total number of branch takens : 441
+ # total probability of branch taken occured(takens/branches) : 0.621127

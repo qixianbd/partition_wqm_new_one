@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding='ISO-8859-1' standalone='yes' ?>
+<static_statistics_information>
+  <program name:>TreeAlloc</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>dealwithargs</program name:>
+  <迭代次数：>7</迭代次数：>
+  <program name:>TreeAdd</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>main</program name:>
+  <迭代次数：>35</迭代次数：>
+  <总迭代次数：>48</总迭代次数：>
+  <平均迭代次数：>12</平均迭代次数：>
+</static_statistics_information>

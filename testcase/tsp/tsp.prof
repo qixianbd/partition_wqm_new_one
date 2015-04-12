@@ -1,0 +1,79 @@
+Target machine parameters:
+  Little endian
+  Size of addressable units = 8
+  Default char type is signed
+  char type:       size = 8, align = 8
+  short type:      size = 16, align = 16
+  int type:        size = 32, align = 32
+  long type:       size = 32, align = 32
+  longlong type:   size = 32, align = 32
+  float type:      size = 32, align = 32
+  double type:     size = 64, align = 64
+  longdouble type: size = 64, align = 64
+  ptr type:        size = 32, align = 32
+  Array alignment = 8
+  Structure alignment = 8
+  Pointer difference type = 2 (see C_types enum)
+
+Runtime Statistics
+--------------Instructions-----------
+	NEG            : 0
+	NOT            : 0
+	ADD            : 53442
+	MUL            : 17391
+	AND            : 0
+	IOR            : 0
+	XOR            : 0
+	SUB            : 34780
+	DIV            : 1271
+	REM            : 0
+	ASR            : 0
+	LSR            : 0
+	LSL            : 0
+	SEQ            : 639
+	SNE            : 8960
+	SL             : 8132
+	SLE            : 1
+	CPY            : 824
+	LOD            : 42781
+	STR            : 1648
+	MEMCPY         : 0
+	LDC            : 67260
+	BFALSE         : 9217
+	BTRUE          : 8004
+	JMP            : 232
+	CVT            : 381
+	CAL            : 18543
+	RET            : 9528
+
+----------------Functions-------------
+	malloc         : 127       N/A
+	rand           : 254       N/A
+	sqrt           : 8505      N/A
+	log            : 127       N/A
+	mylog          : 1         11 (code size)   	5 (dynamic cycles)
+	dealwithargs   : 1         15 (code size)   	20 (dynamic cycles)
+	build_tree     : 255       97 (code size)   	265 (dynamic cycles)
+	tsp            : 1         23 (code size)   	269336 (dynamic cycles)
+	drand48        : 254       6 (code size)   	6 (dynamic cycles)
+	print_tree     : 0         26 (code size)   	0 (dynamic cycles)
+	print_list     : 0         35 (code size)   	0 (dynamic cycles)
+	main           : 1         53 (code size)   	283034 (dynamic cycles)
+	myprintf       : 1         N/A
+	myprintf1      : 1         N/A
+	myprintf2      : 1         N/A
+	myprintf5      : 0         N/A
+	median         : 127       37 (code size)   	32 (dynamic cycles)
+	uniform        : 127       6 (code size)   	12 (dynamic cycles)
+	conquer        : 1         92 (code size)   	269326 (dynamic cycles)
+	merge          : 0         222 (code size)   	0 (dynamic cycles)
+	makelist       : 255       49 (code size)   	60 (dynamic cycles)
+	reverse        : 0         46 (code size)   	0 (dynamic cycles)
+	distance       : 8505      22 (code size)   	22 (dynamic cycles)
+
+ # total number of instructions executed : 283034
+ # total number of instructions in program text(code) : 740
+ # total number of branches executed : 17453
+ # total number of condition branches executed : 17221
+ # total number of branch takens : 16582
+ # total probability of branch taken occured(takens/branches) : 0.950095

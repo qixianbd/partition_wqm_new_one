@@ -347,7 +347,7 @@ user_options.o: user_options.cc /usr/include/stdc-predef.h \
  /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/bit_vector_dfa.h \
  /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/live_varAD.h \
  /home/keyming/Prophet/x86_64-linux-gnu/include/dfa/instr_catalog.h \
- user_options.h
+ user_options.h threshold.h
 partition.o: partition.cc /usr/include/stdc-predef.h partition.h \
  /usr/include/c++/4.8/iostream \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
@@ -721,7 +721,8 @@ procedure.o: procedure.cc /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++io.h \
  /usr/include/c++/4.8/bits/fstream.tcc misc.h thread_partition.h \
- procedure_path.h spmt_utility.h threshold.h /usr/include/math.h \
+ procedure_path.h spmt_utility.h threshold.h spmt_instr.h \
+ spawn_pos_trace.h /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/huge_val.h \
  /usr/include/x86_64-linux-gnu/bits/huge_valf.h \
  /usr/include/x86_64-linux-gnu/bits/huge_vall.h \
@@ -1376,7 +1377,8 @@ spawn_pos_trace.o: spawn_pos_trace.cpp /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_inline.h \
  /usr/include/c++/4.8/bits/locale_facets.tcc \
  /usr/include/c++/4.8/bits/basic_ios.tcc \
- /usr/include/c++/4.8/bits/ostream.tcc
+ /usr/include/c++/4.8/bits/ostream.tcc /usr/include/c++/4.8/iostream \
+ /usr/include/c++/4.8/istream /usr/include/c++/4.8/bits/istream.tcc
 super_block_cfg.o: super_block_cfg.cpp /usr/include/stdc-predef.h \
  super_block_cfg.h common.h \
  /home/keyming/Prophet/x86_64-linux-gnu/include/suif1.h \
@@ -2514,7 +2516,8 @@ thread_partition.o: thread_partition.cc /usr/include/stdc-predef.h \
  /usr/include/c++/4.8/queue /usr/include/c++/4.8/deque \
  /usr/include/c++/4.8/bits/stl_deque.h \
  /usr/include/c++/4.8/bits/deque.tcc /usr/include/c++/4.8/bits/stl_heap.h \
- /usr/include/c++/4.8/bits/stl_queue.h misc.h spmt_instr.h
+ /usr/include/c++/4.8/bits/stl_queue.h misc.h spmt_instr.h \
+ spawn_pos_trace.h
 procedure_path.o: procedure_path.cc /usr/include/stdc-predef.h \
  procedure_path.h /usr/include/c++/4.8/vector \
  /usr/include/c++/4.8/bits/stl_algobase.h \

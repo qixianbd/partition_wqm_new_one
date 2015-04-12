@@ -5,11 +5,11 @@ digraph G{
 	Node0 -> {Node2 }
 	Node1 [label = "End"];
 	Node1 -> {}
-	Node2 [label = "B2_33\nspawn	ic_test.L21\nspawn	ic_test.L20\nspawn	ic_test.L19\nli	r9	nd#743	\nla	r27	nd#746	\nli	r28	nd#748	\naddu	r23	r5	r28	\nl.d	r52	nd#751	\ns.d	nd#754	r52	\nla	r7	nd#758	\nli	r8	nd#760	\naddu	r8	r5	r8	\nl.d	r54	nd#763	\ns.d	nd#766	r54	\nla	r8	nd#770	\nli	r10	nd#772	\naddu	r10	r5	r10	\nl.d	r56	nd#775	\ns.d	nd#778	r56	\nli	r19	nd#782	\naddu	r20	r6	r19	\nl.d	r58	nd#785	\nla	r21	nd#789	\nl.d	r60	nd#791	\nmove	r22	r0	\naddu	r22	r6	r22	\nl.d	r62	nd#796	\nsub.d	r32	r60	r62	\ndiv.d	r34	r32	r58	\nli.d	r36	nd#802	\nli	r24	nd#804	\nc.le.d	r36	r34	\nbc1t	ic_test.L10\n"];
+	Node2 [label = "B2_31\nspawn	ic_test.L19\nli	r9	nd#743	\nla	r27	nd#746	\nli	r28	nd#748	\naddu	r23	r5	r28	\nl.d	r52	nd#751	\ns.d	nd#754	r52	\nla	r7	nd#758	\nli	r8	nd#760	\naddu	r8	r5	r8	\nl.d	r54	nd#763	\ns.d	nd#766	r54	\nla	r8	nd#770	\nli	r10	nd#772	\naddu	r10	r5	r10	\nl.d	r56	nd#775	\ns.d	nd#778	r56	\nli	r19	nd#782	\naddu	r20	r6	r19	\nl.d	r58	nd#785	\nla	r21	nd#789	\nl.d	r60	nd#791	\nmove	r22	r0	\naddu	r22	r6	r22	\nl.d	r62	nd#796	\nsub.d	r32	r60	r62	\ndiv.d	r34	r32	r58	\nli.d	r36	nd#802	\nli	r24	nd#804	\nc.le.d	r36	r34	\nbc1t	ic_test.L10\n"];
 	Node2 -> {Node3 Node4 }
 	Node3 [label = "B3_1\nmove	r24	r0	\n"];
 	Node3 -> {Node4 }
-	Node4 [label = "B4_10\nic_test.L10:\ncqip	ic_test.L21\nic_test.L21:\npslice_entry	ic_test.L21\npslice_exit	ic_test.L21\ncqip	ic_test.L20\nic_test.L20:\npslice_entry	ic_test.L20\npslice_exit	ic_test.L20\ncqip	ic_test.L19\nic_test.L19:\npslice_entry	ic_test.L19\npslice_exit	ic_test.L19\nbnez	ic_test.L1\n"];
+	Node4 [label = "B4_5\nic_test.L10:\ncqip	ic_test.L19\nic_test.L19:\npslice_entry	ic_test.L19\npslice_exit	ic_test.L19\nspawn	ic_test.L20\nbnez	ic_test.L1\n"];
 	Node4 -> {Node5 Node6 }
 	Node5 [label = "B5_1\nic_test.L16:\nj	ic_test.__done7\n"];
 	Node5 -> {Node8 }
@@ -25,7 +25,7 @@ digraph G{
 	Node10 -> {Node11 Node12 }
 	Node11 [label = "B11_1\nmove	r25	r0	\n"];
 	Node11 -> {Node12 }
-	Node12 [label = "B12_1\nic_test.L12:\nbnez	ic_test.L3\n"];
+	Node12 [label = "B12_6\nic_test.L12:\ncqip	ic_test.L20\nic_test.L20:\npslice_entry	ic_test.L20\nmove	r23	r0	\nseq	r24	r24	r23	\npslice_exit	ic_test.L20\nbnez	ic_test.L3\n"];
 	Node12 -> {Node13 Node14 }
 	Node13 [label = "B13_1\nic_test.L17:\nj	ic_test.__done8\n"];
 	Node13 -> {Node16 }
@@ -56,9 +56,6 @@ digraph G{
 	Node26 [label = "B26_1\nic_test.L6:\njr	\n"];
 	Node26 -> {Node1 }
 	Node2 [shape = box ,style=filled ,color=red];
-	Node2 [shape = box ,style=filled ,color=red];
-	Node2 [shape = box ,style=filled ,color=red];
-	Node4 [shape = polygon ,style=filled ,color=yellow];
-	Node4 [shape = polygon ,style=filled ,color=yellow];
-	Node4 [shape = polygon ,style=filled ,color=yellow];
+	Node4 [shape = ellipse ,style=filled ,color=blue];
+	Node12 [shape = polygon ,style=filled ,color=yellow];
 }

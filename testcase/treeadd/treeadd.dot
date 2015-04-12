@@ -1,0 +1,84 @@
+digraph G{
+subgraph cluster_0{
+	label = "TreeAlloc"	style = "dashed";
+	color = purple;
+	Node0 [label = "Begin"];
+	Node0 -> {Node2 }
+	Node1 [label = "End"];
+	Node1 -> {}
+	Node2 [label = "B2"];
+	Node2 -> {Node3 Node4 }
+	Node3 [label = "B3"];
+	Node3 -> {Node1 }
+	Node4 [label = "B4"];
+	Node4 -> {Node5 }
+	Node5 [label = "B5"];
+	Node5 -> {Node6 }
+	Node6 [label = "B6"];
+	Node6 -> {Node7 }
+	Node7 [label = "B7"];
+	Node7 -> {Node1 }
+ }
+subgraph cluster_1{
+	label = "dealwithargs"	style = "dashed";
+	color = purple;
+	Node8 [label = "Begin"];
+	Node8 -> {Node10 }
+	Node9 [label = "End"];
+	Node9 -> {}
+	Node10 [label = "B2"];
+	Node10 -> {Node11 Node12 }
+	Node11 [label = "B3"];
+	Node11 -> {Node12 }
+	Node12 [label = "B4"];
+	Node12 -> {Node13 Node14 }
+	Node13 [label = "B5"];
+	Node13 -> {Node14 }
+	Node14 [label = "B6"];
+	Node14 -> {Node9 }
+ }
+subgraph cluster_2{
+	label = "TreeAdd"	style = "dashed";
+	color = purple;
+	Node15 [label = "Begin"];
+	Node15 -> {Node17 }
+	Node16 [label = "End"];
+	Node16 -> {}
+	Node17 [label = "B2"];
+	Node17 -> {Node18 Node19 }
+	Node18 [label = "B3"];
+	Node18 -> {Node16 }
+	Node19 [label = "B4"];
+	Node19 -> {Node20 }
+	Node20 [label = "B5"];
+	Node20 -> {Node21 }
+	Node21 [label = "B6"];
+	Node21 -> {Node16 }
+ }
+subgraph cluster_3{
+	label = "main"	style = "dashed";
+	color = purple;
+	Node22 [label = "Begin"];
+	Node22 -> {Node24 }
+	Node23 [label = "End"];
+	Node23 -> {}
+	Node24 [label = "B2"];
+	Node24 -> {Node25 }
+	Node25 [label = "B3"];
+	Node25 -> {Node26 }
+	Node26 [label = "B4"];
+	Node26 -> {Node27 }
+	Node27 [label = "B5"];
+	Node27 -> {Node28 }
+	Node28 [label = "B6"];
+	Node28 -> {Node29 }
+	Node29 [label = "B7"];
+	Node29 -> {Node30 }
+	Node30 [label = "B8"];
+	Node30 -> {Node31 }
+	Node31 [label = "B9"];
+	Node31 -> {Node32 }
+	Node32 [label = "B10"];
+	Node32 -> {Node23 }
+ }
+}

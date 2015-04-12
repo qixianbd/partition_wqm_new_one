@@ -5,27 +5,27 @@ digraph G{
 	Node0 -> {Node2 }
 	Node1 [label = "End"];
 	Node1 -> {}
-	Node2 [label = "B2_10\nspawn	testdata.L80\nspawn	testdata.L73\nspawn	testdata.L66\nli.d	r44	nd#3669	\nla	r19	nd#3672	\nla	r5	nd#3674	\nli	r6	nd#3676	\nmove	r4	r2	\nfst	r2	\njalr	\n"];
+	Node2 [label = "B2_7\nli.d	r44	nd#3669	\nla	r19	nd#3672	\nla	r5	nd#3674	\nli	r6	nd#3676	\nmove	r4	r2	\nfst	r2	\njalr	\n"];
 	Node2 -> {Node3 }
 	Node3 [label = "B3_5\nla	r19	nd#3682	\nmove	r5	r0	\nmove	r4	r2	\nfst	r2	\njalr	\n"];
 	Node3 -> {Node4 }
 	Node4 [label = "B4_7\nli.d	r42	nd#3689	\nla	r19	nd#3692	\nli.d	r34	nd#3694	\ndiv.d	r32	r34	r42	\nmove	r4	r2	\nfst	r2	\njalr	\n"];
 	Node4 -> {Node5 }
-	Node5 [label = "B5_14\ncqip	testdata.L80\ntestdata.L80:\npslice_entry	testdata.L80\npslice_exit	testdata.L80\nspawn	testdata.L81\ncqip	testdata.L73\ntestdata.L73:\npslice_entry	testdata.L73\npslice_exit	testdata.L73\nspawn	testdata.L74\ncqip	testdata.L66\ntestdata.L66:\npslice_entry	testdata.L66\npslice_exit	testdata.L66\nspawn	testdata.L67\nmov.d	r40	r36	\nmove	r26	r0	\n"];
+	Node5 [label = "B5_2\nmov.d	r40	r36	\nmove	r26	r0	\n"];
 	Node5 -> {Node6 }
-	Node6 [label = "B6_12\ntestdata.L48:\nla	r27	nd#3706	\nli	r28	nd#3708	\nmult	r26	r28	\nmflo	r5	\naddu	r6	r27	r5	\nli.d	r36	nd#3713	\ns.d	nd#3715	r36	\nli	r7	nd#3718	\naddu	r26	r26	r7	\nli	r8	nd#3721	\nsle	r9	r8	r26	\nbeqz	testdata.L48\n"];
+	Node6 [label = "B6_20\ntestdata.L48:\nspawn	testdata.L66\nla	r27	nd#3706	\nli	r28	nd#3708	\nmult	r26	r28	\nmflo	r5	\naddu	r6	r27	r5	\nli.d	r36	nd#3713	\ns.d	nd#3715	r36	\nli	r7	nd#3718	\naddu	r26	r26	r7	\nli	r8	nd#3721	\nsle	r9	r8	r26	\ncqip	testdata.L66\ntestdata.L66:\npslice_entry	testdata.L66\nli	r7	nd#0	\naddu	r26	r26	r7	\nli	r8	nd#0	\nsle	r9	r8	r26	\npslice_exit	testdata.L66\nbeqz	testdata.L48\n"];
 	Node6 -> {Node7 Node6 }
 	Node7 [label = "B7_1\nmove	r10	r0	\n"];
 	Node7 -> {Node8 }
-	Node8 [label = "B8_24\ntestdata.L49:\ncqip	testdata.L81\ntestdata.L81:\npslice_entry	testdata.L81\npslice_exit	testdata.L81\nspawn	testdata.L82\ncqip	testdata.L74\ntestdata.L74:\npslice_entry	testdata.L74\npslice_exit	testdata.L74\nspawn	testdata.L75\ncqip	testdata.L67\ntestdata.L67:\npslice_entry	testdata.L67\npslice_exit	testdata.L67\nspawn	testdata.L68\nla	r19	nd#3731	\nli	r20	nd#3733	\nmult	r10	r20	\nmflo	r21	\naddu	r22	r19	r21	\nli.d	r38	nd#3738	\ns.d	nd#3740	r38	\nli	r23	nd#3743	\naddu	r10	r10	r23	\nli	r24	nd#3746	\nsle	r25	r24	r10	\nbeqz	testdata.L49\n"];
+	Node8 [label = "B8_21\ntestdata.L49:\nspawn	testdata.L72\nspawn	testdata.L67\nla	r19	nd#3731	\nli	r20	nd#3733	\nmult	r10	r20	\nmflo	r21	\naddu	r22	r19	r21	\nli.d	r38	nd#3738	\ns.d	nd#3740	r38	\nli	r23	nd#3743	\naddu	r10	r10	r23	\nli	r24	nd#3746	\nsle	r25	r24	r10	\ncqip	testdata.L67\ntestdata.L67:\npslice_entry	testdata.L67\nli	r23	nd#0	\naddu	r10	r10	r23	\nli	r24	nd#0	\nsle	r25	r24	r10	\npslice_exit	testdata.L67\nbeqz	testdata.L49\n"];
 	Node8 -> {Node9 Node8 }
 	Node9 [label = "B9_5\nla	r19	nd#3752	\nmove	r5	r0	\nmove	r4	r2	\nfst	r2	\njalr	\n"];
 	Node9 -> {Node10 }
-	Node10 [label = "B10_18\ncqip	testdata.L82\ntestdata.L82:\npslice_entry	testdata.L82\npslice_exit	testdata.L82\nspawn	testdata.L83\ncqip	testdata.L75\ntestdata.L75:\npslice_entry	testdata.L75\npslice_exit	testdata.L75\nspawn	testdata.L76\ncqip	testdata.L68\ntestdata.L68:\npslice_entry	testdata.L68\npslice_exit	testdata.L68\nspawn	testdata.L69\nmove	r12	r9	\nmove	r11	r12	\nmove	r26	r0	\nlw	r27	nd#3763	\nslt	r28	r26	r27	\nbeqz	testdata.L46\n"];
+	Node10 [label = "B10_10\ncqip	testdata.L72\ntestdata.L72:\npslice_entry	testdata.L72\npslice_exit	testdata.L72\nspawn	testdata.L73\nmove	r12	r9	\nmove	r11	r12	\nmove	r26	r0	\nlw	r27	nd#3763	\nslt	r28	r26	r27	\nbeqz	testdata.L46\n"];
 	Node10 -> {Node11 Node63 }
 	Node11 [label = "B11_1\nmove	r14	r0	\n"];
 	Node11 -> {Node12 }
-	Node12 [label = "B12_5\ntestdata.L47:\nla	r19	nd#3770	\nmove	r5	r0	\nmove	r4	r2	\nfst	r2	\njalr	\n"];
+	Node12 [label = "B12_6\ntestdata.L47:\nspawn	testdata.L68\nla	r19	nd#3770	\nmove	r5	r0	\nmove	r4	r2	\nfst	r2	\njalr	\n"];
 	Node12 -> {Node13 }
 	Node13 [label = "B13_4\nmove	r13	r9	\nla	r5	nd#3778	\nseq	r6	r13	r5	\nbeqz	testdata.L8\n"];
 	Node13 -> {Node14 Node15 }
@@ -123,23 +123,23 @@ digraph G{
 	Node59 -> {Node60 }
 	Node60 [label = "B60_25\ntestdata.L57:\nla	r23	nd#4296	\nli	r24	nd#4298	\nmult	r22	r24	\nmflo	r25	\naddu	r26	r23	r25	\nla	r27	nd#4303	\nli	r28	nd#4305	\nmult	r22	r28	\nmflo	r5	\naddu	r6	r27	r5	\nl.d	r34	nd#4310	\nli	r7	nd#4313	\naddu	r21	r13	r7	\nli	r8	nd#4316	\nmult	r22	r8	\nmflo	r9	\naddu	r10	r21	r9	\nl.d	r36	nd#4321	\nadd.d	r38	r34	r36	\ns.d	nd#4325	r38	\nli	r19	nd#4328	\naddu	r22	r22	r19	\nli	r20	nd#4331	\nsle	r21	r20	r22	\nbeqz	testdata.L57\n"];
 	Node60 -> {Node61 Node60 }
-	Node61 [label = "B61_5\nli	r22	nd#4337	\naddu	r14	r14	r22	\nlw	r23	nd#4340	\nsle	r24	r23	r14	\nbeqz	testdata.L47\n"];
+	Node61 [label = "B61_12\nli	r22	nd#4337	\naddu	r14	r14	r22	\nlw	r23	nd#4340	\nsle	r24	r23	r14	\ncqip	testdata.L68\ntestdata.L68:\npslice_entry	testdata.L68\nli	r22	nd#0	\naddu	r14	r14	r22	\nlw	r23	nd#0	\nsle	r24	r23	r14	\npslice_exit	testdata.L68\nbeqz	testdata.L47\n"];
 	Node61 -> {Node62 Node12 }
 	Node62 [label = "B62_1\ntestdata.L65:\nj	testdata.__done55\n"];
 	Node62 -> {Node64 }
 	Node63 [label = "B63_1\ntestdata.L46:\nmove	r14	r0	\n"];
 	Node63 -> {Node64 }
-	Node64 [label = "B64_20\ntestdata.__done55:\ncqip	testdata.L83\ntestdata.L83:\npslice_entry	testdata.L83\npslice_exit	testdata.L83\nspawn	testdata.L84\ncqip	testdata.L76\ntestdata.L76:\npslice_entry	testdata.L76\npslice_exit	testdata.L76\nspawn	testdata.L77\ncqip	testdata.L69\ntestdata.L69:\npslice_entry	testdata.L69\npslice_exit	testdata.L69\nspawn	testdata.L70\nli	r25	nd#4350	\naddu	r26	r11	r25	\nla	r27	nd#4353	\nsw	nd#4356	r27	\nli	r28	nd#4360	\naddu	r5	r12	r28	\nlw	r12	nd#4363	\nmove	r6	r0	\n"];
+	Node64 [label = "B64_12\ntestdata.__done55:\ncqip	testdata.L73\ntestdata.L73:\npslice_entry	testdata.L73\npslice_exit	testdata.L73\nspawn	testdata.L74\nli	r25	nd#4350	\naddu	r26	r11	r25	\nla	r27	nd#4353	\nsw	nd#4356	r27	\nli	r28	nd#4360	\naddu	r5	r12	r28	\nlw	r12	nd#4363	\nmove	r6	r0	\n"];
 	Node64 -> {Node65 }
-	Node65 [label = "B65_21\ntestdata.L58:\nla	r7	nd#4371	\nli	r8	nd#4373	\nmult	r6	r8	\nmflo	r9	\naddu	r10	r7	r9	\nla	r19	nd#4378	\nli	r20	nd#4380	\nmult	r6	r20	\nmflo	r21	\naddu	r22	r19	r21	\nl.d	r52	nd#4385	\nlw	r23	nd#4388	\nmtc1	r54	r23	\ncvt.d.w	r56	r54	\ndiv.d	r58	r52	r56	\ns.d	nd#4393	r58	\nli	r24	nd#4396	\naddu	r6	r6	r24	\nli	r25	nd#4399	\nsle	r26	r25	r6	\nbeqz	testdata.L58\n"];
+	Node65 [label = "B65_29\ntestdata.L58:\nspawn	testdata.L69\nla	r7	nd#4371	\nli	r8	nd#4373	\nmult	r6	r8	\nmflo	r9	\naddu	r10	r7	r9	\nla	r19	nd#4378	\nli	r20	nd#4380	\nmult	r6	r20	\nmflo	r21	\naddu	r22	r19	r21	\nl.d	r52	nd#4385	\nlw	r23	nd#4388	\nmtc1	r54	r23	\ncvt.d.w	r56	r54	\ndiv.d	r58	r52	r56	\ns.d	nd#4393	r58	\nli	r24	nd#4396	\naddu	r6	r6	r24	\nli	r25	nd#4399	\nsle	r26	r25	r6	\ncqip	testdata.L69\ntestdata.L69:\npslice_entry	testdata.L69\nli	r24	nd#0	\naddu	r6	r6	r24	\nli	r25	nd#0	\nsle	r26	r25	r6	\npslice_exit	testdata.L69\nbeqz	testdata.L58\n"];
 	Node65 -> {Node66 Node65 }
-	Node66 [label = "B66_13\ncqip	testdata.L84\ntestdata.L84:\npslice_entry	testdata.L84\npslice_exit	testdata.L84\nspawn	testdata.L85\ncqip	testdata.L77\ntestdata.L77:\npslice_entry	testdata.L77\npslice_exit	testdata.L77\nspawn	testdata.L78\ncqip	testdata.L70\ntestdata.L70:\npslice_entry	testdata.L70\npslice_exit	testdata.L70\nspawn	testdata.L71\nmove	r27	r0	\n"];
+	Node66 [label = "B66_5\ncqip	testdata.L74\ntestdata.L74:\npslice_entry	testdata.L74\npslice_exit	testdata.L74\nspawn	testdata.L75\nmove	r27	r0	\n"];
 	Node66 -> {Node67 }
-	Node67 [label = "B67_21\ntestdata.L59:\nla	r28	nd#4409	\nli	r5	nd#4411	\nmult	r27	r5	\nmflo	r6	\naddu	r7	r28	r6	\nla	r8	nd#4416	\nli	r9	nd#4418	\nmult	r27	r9	\nmflo	r10	\naddu	r19	r8	r10	\nl.d	r60	nd#4423	\nlw	r20	nd#4426	\nmtc1	r62	r20	\ncvt.d.w	r32	r62	\ndiv.d	r34	r60	r32	\ns.d	nd#4431	r34	\nli	r21	nd#4434	\naddu	r27	r27	r21	\nli	r22	nd#4437	\nsle	r23	r22	r27	\nbeqz	testdata.L59\n"];
+	Node67 [label = "B67_29\ntestdata.L59:\nspawn	testdata.L70\nla	r28	nd#4409	\nli	r5	nd#4411	\nmult	r27	r5	\nmflo	r6	\naddu	r7	r28	r6	\nla	r8	nd#4416	\nli	r9	nd#4418	\nmult	r27	r9	\nmflo	r10	\naddu	r19	r8	r10	\nl.d	r60	nd#4423	\nlw	r20	nd#4426	\nmtc1	r62	r20	\ncvt.d.w	r32	r62	\ndiv.d	r34	r60	r32	\ns.d	nd#4431	r34	\nli	r21	nd#4434	\naddu	r27	r27	r21	\nli	r22	nd#4437	\nsle	r23	r22	r27	\ncqip	testdata.L70\ntestdata.L70:\npslice_entry	testdata.L70\nli	r21	nd#0	\naddu	r27	r27	r21	\nli	r22	nd#0	\nsle	r23	r22	r27	\npslice_exit	testdata.L70\nbeqz	testdata.L59\n"];
 	Node67 -> {Node68 Node67 }
-	Node68 [label = "B68_16\ncqip	testdata.L85\ntestdata.L85:\npslice_entry	testdata.L85\npslice_exit	testdata.L85\nspawn	testdata.L86\ncqip	testdata.L78\ntestdata.L78:\npslice_entry	testdata.L78\npslice_exit	testdata.L78\nspawn	testdata.L79\ncqip	testdata.L71\ntestdata.L71:\npslice_entry	testdata.L71\npslice_exit	testdata.L71\nspawn	testdata.L72\nmove	r13	r12	\nla	r24	nd#4445	\nsne	r25	r13	r24	\nbeqz	testdata.L41\n"];
+	Node68 [label = "B68_7\ncqip	testdata.L75\ntestdata.L75:\npslice_entry	testdata.L75\npslice_exit	testdata.L75\nmove	r13	r12	\nla	r24	nd#4445	\nsne	r25	r13	r24	\nbeqz	testdata.L41\n"];
 	Node68 -> {Node69 Node74 }
-	Node69 [label = "B69_1\ntestdata.L40:\nmove	r26	r0	\n"];
+	Node69 [label = "B69_3\ntestdata.L40:\nspawn	testdata.L76\nspawn	testdata.L71\nmove	r26	r0	\n"];
 	Node69 -> {Node70 }
 	Node70 [label = "B70_26\ntestdata.L60:\nli	r27	nd#4456	\naddu	r23	r13	r27	\nli	r28	nd#4459	\nmult	r26	r28	\nmflo	r5	\naddu	r6	r23	r5	\nli	r7	nd#4464	\naddu	r22	r13	r7	\nli	r8	nd#4467	\nmult	r26	r8	\nmflo	r9	\naddu	r10	r22	r9	\nl.d	r36	nd#4472	\nla	r19	nd#4475	\nli	r20	nd#4477	\nmult	r26	r20	\nmflo	r21	\naddu	r22	r19	r21	\nl.d	r38	nd#4482	\nsub.d	r52	r36	r38	\ns.d	nd#4486	r52	\nli	r23	nd#4489	\naddu	r26	r26	r23	\nli	r24	nd#4492	\nsle	r25	r24	r26	\nbeqz	testdata.L60\n"];
 	Node70 -> {Node71 Node70 }
@@ -147,32 +147,23 @@ digraph G{
 	Node71 -> {Node72 }
 	Node72 [label = "B72_26\ntestdata.L61:\nli	r27	nd#4502	\naddu	r25	r13	r27	\nli	r28	nd#4505	\nmult	r26	r28	\nmflo	r5	\naddu	r6	r25	r5	\nli	r7	nd#4510	\naddu	r24	r13	r7	\nli	r8	nd#4513	\nmult	r26	r8	\nmflo	r9	\naddu	r10	r24	r9	\nl.d	r54	nd#4518	\nla	r19	nd#4521	\nli	r20	nd#4523	\nmult	r26	r20	\nmflo	r21	\naddu	r22	r19	r21	\nl.d	r56	nd#4528	\nsub.d	r58	r54	r56	\ns.d	nd#4532	r58	\nli	r23	nd#4535	\naddu	r26	r26	r23	\nli	r24	nd#4538	\nsle	r25	r24	r26	\nbeqz	testdata.L61\n"];
 	Node72 -> {Node73 Node72 }
-	Node73 [label = "B73_6\nli	r26	nd#4545	\naddu	r27	r13	r26	\nlw	r13	nd#4548	\nla	r28	nd#4552	\nsne	r5	r13	r28	\nbnez	testdata.L40\n"];
+	Node73 [label = "B73_14\nli	r26	nd#4545	\naddu	r27	r13	r26	\nlw	r13	nd#4548	\nla	r28	nd#4552	\nsne	r5	r13	r28	\ncqip	testdata.L71\ntestdata.L71:\npslice_entry	testdata.L71\nli	r26	nd#0	\naddu	r27	r13	r26	\nlw	r13	nd#0	\nla	r28	nd#0	\nsne	r5	r13	r28	\npslice_exit	testdata.L71\nbnez	testdata.L40\n"];
 	Node73 -> {Node74 Node69 }
-	Node74 [label = "B74_11\ntestdata.L41:\ncqip	testdata.L86\ntestdata.L86:\npslice_entry	testdata.L86\npslice_exit	testdata.L86\ncqip	testdata.L79\ntestdata.L79:\npslice_entry	testdata.L79\npslice_exit	testdata.L79\ncqip	testdata.L72\ntestdata.L72:\npslice_entry	testdata.L72\npslice_exit	testdata.L72\nmove	r9	r12	\njr	\n"];
+	Node74 [label = "B74_5\ntestdata.L41:\ncqip	testdata.L76\ntestdata.L76:\npslice_entry	testdata.L76\npslice_exit	testdata.L76\nmove	r9	r12	\njr	\n"];
 	Node74 -> {Node1 }
-	Node2 [shape = box ,style=filled ,color=red];
-	Node2 [shape = box ,style=filled ,color=red];
-	Node2 [shape = box ,style=filled ,color=red];
-	Node5 [shape = ellipse ,style=filled ,color=blue];
-	Node5 [shape = ellipse ,style=filled ,color=blue];
-	Node5 [shape = ellipse ,style=filled ,color=blue];
-	Node8 [shape = ellipse ,style=filled ,color=blue];
+	Node6 [shape = ellipse ,style=filled ,color=blue];
 	Node8 [shape = ellipse ,style=filled ,color=blue];
 	Node8 [shape = ellipse ,style=filled ,color=blue];
 	Node10 [shape = ellipse ,style=filled ,color=blue];
-	Node10 [shape = ellipse ,style=filled ,color=blue];
-	Node10 [shape = ellipse ,style=filled ,color=blue];
+	Node12 [shape = box ,style=filled ,color=red];
 	Node64 [shape = ellipse ,style=filled ,color=blue];
-	Node64 [shape = ellipse ,style=filled ,color=blue];
-	Node64 [shape = ellipse ,style=filled ,color=blue];
+	Node65 [shape = ellipse ,style=filled ,color=blue];
 	Node66 [shape = ellipse ,style=filled ,color=blue];
-	Node66 [shape = ellipse ,style=filled ,color=blue];
-	Node66 [shape = ellipse ,style=filled ,color=blue];
-	Node68 [shape = ellipse ,style=filled ,color=blue];
-	Node68 [shape = ellipse ,style=filled ,color=blue];
-	Node68 [shape = ellipse ,style=filled ,color=blue];
-	Node74 [shape = polygon ,style=filled ,color=yellow];
-	Node74 [shape = polygon ,style=filled ,color=yellow];
+	Node67 [shape = ellipse ,style=filled ,color=blue];
+	Node69 [shape = box ,style=filled ,color=red];
+	Node69 [shape = box ,style=filled ,color=red];
+	Node61 [shape = polygon ,style=filled ,color=yellow];
+	Node68 [shape = polygon ,style=filled ,color=yellow];
+	Node73 [shape = polygon ,style=filled ,color=yellow];
 	Node74 [shape = polygon ,style=filled ,color=yellow];
 }

@@ -1,0 +1,500 @@
+digraph G{
+subgraph cluster_0{
+	label = "CheckOutside"	style = "dashed";
+	color = purple;
+	Node0 [label = "Begin"];
+	Node0 -> {Node2 }
+	Node1 [label = "End"];
+	Node1 -> {}
+	Node2 [label = "B2_8"];
+	Node2 -> {Node3 Node4 }
+	Node3 [label = "B3_2"];
+	Node3 -> {Node1 }
+	Node4 [label = "B4_3"];
+	Node4 -> {Node5 Node6 }
+	Node5 [label = "B5_2"];
+	Node5 -> {Node1 }
+	Node6 [label = "B6_2"];
+	Node6 -> {Node1 }
+ }
+subgraph cluster_1{
+	label = "CheckIntersect"	style = "dashed";
+	color = purple;
+	Node7 [label = "Begin"];
+	Node7 -> {Node9 }
+	Node8 [label = "End"];
+	Node8 -> {}
+	Node9 [label = "B2_9"];
+	Node9 -> {Node10 }
+	Node10 [label = "B3_5"];
+	Node10 -> {Node11 Node12 }
+	Node11 [label = "B4_1"];
+	Node11 -> {Node20 }
+	Node12 [label = "B5_6"];
+	Node12 -> {Node13 }
+	Node13 [label = "B6_5"];
+	Node13 -> {Node14 Node15 }
+	Node14 [label = "B7_1"];
+	Node14 -> {Node20 }
+	Node15 [label = "B8_6"];
+	Node15 -> {Node16 }
+	Node16 [label = "B9_5"];
+	Node16 -> {Node17 Node18 }
+	Node17 [label = "B10_1"];
+	Node17 -> {Node20 }
+	Node18 [label = "B11_6"];
+	Node18 -> {Node19 }
+	Node19 [label = "B12_4"];
+	Node19 -> {Node20 }
+	Node20 [label = "B13_1"];
+	Node20 -> {Node21 Node22 }
+	Node21 [label = "B14_2"];
+	Node21 -> {Node8 }
+	Node22 [label = "B15_6"];
+	Node22 -> {Node23 }
+	Node23 [label = "B16_7"];
+	Node23 -> {Node24 }
+	Node24 [label = "B17_7"];
+	Node24 -> {Node25 }
+	Node25 [label = "B18_7"];
+	Node25 -> {Node26 }
+	Node26 [label = "B19_4"];
+	Node26 -> {Node27 Node28 }
+	Node27 [label = "B20_1"];
+	Node27 -> {Node29 }
+	Node28 [label = "B21_2"];
+	Node28 -> {Node29 }
+	Node29 [label = "B22_1"];
+	Node29 -> {Node30 Node31 }
+	Node30 [label = "B23_2"];
+	Node30 -> {Node8 }
+	Node31 [label = "B24_2"];
+	Node31 -> {Node8 }
+ }
+subgraph cluster_2{
+	label = "adj"	style = "dashed";
+	color = purple;
+	Node32 [label = "Begin"];
+	Node32 -> {Node34 }
+	Node33 [label = "End"];
+	Node33 -> {}
+	Node34 [label = "B2_3"];
+	Node34 -> {Node35 Node57 }
+	Node35 [label = "B3_3"];
+	Node35 -> {Node36 Node57 }
+	Node36 [label = "B4_3"];
+	Node36 -> {Node37 Node41 }
+	Node37 [label = "B5_3"];
+	Node37 -> {Node38 Node49 }
+	Node38 [label = "B6_3"];
+	Node38 -> {Node39 Node45 }
+	Node39 [label = "B7_3"];
+	Node39 -> {Node40 Node53 }
+	Node40 [label = "B8_1"];
+	Node40 -> {Node57 }
+	Node41 [label = "B9_4"];
+	Node41 -> {Node42 Node43 }
+	Node42 [label = "B10_1"];
+	Node42 -> {Node44 }
+	Node43 [label = "B11_2"];
+	Node43 -> {Node44 }
+	Node44 [label = "B12_1"];
+	Node44 -> {Node33 }
+	Node45 [label = "B13_4"];
+	Node45 -> {Node46 Node47 }
+	Node46 [label = "B14_1"];
+	Node46 -> {Node48 }
+	Node47 [label = "B15_2"];
+	Node47 -> {Node48 }
+	Node48 [label = "B16_1"];
+	Node48 -> {Node33 }
+	Node49 [label = "B17_4"];
+	Node49 -> {Node50 Node51 }
+	Node50 [label = "B18_1"];
+	Node50 -> {Node52 }
+	Node51 [label = "B19_2"];
+	Node51 -> {Node52 }
+	Node52 [label = "B20_1"];
+	Node52 -> {Node33 }
+	Node53 [label = "B21_4"];
+	Node53 -> {Node54 Node55 }
+	Node54 [label = "B22_1"];
+	Node54 -> {Node56 }
+	Node55 [label = "B23_2"];
+	Node55 -> {Node56 }
+	Node56 [label = "B24_1"];
+	Node56 -> {Node33 }
+	Node57 [label = "B25_2"];
+	Node57 -> {Node33 }
+ }
+subgraph cluster_3{
+	label = "reflect"	style = "dashed";
+	color = purple;
+	Node58 [label = "Begin"];
+	Node58 -> {Node60 }
+	Node59 [label = "End"];
+	Node59 -> {}
+	Node60 [label = "B2_4"];
+	Node60 -> {Node61 Node62 }
+	Node61 [label = "B3_1"];
+	Node61 -> {Node63 }
+	Node62 [label = "B4_2"];
+	Node62 -> {Node63 }
+	Node63 [label = "B5_1"];
+	Node63 -> {Node64 Node75 }
+	Node64 [label = "B6_4"];
+	Node64 -> {Node65 Node75 }
+	Node65 [label = "B7_3"];
+	Node65 -> {Node66 Node75 }
+	Node66 [label = "B8_3"];
+	Node66 -> {Node67 Node71 }
+	Node67 [label = "B9_3"];
+	Node67 -> {Node68 Node72 }
+	Node68 [label = "B10_3"];
+	Node68 -> {Node69 Node74 }
+	Node69 [label = "B11_3"];
+	Node69 -> {Node70 Node73 }
+	Node70 [label = "B12_1"];
+	Node70 -> {Node75 }
+	Node71 [label = "B13_2"];
+	Node71 -> {Node59 }
+	Node72 [label = "B14_2"];
+	Node72 -> {Node59 }
+	Node73 [label = "B15_2"];
+	Node73 -> {Node59 }
+	Node74 [label = "B16_2"];
+	Node74 -> {Node59 }
+	Node75 [label = "B17_3"];
+	Node75 -> {Node76 Node86 }
+	Node76 [label = "B18_3"];
+	Node76 -> {Node77 Node86 }
+	Node77 [label = "B19_3"];
+	Node77 -> {Node78 Node82 }
+	Node78 [label = "B20_3"];
+	Node78 -> {Node79 Node83 }
+	Node79 [label = "B21_3"];
+	Node79 -> {Node80 Node85 }
+	Node80 [label = "B22_3"];
+	Node80 -> {Node81 Node84 }
+	Node81 [label = "B23_1"];
+	Node81 -> {Node86 }
+	Node82 [label = "B24_2"];
+	Node82 -> {Node59 }
+	Node83 [label = "B25_2"];
+	Node83 -> {Node59 }
+	Node84 [label = "B26_2"];
+	Node84 -> {Node59 }
+	Node85 [label = "B27_2"];
+	Node85 -> {Node59 }
+	Node86 [label = "B28_2"];
+	Node86 -> {Node59 }
+ }
+subgraph cluster_4{
+	label = "child"	style = "dashed";
+	color = purple;
+	Node87 [label = "Begin"];
+	Node87 -> {Node89 }
+	Node88 [label = "End"];
+	Node88 -> {}
+	Node89 [label = "B2_3"];
+	Node89 -> {Node90 Node100 }
+	Node90 [label = "B3_3"];
+	Node90 -> {Node91 Node100 }
+	Node91 [label = "B4_3"];
+	Node91 -> {Node92 Node97 }
+	Node92 [label = "B5_3"];
+	Node92 -> {Node93 Node96 }
+	Node93 [label = "B6_3"];
+	Node93 -> {Node94 Node99 }
+	Node94 [label = "B7_3"];
+	Node94 -> {Node95 Node98 }
+	Node95 [label = "B8_1"];
+	Node95 -> {Node100 }
+	Node96 [label = "B9_4"];
+	Node96 -> {Node88 }
+	Node97 [label = "B10_4"];
+	Node97 -> {Node88 }
+	Node98 [label = "B11_4"];
+	Node98 -> {Node88 }
+	Node99 [label = "B12_4"];
+	Node99 -> {Node88 }
+	Node100 [label = "B13_2"];
+	Node100 -> {Node88 }
+ }
+subgraph cluster_5{
+	label = "gtequal_adj_neighbor"	style = "dashed";
+	color = purple;
+	Node101 [label = "Begin"];
+	Node101 -> {Node103 }
+	Node102 [label = "End"];
+	Node102 -> {}
+	Node103 [label = "B2_10"];
+	Node103 -> {Node104 Node105 }
+	Node104 [label = "B3_1"];
+	Node104 -> {Node107 }
+	Node105 [label = "B4_6"];
+	Node105 -> {Node106 }
+	Node106 [label = "B5_2"];
+	Node106 -> {Node107 }
+	Node107 [label = "B6_1"];
+	Node107 -> {Node108 Node110 }
+	Node108 [label = "B7_6"];
+	Node108 -> {Node109 }
+	Node109 [label = "B8_2"];
+	Node109 -> {Node111 }
+	Node110 [label = "B9_0"];
+	Node110 -> {Node111 }
+	Node111 [label = "B10_3"];
+	Node111 -> {Node112 Node113 }
+	Node112 [label = "B11_1"];
+	Node112 -> {Node114 }
+	Node113 [label = "B12_5"];
+	Node113 -> {Node114 }
+	Node114 [label = "B13_1"];
+	Node114 -> {Node115 Node118 }
+	Node115 [label = "B14_7"];
+	Node115 -> {Node116 }
+	Node116 [label = "B15_6"];
+	Node116 -> {Node117 }
+	Node117 [label = "B16_1"];
+	Node117 -> {Node102 }
+	Node118 [label = "B17_2"];
+	Node118 -> {Node102 }
+ }
+subgraph cluster_6{
+	label = "sum_adjacent"	style = "dashed";
+	color = purple;
+	Node119 [label = "Begin"];
+	Node119 -> {Node121 }
+	Node120 [label = "End"];
+	Node120 -> {}
+	Node121 [label = "B2_10"];
+	Node121 -> {Node122 Node127 }
+	Node122 [label = "B3_7"];
+	Node122 -> {Node123 }
+	Node123 [label = "B4_9"];
+	Node123 -> {Node124 }
+	Node124 [label = "B5_8"];
+	Node124 -> {Node125 }
+	Node125 [label = "B6_9"];
+	Node125 -> {Node126 }
+	Node126 [label = "B7_2"];
+	Node126 -> {Node120 }
+	Node127 [label = "B8_6"];
+	Node127 -> {Node128 Node129 }
+	Node128 [label = "B9_2"];
+	Node128 -> {Node120 }
+	Node129 [label = "B10_2"];
+	Node129 -> {Node120 }
+ }
+subgraph cluster_7{
+	label = "MakeTree"	style = "dashed";
+	color = purple;
+	Node130 [label = "Begin"];
+	Node130 -> {Node132 }
+	Node131 [label = "End"];
+	Node131 -> {}
+	Node132 [label = "B2_13"];
+	Node132 -> {Node133 }
+	Node133 [label = "B3_15"];
+	Node133 -> {Node134 }
+	Node134 [label = "B4_5"];
+	Node134 -> {Node135 Node136 }
+	Node135 [label = "B5_1"];
+	Node135 -> {Node137 }
+	Node136 [label = "B6_2"];
+	Node136 -> {Node137 }
+	Node137 [label = "B7_1"];
+	Node137 -> {Node138 Node139 }
+	Node138 [label = "B8_21"];
+	Node138 -> {Node148 }
+	Node139 [label = "B9_3"];
+	Node139 -> {Node140 Node141 }
+	Node140 [label = "B10_21"];
+	Node140 -> {Node148 }
+	Node141 [label = "B11_5"];
+	Node141 -> {Node142 Node143 }
+	Node142 [label = "B12_21"];
+	Node142 -> {Node148 }
+	Node143 [label = "B13_32"];
+	Node143 -> {Node144 }
+	Node144 [label = "B14_24"];
+	Node144 -> {Node145 }
+	Node145 [label = "B15_23"];
+	Node145 -> {Node146 }
+	Node146 [label = "B16_21"];
+	Node146 -> {Node147 }
+	Node147 [label = "B17_5"];
+	Node147 -> {Node148 }
+	Node148 [label = "B18_2"];
+	Node148 -> {Node131 }
+ }
+subgraph cluster_8{
+	label = "dealwithargs"	style = "dashed";
+	color = purple;
+	Node149 [label = "Begin"];
+	Node149 -> {Node151 }
+	Node150 [label = "End"];
+	Node150 -> {}
+	Node151 [label = "B2_4"];
+	Node151 -> {Node150 }
+ }
+subgraph cluster_9{
+	label = "CountTree"	style = "dashed";
+	color = purple;
+	Node152 [label = "Begin"];
+	Node152 -> {Node154 }
+	Node153 [label = "End"];
+	Node153 -> {}
+	Node154 [label = "B2_16"];
+	Node154 -> {Node155 Node156 }
+	Node155 [label = "B3_1"];
+	Node155 -> {Node161 }
+	Node156 [label = "B4_3"];
+	Node156 -> {Node157 Node158 }
+	Node157 [label = "B5_1"];
+	Node157 -> {Node161 }
+	Node158 [label = "B6_3"];
+	Node158 -> {Node159 Node160 }
+	Node159 [label = "B7_1"];
+	Node159 -> {Node161 }
+	Node160 [label = "B8_2"];
+	Node160 -> {Node161 }
+	Node161 [label = "B9_1"];
+	Node161 -> {Node162 Node163 }
+	Node162 [label = "B10_2"];
+	Node162 -> {Node153 }
+	Node163 [label = "B11_4"];
+	Node163 -> {Node164 }
+	Node164 [label = "B12_6"];
+	Node164 -> {Node165 }
+	Node165 [label = "B13_6"];
+	Node165 -> {Node166 }
+	Node166 [label = "B14_6"];
+	Node166 -> {Node167 }
+	Node167 [label = "B15_2"];
+	Node167 -> {Node153 }
+ }
+subgraph cluster_10{
+	label = "perimeter"	style = "dashed";
+	color = purple;
+	Node168 [label = "Begin"];
+	Node168 -> {Node170 }
+	Node169 [label = "End"];
+	Node169 -> {}
+	Node170 [label = "B2_9"];
+	Node170 -> {Node171 Node176 }
+	Node171 [label = "B3_9"];
+	Node171 -> {Node172 }
+	Node172 [label = "B4_10"];
+	Node172 -> {Node173 }
+	Node173 [label = "B5_10"];
+	Node173 -> {Node174 }
+	Node174 [label = "B6_10"];
+	Node174 -> {Node175 }
+	Node175 [label = "B7_2"];
+	Node175 -> {Node213 }
+	Node176 [label = "B8_6"];
+	Node176 -> {Node177 Node213 }
+	Node177 [label = "B9_6"];
+	Node177 -> {Node178 }
+	Node178 [label = "B10_4"];
+	Node178 -> {Node179 Node180 }
+	Node179 [label = "B11_1"];
+	Node179 -> {Node181 }
+	Node180 [label = "B12_5"];
+	Node180 -> {Node181 }
+	Node181 [label = "B13_1"];
+	Node181 -> {Node182 Node183 }
+	Node182 [label = "B14_2"];
+	Node182 -> {Node186 }
+	Node183 [label = "B15_6"];
+	Node183 -> {Node184 Node186 }
+	Node184 [label = "B16_10"];
+	Node184 -> {Node185 }
+	Node185 [label = "B17_1"];
+	Node185 -> {Node186 }
+	Node186 [label = "B18_6"];
+	Node186 -> {Node187 }
+	Node187 [label = "B19_4"];
+	Node187 -> {Node188 Node189 }
+	Node188 [label = "B20_1"];
+	Node188 -> {Node190 }
+	Node189 [label = "B21_5"];
+	Node189 -> {Node190 }
+	Node190 [label = "B22_1"];
+	Node190 -> {Node191 Node192 }
+	Node191 [label = "B23_2"];
+	Node191 -> {Node195 }
+	Node192 [label = "B24_6"];
+	Node192 -> {Node193 Node195 }
+	Node193 [label = "B25_9"];
+	Node193 -> {Node194 }
+	Node194 [label = "B26_1"];
+	Node194 -> {Node195 }
+	Node195 [label = "B27_6"];
+	Node195 -> {Node196 }
+	Node196 [label = "B28_4"];
+	Node196 -> {Node197 Node198 }
+	Node197 [label = "B29_1"];
+	Node197 -> {Node199 }
+	Node198 [label = "B30_5"];
+	Node198 -> {Node199 }
+	Node199 [label = "B31_1"];
+	Node199 -> {Node200 Node201 }
+	Node200 [label = "B32_2"];
+	Node200 -> {Node204 }
+	Node201 [label = "B33_6"];
+	Node201 -> {Node202 Node204 }
+	Node202 [label = "B34_10"];
+	Node202 -> {Node203 }
+	Node203 [label = "B35_1"];
+	Node203 -> {Node204 }
+	Node204 [label = "B36_6"];
+	Node204 -> {Node205 }
+	Node205 [label = "B37_4"];
+	Node205 -> {Node206 Node207 }
+	Node206 [label = "B38_1"];
+	Node206 -> {Node208 }
+	Node207 [label = "B39_5"];
+	Node207 -> {Node208 }
+	Node208 [label = "B40_1"];
+	Node208 -> {Node209 Node210 }
+	Node209 [label = "B41_2"];
+	Node209 -> {Node213 }
+	Node210 [label = "B42_6"];
+	Node210 -> {Node211 Node213 }
+	Node211 [label = "B43_10"];
+	Node211 -> {Node212 }
+	Node212 [label = "B44_1"];
+	Node212 -> {Node213 }
+	Node213 [label = "B45_2"];
+	Node213 -> {Node169 }
+ }
+subgraph cluster_11{
+	label = "main"	style = "dashed";
+	color = purple;
+	Node214 [label = "Begin"];
+	Node214 -> {Node216 }
+	Node215 [label = "End"];
+	Node215 -> {}
+	Node216 [label = "B2_4"];
+	Node216 -> {Node217 }
+	Node217 [label = "B3_8"];
+	Node217 -> {Node218 }
+	Node218 [label = "B4_17"];
+	Node218 -> {Node219 }
+	Node219 [label = "B5_6"];
+	Node219 -> {Node220 }
+	Node220 [label = "B6_6"];
+	Node220 -> {Node221 }
+	Node221 [label = "B7_6"];
+	Node221 -> {Node222 }
+	Node222 [label = "B8_6"];
+	Node222 -> {Node223 }
+	Node223 [label = "B9_5"];
+	Node223 -> {Node224 }
+	Node224 [label = "B10_2"];
+	Node224 -> {Node215 }
+ }
+}

@@ -1,0 +1,72 @@
+Target machine parameters:
+  Little endian
+  Size of addressable units = 8
+  Default char type is signed
+  char type:       size = 8, align = 8
+  short type:      size = 16, align = 16
+  int type:        size = 32, align = 32
+  long type:       size = 32, align = 32
+  longlong type:   size = 32, align = 32
+  float type:      size = 32, align = 32
+  double type:     size = 64, align = 64
+  longdouble type: size = 64, align = 64
+  ptr type:        size = 32, align = 32
+  Array alignment = 8
+  Structure alignment = 8
+  Pointer difference type = 2 (see C_types enum)
+
+Runtime Statistics
+--------------Instructions-----------
+	NEG            : 0
+	NOT            : 0
+	ADD            : 13336
+	MUL            : 2610
+	AND            : 0
+	IOR            : 0
+	XOR            : 0
+	SUB            : 1647
+	DIV            : 935
+	REM            : 0
+	ASR            : 0
+	LSR            : 0
+	LSL            : 0
+	SEQ            : 15833
+	SNE            : 3930
+	SL             : 7884
+	SLE            : 0
+	CPY            : 3385
+	LOD            : 6909
+	STR            : 1715
+	MEMCPY         : 0
+	LDC            : 49476
+	BFALSE         : 10859
+	BTRUE          : 16185
+	JMP            : 1996
+	CVT            : 17707
+	CAL            : 6559
+	RET            : 6310
+
+----------------Functions-------------
+	malloc         : 245       N/A
+	exit           : 1         N/A
+	MakeTree       : 245       163 (code size)   	645 (dynamic cycles)
+	dealwithargs   : 1         3 (code size)   	3 (dynamic cycles)
+	CountTree      : 245       46 (code size)   	63 (dynamic cycles)
+	perimeter      : 245       175 (code size)   	2330 (dynamic cycles)
+	main           : 1         31 (code size)   	167276 (dynamic cycles)
+	myprintf1      : 2         N/A
+	myprintf2      : 1         N/A
+	CheckOutside   : 1305      15 (code size)   	8 (dynamic cycles)
+	CheckIntersect : 245       77 (code size)   	79 (dynamic cycles)
+	adj            : 1056      75 (code size)   	20 (dynamic cycles)
+	reflect        : 840       72 (code size)   	21 (dynamic cycles)
+	child          : 920       39 (code size)   	15 (dynamic cycles)
+	gtequal_adj_neighbor: 1088      39 (code size)   	56 (dynamic cycles)
+	sum_adjacent   : 120       33 (code size)   	18 (dynamic cycles)
+
+ # total number of instructions executed : 167276
+ # total number of instructions in program text(code) : 768
+ # total number of branches executed : 29040
+ # total number of condition branches executed : 27044
+ # total number of branch takens : 14798
+ # total probability of branch taken occured(takens/branches) : 0.509573

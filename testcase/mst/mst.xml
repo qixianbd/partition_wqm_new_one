@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding='ISO-8859-1' standalone='yes' ?>
+<static_statistics_information>
+  <program name:>localmalloc</program name:>
+  <迭代次数：>11</迭代次数：>
+  <program name:>mult</program name:>
+  <迭代次数：>1</迭代次数：>
+  <program name:>mst_random</program name:>
+  <迭代次数：>4</迭代次数：>
+  <program name:>compute_dist</program name:>
+  <迭代次数：>7</迭代次数：>
+  <program name:>hashfunc</program name:>
+  <迭代次数：>1</迭代次数：>
+  <program name:>AddEdges</program name:>
+  <迭代次数：>17</迭代次数：>
+  <program name:>BlueRule</program name:>
+  <迭代次数：>24</迭代次数：>
+  <program name:>SetMyVertexList</program name:>
+  <迭代次数：>1</迭代次数：>
+  <program name:>Do_all_BlueRule</program name:>
+  <迭代次数：>25</迭代次数：>
+  <program name:>ComputeMst</program name:>
+  <迭代次数：>14</迭代次数：>
+  <program name:>MakeHash</program name:>
+  <迭代次数：>23</迭代次数：>
+  <program name:>HashLookup</program name:>
+  <迭代次数：>22</迭代次数：>
+  <program name:>HashInsert</program name:>
+  <迭代次数：>7</迭代次数：>
+  <program name:>HashDelete</program name:>
+  <迭代次数：>21</迭代次数：>
+  <program name:>MakeGraph</program name:>
+  <迭代次数：>24</迭代次数：>
+  <program name:>dealwithargs</program name:>
+  <迭代次数：>7</迭代次数：>
+  <program name:>main</program name:>
+  <迭代次数：>46</迭代次数：>
+  <总迭代次数：>255</总迭代次数：>
+  <平均迭代次数：>15</平均迭代次数：>
+</static_statistics_information>

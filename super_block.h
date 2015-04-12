@@ -32,7 +32,7 @@ public:
     ~super_block();
     super_block_kind knd(){return kind;}
     void set_block_num(int num);
-    int block_num(){return super_block_num;}
+    int block_num()const{return super_block_num;}
     cfg_node_list *nodes();
     int size();
     int instr_size();

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding='ISO-8859-1' standalone='yes' ?>
+<static_statistics_information>
+  <program name:>build_tree</program name:>
+  <迭代次数：>18</迭代次数：>
+  <program name:>build_lateral</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>build_branch</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>build_leaf</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>Compute_Tree</program name:>
+  <迭代次数：>15</迭代次数：>
+  <program name:>Compute_Lateral</program name:>
+  <迭代次数：>19</迭代次数：>
+  <program name:>Compute_Branch</program name:>
+  <迭代次数：>22</迭代次数：>
+  <program name:>Compute_Leaf</program name:>
+  <迭代次数：>4</迭代次数：>
+  <program name:>optimize_node</program name:>
+  <迭代次数：>12</迭代次数：>
+  <program name:>find_g</program name:>
+  <迭代次数：>1</迭代次数：>
+  <program name:>find_h</program name:>
+  <迭代次数：>1</迭代次数：>
+  <program name:>find_gradient_f</program name:>
+  <迭代次数：>16</迭代次数：>
+  <program name:>find_gradient_g</program name:>
+  <迭代次数：>17</迭代次数：>
+  <program name:>find_gradient_h</program name:>
+  <迭代次数：>17</迭代次数：>
+  <program name:>find_dd_grad_f</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>make_orthogonal</program name:>
+  <迭代次数：>32</迭代次数：>
+  <program name:>main</program name:>
+  <迭代次数：>32</迭代次数：>
+  <总迭代次数：>218</总迭代次数：>
+  <平均迭代次数：>12</平均迭代次数：>
+</static_statistics_information>

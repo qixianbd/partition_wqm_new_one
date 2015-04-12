@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding='ISO-8859-1' standalone='yes' ?>
+<static_statistics_information>
+  <program name:>alloc_edge</program name:>
+  <迭代次数：>6</迭代次数：>
+  <program name:>makeedge</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>splice</program name:>
+  <迭代次数：>1</迭代次数：>
+  <program name:>swapedge</program name:>
+  <迭代次数：>15</迭代次数：>
+  <program name:>deleteedge</program name:>
+  <迭代次数：>6</迭代次数：>
+  <program name:>build_delaunay_triangulation</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>build_delaunay</program name:>
+  <迭代次数：>23</迭代次数：>
+  <program name:>do_merge</program name:>
+  <迭代次数：>32</迭代次数：>
+  <program name:>connect_left</program name:>
+  <迭代次数：>12</迭代次数：>
+  <program name:>connect_right</program name:>
+  <迭代次数：>5</迭代次数：>
+  <program name:>zero_seen</program name:>
+  <迭代次数：>11</迭代次数：>
+  <program name:>pop_edge</program name:>
+  <迭代次数：>1</迭代次数：>
+  <program name:>mylog</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>dealwithargs</program name:>
+  <迭代次数：>27</迭代次数：>
+  <program name:>V2_cprod</program name:>
+  <迭代次数：>1</迭代次数：>
+  <program name:>V2_dot</program name:>
+  <迭代次数：>1</迭代次数：>
+  <program name:>V2_times</program name:>
+  <迭代次数：>1</迭代次数：>
+  <program name:>V2_sum</program name:>
+  <迭代次数：>1</迭代次数：>
+  <program name:>V2_sub</program name:>
+  <迭代次数：>1</迭代次数：>
+  <program name:>V2_magn</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>V2_cross</program name:>
+  <迭代次数：>1</迭代次数：>
+  <program name:>plot_dedge</program name:>
+  <迭代次数：>4</迭代次数：>
+  <program name:>plot_vedge</program name:>
+  <迭代次数：>4</迭代次数：>
+  <program name:>circle_center</program name:>
+  <迭代次数：>27</迭代次数：>
+  <program name:>output_voronoi_diagram</program name:>
+  <迭代次数：>45</迭代次数：>
+  <program name:>push_ring</program name:>
+  <迭代次数：>6</迭代次数：>
+  <program name:>ccw</program name:>
+  <迭代次数：>4</迭代次数：>
+  <program name:>free_edge</program name:>
+  <迭代次数：>1</迭代次数：>
+  <program name:>get_low</program name:>
+  <迭代次数：>6</迭代次数：>
+  <program name:>delete_all_edges</program name:>
+  <迭代次数：>1</迭代次数：>
+  <program name:>myalign</program name:>
+  <迭代次数：>5</迭代次数：>
+  <program name:>incircle</program name:>
+  <迭代次数：>4</迭代次数：>
+  <program name:>valid</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>dump_quad</program name:>
+  <迭代次数：>15</迭代次数：>
+  <program name:>allocate_stack</program name:>
+  <迭代次数：>7</迭代次数：>
+  <program name:>get_points</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>in_order</program name:>
+  <迭代次数：>4</迭代次数：>
+  <program name:>mult</program name:>
+  <迭代次数：>1</迭代次数：>
+  <program name:>skiprand</program name:>
+  <迭代次数：>5</迭代次数：>
+  <program name:>random</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>print_extra</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>main</program name:>
+  <迭代次数：>34</迭代次数：>
+  <program name:>push_edge</program name:>
+  <迭代次数：>4</迭代次数：>
+  <program name:>push_nonzero_ring</program name:>
+  <迭代次数：>6</迭代次数：>
+  <总迭代次数：>352</总迭代次数：>
+  <平均迭代次数：>8</平均迭代次数：>
+</static_statistics_information>

@@ -158,6 +158,10 @@ unsigned int ProcedurePath::blockNumber() {
 	return path->size();
 }
 
+int ProcedurePath::getKeyThreadBlock()const{
+	return this->keySubPathThreadBlock;
+}
+
 unsigned int ProcedurePath::size() {
 	assert(!path->empty());
 	unsigned int pathSize = 0;

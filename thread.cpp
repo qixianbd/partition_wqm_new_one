@@ -280,11 +280,14 @@ void thread::printSpawnPosition(std::ostream &os)const{
 
     tree_instr *first_instr = (tree_instr *)spawned_pos->contents;
     machine_instr *first_mi = (machine_instr *)first_instr->instr();
+    assert(the_spawn_super_block->contains(first_mi));
+    cfg_block *the_block = (cfg_block*) the_spawn_super_block->in_which_block(this->spawned_pos);
 
 
 	os << "The spawn is in the super block " << the_spawn_super_block->block_num() << "\n";
 	os << "The corresponding instruction is " << ":";
 	first_mi->print(stdout);
+	assert(the_block->contains(spawned_pos));
 }
 
 void thread::printSuperBlocks(std::ostream &os)const{

@@ -1,0 +1,75 @@
+Target machine parameters:
+  Little endian
+  Size of addressable units = 8
+  Default char type is signed
+  char type:       size = 8, align = 8
+  short type:      size = 16, align = 16
+  int type:        size = 32, align = 32
+  long type:       size = 32, align = 32
+  longlong type:   size = 32, align = 32
+  float type:      size = 32, align = 32
+  double type:     size = 64, align = 64
+  longdouble type: size = 64, align = 64
+  ptr type:        size = 32, align = 32
+  Array alignment = 8
+  Structure alignment = 8
+  Pointer difference type = 2 (see C_types enum)
+
+Runtime Statistics
+--------------Instructions-----------
+	NEG            : 0
+	NOT            : 0
+	ADD            : 4108
+	MUL            : 1415
+	AND            : 0
+	IOR            : 0
+	XOR            : 172
+	SUB            : 268
+	DIV            : 123
+	REM            : 16
+	ASR            : 0
+	LSR            : 0
+	LSL            : 0
+	SEQ            : 459
+	SNE            : 938
+	SL             : 639
+	SLE            : 306
+	CPY            : 92
+	LOD            : 2204
+	STR            : 1134
+	MEMCPY         : 0
+	LDC            : 9972
+	BFALSE         : 2104
+	BTRUE          : 243
+	JMP            : 19
+	CVT            : 1358
+	CAL            : 932
+	RET            : 854
+
+----------------Functions-------------
+	malloc         : 65        N/A
+	pow            : 5         N/A
+	dealwithargs   : 1         14 (code size)   	14 (dynamic cycles)
+	my_rand        : 86        27 (code size)   	25 (dynamic cycles)
+	generate_patient: 80        39 (code size)   	44 (dynamic cycles)
+	put_in_hosp    : 26        44 (code size)   	55 (dynamic cycles)
+	addList        : 34        28 (code size)   	29 (dynamic cycles)
+	removeList     : 8         38 (code size)   	30 (dynamic cycles)
+	sim            : 336       105 (code size)   	27 (dynamic cycles)
+	check_patients_inside: 80        43 (code size)   	4 (dynamic cycles)
+	check_patients_assess: 80        90 (code size)   	5 (dynamic cycles)
+	check_patients_waiting: 80        56 (code size)   	13 (dynamic cycles)
+	get_results    : 21        114 (code size)   	119 (dynamic cycles)
+	alloc_tree     : 21        130 (code size)   	101 (dynamic cycles)
+	main           : 1         58 (code size)   	27356 (dynamic cycles)
+	myprintf       : 4         N/A
+	myprintf1      : 1         N/A
+	myprintf3      : 1         N/A
+	myprintf4      : 3         N/A
+
+ # total number of instructions executed : 27356
+ # total number of instructions in program text(code) : 786
+ # total number of branches executed : 2366
+ # total number of condition branches executed : 2347
+ # total number of branch takens : 1529
+ # total probability of branch taken occured(takens/branches) : 0.646238

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding='ISO-8859-1' standalone='yes' ?>
+<static_statistics_information>
+  <program name:>median</program name:>
+  <迭代次数：>19</迭代次数：>
+  <program name:>uniform</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>conquer</program name:>
+  <迭代次数：>14</迭代次数：>
+  <program name:>merge</program name:>
+  <迭代次数：>376</迭代次数：>
+  <program name:>makelist</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>reverse</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>distance</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>mylog</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>dealwithargs</program name:>
+  <迭代次数：>14</迭代次数：>
+  <program name:>build_tree</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>tsp</program name:>
+  <迭代次数：>20</迭代次数：>
+  <program name:>drand48</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>print_tree</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>print_list</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>main</program name:>
+  <迭代次数：>42</迭代次数：>
+  <总迭代次数：>512</总迭代次数：>
+  <平均迭代次数：>34</平均迭代次数：>
+</static_statistics_information>

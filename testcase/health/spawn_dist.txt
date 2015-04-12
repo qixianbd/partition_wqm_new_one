@@ -1,0 +1,74 @@
+dealwithargs 1
+dealwithargs 2
+15
+dealwithargs 3
+9
+7
+9
+7
+my_rand 1
+my_rand 2
+21
+generate_patient 1
+generate_patient 2
+27
+generate_patient 3
+27
+17
+27
+5
+put_in_hosp 1
+put_in_hosp 2
+37
+addList 1
+addList 2
+13
+addList 3
+13
+2
+13
+2
+removeList 1
+removeList 2
+14
+removeList 3
+14
+16
+removeList 4
+6
+9
+16
+6
+9
+16
+sim 1
+sim 2
+5
+check_patients_inside 1
+check_patients_inside 2
+6
+check_patients_assess 1
+check_patients_assess 2
+7
+check_patients_waiting 1
+check_patients_waiting 2
+6
+get_results 1
+get_results 2
+15
+alloc_tree 1
+alloc_tree 2
+9
+main 1
+main 2
+3080
+main 3
+1223
+8
+main 4
+1231
+16
+8
+1231
+16
+8

@@ -1,0 +1,110 @@
+Target machine parameters:
+  Little endian
+  Size of addressable units = 8
+  Default char type is signed
+  char type:       size = 8, align = 8
+  short type:      size = 16, align = 16
+  int type:        size = 32, align = 32
+  long type:       size = 32, align = 32
+  longlong type:   size = 32, align = 32
+  float type:      size = 32, align = 32
+  double type:     size = 64, align = 64
+  longdouble type: size = 64, align = 64
+  ptr type:        size = 32, align = 32
+  Array alignment = 8
+  Structure alignment = 8
+  Pointer difference type = 2 (see C_types enum)
+
+Runtime Statistics
+--------------Instructions-----------
+	NEG            : 0
+	NOT            : 0
+	ADD            : 11458
+	MUL            : 2166
+	AND            : 1765
+	IOR            : 819
+	XOR            : 1009
+	SUB            : 2532
+	DIV            : 1793
+	REM            : 895
+	ASR            : 0
+	LSR            : 0
+	LSL            : 0
+	SEQ            : 634
+	SNE            : 1199
+	SL             : 640
+	SLE            : 0
+	CPY            : 1449
+	LOD            : 7455
+	STR            : 2806
+	MEMCPY         : 0
+	LDC            : 24344
+	BFALSE         : 1906
+	BTRUE          : 313
+	JMP            : 127
+	CVT            : 8165
+	CAL            : 2747
+	RET            : 2227
+
+----------------Functions-------------
+	malloc         : 257       N/A
+	exit           : 1         N/A
+	sqrt           : 0         N/A
+	exp            : 128       N/A
+	log            : 128       N/A
+	alloc_edge     : 127       27 (code size)   	30 (dynamic cycles)
+	makeedge       : 127       52 (code size)   	82 (dynamic cycles)
+	splice         : 126       58 (code size)   	58 (dynamic cycles)
+	swapedge       : 0         182 (code size)   	0 (dynamic cycles)
+	deleteedge     : 0         100 (code size)   	0 (dynamic cycles)
+	build_delaunay_triangulation: 1         5 (code size)   	56086 (dynamic cycles)
+	build_delaunay : 127       157 (code size)   	2313 (dynamic cycles)
+	do_merge       : 63        487 (code size)   	700 (dynamic cycles)
+	connect_left   : 63        57 (code size)   	255 (dynamic cycles)
+	connect_right  : 0         61 (code size)   	0 (dynamic cycles)
+	zero_seen      : 0         28 (code size)   	0 (dynamic cycles)
+	pop_edge       : 0         15 (code size)   	0 (dynamic cycles)
+	mylog          : 1         11 (code size)   	5 (dynamic cycles)
+	dealwithargs   : 1         18 (code size)   	23 (dynamic cycles)
+	V2_cprod       : 0         12 (code size)   	0 (dynamic cycles)
+	V2_dot         : 0         12 (code size)   	0 (dynamic cycles)
+	V2_times       : 0         11 (code size)   	0 (dynamic cycles)
+	V2_sum         : 0         15 (code size)   	0 (dynamic cycles)
+	V2_sub         : 0         15 (code size)   	0 (dynamic cycles)
+	V2_magn        : 0         14 (code size)   	0 (dynamic cycles)
+	V2_cross       : 0         10 (code size)   	0 (dynamic cycles)
+	plot_dedge     : 0         20 (code size)   	0 (dynamic cycles)
+	plot_vedge     : 0         16 (code size)   	0 (dynamic cycles)
+	circle_center  : 0         33 (code size)   	0 (dynamic cycles)
+	output_voronoi_diagram: 0         270 (code size)   	0 (dynamic cycles)
+	push_ring      : 0         24 (code size)   	0 (dynamic cycles)
+	ccw            : 378       35 (code size)   	33 (dynamic cycles)
+	free_edge      : 0         14 (code size)   	0 (dynamic cycles)
+	get_low        : 63        14 (code size)   	14 (dynamic cycles)
+	delete_all_edges: 0         4 (code size)   	0 (dynamic cycles)
+	myalign        : 127       20 (code size)   	14 (dynamic cycles)
+	incircle       : 0         70 (code size)   	0 (dynamic cycles)
+	valid          : 252       20 (code size)   	53 (dynamic cycles)
+	dump_quad      : 0         33 (code size)   	0 (dynamic cycles)
+	allocate_stack : 1         21 (code size)   	21 (dynamic cycles)
+	get_points     : 258       105 (code size)   	416 (dynamic cycles)
+	in_order       : 0         29 (code size)   	0 (dynamic cycles)
+	mult           : 256       18 (code size)   	18 (dynamic cycles)
+	skiprand       : 0         11 (code size)   	0 (dynamic cycles)
+	random         : 256       6 (code size)   	24 (dynamic cycles)
+	print_extra    : 0         11 (code size)   	0 (dynamic cycles)
+	main           : 1         84 (code size)   	76449 (dynamic cycles)
+	push_edge      : 0         29 (code size)   	0 (dynamic cycles)
+	push_nonzero_ring: 0         24 (code size)   	0 (dynamic cycles)
+	myprintf       : 2         N/A
+	myprintf1      : 3         N/A
+	myprintf2      : 0         N/A
+	myprintf3      : 1         N/A
+	myprintf5      : 0         N/A
+
+ # total number of instructions executed : 76449
+ # total number of instructions in program text(code) : 2258
+ # total number of branches executed : 2346
+ # total number of condition branches executed : 2219
+ # total number of branch takens : 1770
+ # total probability of branch taken occured(takens/branches) : 0.754476

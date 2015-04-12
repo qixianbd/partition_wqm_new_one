@@ -1,0 +1,102 @@
+Target machine parameters:
+  Little endian
+  Size of addressable units = 8
+  Default char type is signed
+  char type:       size = 8, align = 8
+  short type:      size = 16, align = 16
+  int type:        size = 32, align = 32
+  long type:       size = 32, align = 32
+  longlong type:   size = 32, align = 32
+  float type:      size = 32, align = 32
+  double type:     size = 64, align = 64
+  longdouble type: size = 64, align = 64
+  ptr type:        size = 32, align = 32
+  Array alignment = 8
+  Structure alignment = 8
+  Pointer difference type = 2 (see C_types enum)
+
+Runtime Statistics
+--------------Instructions-----------
+	NEG            : 0
+	NOT            : 0
+	ADD            : 16147
+	MUL            : 9999
+	AND            : 384
+	IOR            : 0
+	XOR            : 0
+	SUB            : 2652
+	DIV            : 2516
+	REM            : 0
+	ASR            : 194
+	LSR            : 0
+	LSL            : 64
+	SEQ            : 64
+	SNE            : 481
+	SL             : 498
+	SLE            : 3066
+	CPY            : 99
+	LOD            : 4246
+	STR            : 3512
+	MEMCPY         : 0
+	LDC            : 33769
+	BFALSE         : 3580
+	BTRUE          : 532
+	JMP            : 225
+	CVT            : 7042
+	CAL            : 3077
+	RET            : 2192
+
+----------------Functions-------------
+	malloc         : 97        N/A
+	rand           : 1         N/A
+	exit           : 0         N/A
+	sqrt           : 224       N/A
+	pow            : 272       N/A
+	dealwithargs   : 1         9 (code size)   	9 (dynamic cycles)
+	my_rand        : 934       12 (code size)   	12 (dynamic cycles)
+	xrand          : 934       6 (code size)   	6 (dynamic cycles)
+	subdivp        : 0         57 (code size)   	0 (dynamic cycles)
+	walksub        : 0         38 (code size)   	0 (dynamic cycles)
+	gravsub        : 0         97 (code size)   	0 (dynamic cycles)
+	intcoord       : 64        102 (code size)   	83 (dynamic cycles)
+	computegrav    : 0         32 (code size)   	0 (dynamic cycles)
+	maketree       : 0         65 (code size)   	0 (dynamic cycles)
+	vp             : 0         520 (code size)   	0 (dynamic cycles)
+	gravstep       : 0         3 (code size)   	0 (dynamic cycles)
+	ptree          : 0         33 (code size)   	0 (dynamic cycles)
+	testdata       : 0         419 (code size)   	0 (dynamic cycles)
+	uniform_testdata: 32        272 (code size)   	1923 (dynamic cycles)
+	stepsystem     : 0         24 (code size)   	0 (dynamic cycles)
+	old_main       : 1         327 (code size)   	94321 (dynamic cycles)
+	my_free        : 0         20 (code size)   	0 (dynamic cycles)
+	ubody_alloc    : 96        19 (code size)   	19 (dynamic cycles)
+	freetree       : 0         35 (code size)   	0 (dynamic cycles)
+	freetree1      : 0         3 (code size)   	0 (dynamic cycles)
+	main           : 1         9 (code size)   	94339 (dynamic cycles)
+	Srand          : 1         5 (code size)   	5 (dynamic cycles)
+	old_subindex   : 128       26 (code size)   	54 (dynamic cycles)
+	body_alloc     : 0         53 (code size)   	0 (dynamic cycles)
+	cell_alloc     : 0         36 (code size)   	0 (dynamic cycles)
+	grav           : 0         20 (code size)   	0 (dynamic cycles)
+	hackgrav       : 0         64 (code size)   	0 (dynamic cycles)
+	loadtree       : 0         61 (code size)   	0 (dynamic cycles)
+	expandbox      : 0         134 (code size)   	0 (dynamic cycles)
+	intcoord1      : 0         86 (code size)   	0 (dynamic cycles)
+	ic_test        : 0         76 (code size)   	0 (dynamic cycles)
+	subindex       : 0         139 (code size)   	0 (dynamic cycles)
+	hackcofm       : 0         129 (code size)   	0 (dynamic cycles)
+	dis2_number    : 0         37 (code size)   	0 (dynamic cycles)
+	dis_number     : 0         12 (code size)   	0 (dynamic cycles)
+	printtree      : 0         4 (code size)   	0 (dynamic cycles)
+	myprintf       : 1         N/A
+	myprintf1      : 0         N/A
+	myprintf2      : 3         N/A
+	myprintf4      : 144       N/A
+	myprintf5      : 144       N/A
+
+ # total number of instructions executed : 94339
+ # total number of instructions in program text(code) : 2984
+ # total number of branches executed : 4337
+ # total number of condition branches executed : 4112
+ # total number of branch takens : 2816
+ # total probability of branch taken occured(takens/branches) : 0.649297

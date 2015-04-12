@@ -11,7 +11,7 @@ digraph G{
 	Node3 -> {Node4 }
 	Node4 [label = "B4_3\nvp.L1:\nla	r21	nd#4999	\nsne	r22	r12	r21	\nbeqz	vp.L5\n"];
 	Node4 -> {Node5 Node152 }
-	Node5 [label = "B5_1\nvp.L4:\nmove	r23	r0	\n"];
+	Node5 [label = "B5_2\nvp.L4:\nspawn	vp.L115\nmove	r23	r0	\n"];
 	Node5 -> {Node6 }
 	Node6 [label = "B6_18\nvp.L67:\nla	r24	nd#5010	\nli	r25	nd#5012	\nmult	r23	r25	\nmflo	r26	\naddu	r27	r24	r26	\nli	r28	nd#5017	\naddu	r21	r12	r28	\nli	r5	nd#5020	\nmult	r23	r5	\nmflo	r6	\naddu	r7	r21	r6	\nl.d	r32	nd#5025	\ns.d	nd#5028	r32	\nli	r8	nd#5031	\naddu	r23	r23	r8	\nli	r9	nd#5034	\nsle	r10	r9	r23	\nbeqz	vp.L67\n"];
 	Node6 -> {Node7 Node6 }
@@ -303,8 +303,10 @@ digraph G{
 	Node149 -> {Node150 }
 	Node150 [label = "B150_5\nla	r19	nd#6080	\nmove	r5	r0	\nmove	r4	r2	\nfst	r2	\njalr	\n"];
 	Node150 -> {Node151 }
-	Node151 [label = "B151_6\nvp.L66:\nli	r9	nd#6089	\naddu	r10	r12	r9	\nlw	r12	nd#6092	\nla	r19	nd#6096	\nsne	r20	r12	r19	\nbnez	vp.L4\n"];
+	Node151 [label = "B151_14\nvp.L66:\nli	r9	nd#6089	\naddu	r10	r12	r9	\nlw	r12	nd#6092	\nla	r19	nd#6096	\nsne	r20	r12	r19	\ncqip	vp.L115\nvp.L115:\npslice_entry	vp.L115\nli	r9	nd#0	\naddu	r10	r12	r9	\nlw	r12	nd#0	\nla	r19	nd#0	\nsne	r20	r12	r19	\npslice_exit	vp.L115\nbnez	vp.L4\n"];
 	Node151 -> {Node152 Node5 }
 	Node152 [label = "B152_1\nvp.L5:\njr	\n"];
 	Node152 -> {Node1 }
+	Node5 [shape = box ,style=filled ,color=red];
+	Node151 [shape = polygon ,style=filled ,color=yellow];
 }

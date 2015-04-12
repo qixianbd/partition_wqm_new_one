@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding='ISO-8859-1' standalone='yes' ?>
+<static_statistics_information>
+  <program name:>compute_nodes</program name:>
+  <迭代次数：>8</迭代次数：>
+  <program name:>initialize_graph</program name:>
+  <迭代次数：>129</迭代次数：>
+  <program name:>lrand48</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>drand48</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>srand48</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>init_random</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>gen_number</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>gen_signed_number</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>gen_uniform_double</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>check_percent</program name:>
+  <迭代次数：>4</迭代次数：>
+  <program name:>make_table</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>fill_table</program name:>
+  <迭代次数：>18</迭代次数：>
+  <program name:>make_neighbors</program name:>
+  <迭代次数：>9</迭代次数：>
+  <program name:>update_from_coeffs</program name:>
+  <迭代次数：>7</迭代次数：>
+  <program name:>fill_from_fields</program name:>
+  <迭代次数：>8</迭代次数：>
+  <program name:>dealwithargs</program name:>
+  <迭代次数：>14</迭代次数：>
+  <program name:>print_graph</program name:>
+  <迭代次数：>25</迭代次数：>
+  <program name:>main</program name:>
+  <迭代次数：>34</迭代次数：>
+  <总迭代次数：>280</总迭代次数：>
+  <平均迭代次数：>15</平均迭代次数：>
+</static_statistics_information>

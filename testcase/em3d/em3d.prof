@@ -1,0 +1,81 @@
+Target machine parameters:
+  Little endian
+  Size of addressable units = 8
+  Default char type is signed
+  char type:       size = 8, align = 8
+  short type:      size = 16, align = 16
+  int type:        size = 32, align = 32
+  long type:       size = 32, align = 32
+  longlong type:   size = 32, align = 32
+  float type:      size = 32, align = 32
+  double type:     size = 64, align = 64
+  longdouble type: size = 64, align = 64
+  ptr type:        size = 32, align = 32
+  Array alignment = 8
+  Structure alignment = 8
+  Pointer difference type = 2 (see C_types enum)
+
+Runtime Statistics
+--------------Instructions-----------
+	NEG            : 0
+	NOT            : 0
+	ADD            : 19040
+	MUL            : 5926
+	AND            : 0
+	IOR            : 0
+	XOR            : 0
+	SUB            : 1820
+	DIV            : 80
+	REM            : 62
+	ASR            : 0
+	LSR            : 0
+	LSL            : 0
+	SEQ            : 64
+	SNE            : 1408
+	SL             : 810
+	SLE            : 2092
+	CPY            : 6
+	LOD            : 16618
+	STR            : 2262
+	MEMCPY         : 0
+	LDC            : 24252
+	BFALSE         : 2965
+	BTRUE          : 1409
+	JMP            : 703
+	CVT            : 226
+	CAL            : 1296
+	RET            : 388
+
+----------------Functions-------------
+	malloc         : 82        N/A
+	free           : 2         N/A
+	rand           : 142       N/A
+	compute_nodes  : 60        49 (code size)   	1044 (dynamic cycles)
+	initialize_graph: 1         42 (code size)   	8514 (dynamic cycles)
+	lrand48        : 62        3 (code size)   	3 (dynamic cycles)
+	drand48        : 80        6 (code size)   	6 (dynamic cycles)
+	srand48        : 0         3 (code size)   	0 (dynamic cycles)
+	init_random    : 0         5 (code size)   	0 (dynamic cycles)
+	gen_number     : 62        4 (code size)   	7 (dynamic cycles)
+	gen_signed_number: 0         11 (code size)   	0 (dynamic cycles)
+	gen_uniform_double: 80        3 (code size)   	9 (dynamic cycles)
+	check_percent  : 0         8 (code size)   	0 (dynamic cycles)
+	srand          : 0         N/A
+	make_table     : 2         7 (code size)   	7 (dynamic cycles)
+	fill_table     : 2         62 (code size)   	543 (dynamic cycles)
+	make_neighbors : 2         70 (code size)   	1736 (dynamic cycles)
+	update_from_coeffs: 2         55 (code size)   	1025 (dynamic cycles)
+	fill_from_fields: 2         44 (code size)   	925 (dynamic cycles)
+	dealwithargs   : 1         16 (code size)   	16 (dynamic cycles)
+	print_graph    : 31        44 (code size)   	314 (dynamic cycles)
+	main           : 1         31 (code size)   	81427 (dynamic cycles)
+	myprintf       : 33        N/A
+	myprintf1      : 30        N/A
+	myprintf6      : 620       N/A
+
+ # total number of instructions executed : 81427
+ # total number of instructions in program text(code) : 463
+ # total number of branches executed : 5077
+ # total number of condition branches executed : 4374
+ # total number of branch takens : 3270
+ # total probability of branch taken occured(takens/branches) : 0.644081

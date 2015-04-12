@@ -1,0 +1,28 @@
+usage:  health <# levels> <time> <seed>
+max_level=2  max_time=16  seed=1 
+
+
+    Columbian Health Care Simulator
+
+Working...
+0
+Done.
+
+# of people treated:              1.000000 people
+Average length of stay:           13.000000 time units
+Average # of hospitals visited:   1.000000 hospitals
+
+usage:  health <# levels> <time> <seed>
+max_level=2  max_time=16  seed=1 
+
+
+    Columbian Health Care Simulator
+
+Working...
+0
+Done.
+
+# of people treated:              1.000000 people
+Average length of stay:           13.000000 time units
+Average # of hospitals visited:   1.000000 hospitals
+

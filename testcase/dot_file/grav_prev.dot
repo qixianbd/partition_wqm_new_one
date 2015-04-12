@@ -11,10 +11,12 @@ digraph G{
 	Node3 -> {Node4 }
 	Node4 [label = "B4_3\ngrav.L1:\nla	r5	nd#249	\nsne	r6	r11	r5	\nbeqz	grav.L2\n"];
 	Node4 -> {Node5 Node7 }
-	Node5 [label = "B5_9\ngrav.L5:\nla	r19	nd#256	\nmov.d	r32	r40	\nmove	r7	r12	\nmove	r8	r11	\nmove	r4	r2	\nfst	r2	\nsw	nd#263	r13	\ns.d	nd#266	r42	\njalr	\n"];
+	Node5 [label = "B5_10\ngrav.L5:\nspawn	grav.L6\nla	r19	nd#256	\nmov.d	r32	r40	\nmove	r7	r12	\nmove	r8	r11	\nmove	r4	r2	\nfst	r2	\nsw	nd#263	r13	\ns.d	nd#266	r42	\njalr	\n"];
 	Node5 -> {Node6 }
-	Node6 [label = "B6_8\nli	r7	nd#271	\naddu	r8	r11	r7	\nlw	r11	nd#274	\nli	r9	nd#278	\naddu	r14	r14	r9	\nla	r10	nd#281	\nsne	r19	r11	r10	\nbnez	grav.L5\n"];
+	Node6 [label = "B6_16\nli	r7	nd#271	\naddu	r8	r11	r7	\nlw	r11	nd#274	\nli	r9	nd#278	\naddu	r14	r14	r9	\nla	r10	nd#281	\nsne	r19	r11	r10	\ncqip	grav.L6\ngrav.L6:\npslice_entry	grav.L6\nli	r7	nd#0	\naddu	r8	r11	r7	\nlw	r11	nd#0	\nla	r10	nd#0	\nsne	r19	r11	r10	\npslice_exit	grav.L6\nbnez	grav.L5\n"];
 	Node6 -> {Node7 Node5 }
 	Node7 [label = "B7_1\ngrav.L2:\njr	\n"];
 	Node7 -> {Node1 }
+	Node5 [shape = box ,style=filled ,color=red];
+	Node6 [shape = polygon ,style=filled ,color=yellow];
 }

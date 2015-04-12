@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding='ISO-8859-1' standalone='yes' ?>
+<static_statistics_information>
+  <program name:>dealwithargs</program name:>
+  <迭代次数：>11</迭代次数：>
+  <program name:>my_rand</program name:>
+  <迭代次数：>4</迭代次数：>
+  <program name:>generate_patient</program name:>
+  <迭代次数：>10</迭代次数：>
+  <program name:>put_in_hosp</program name:>
+  <迭代次数：>7</迭代次数：>
+  <program name:>addList</program name:>
+  <迭代次数：>12</迭代次数：>
+  <program name:>removeList</program name:>
+  <迭代次数：>14</迭代次数：>
+  <program name:>sim</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>check_patients_inside</program name:>
+  <迭代次数：>8</迭代次数：>
+  <program name:>check_patients_assess</program name:>
+  <迭代次数：>9</迭代次数：>
+  <program name:>check_patients_waiting</program name:>
+  <迭代次数：>9</迭代次数：>
+  <program name:>get_results</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>alloc_tree</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>main</program name:>
+  <迭代次数：>63</迭代次数：>
+  <总迭代次数：>156</总迭代次数：>
+  <平均迭代次数：>12</平均迭代次数：>
+</static_statistics_information>

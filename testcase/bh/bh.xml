@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding='ISO-8859-1' standalone='yes' ?>
+<static_statistics_information>
+  <program name:>dealwithargs</program name:>
+  <迭代次数：>9</迭代次数：>
+  <program name:>my_rand</program name:>
+  <迭代次数：>1</迭代次数：>
+  <program name:>xrand</program name:>
+  <迭代次数：>1</迭代次数：>
+  <program name:>subdivp</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>walksub</program name:>
+  <迭代次数：>24</迭代次数：>
+  <program name:>gravsub</program name:>
+  <迭代次数：>80</迭代次数：>
+  <program name:>intcoord</program name:>
+  <迭代次数：>62</迭代次数：>
+  <program name:>computegrav</program name:>
+  <迭代次数：>12</迭代次数：>
+  <program name:>maketree</program name:>
+  <迭代次数：>16</迭代次数：>
+  <program name:>vp</program name:>
+  <迭代次数：>29</迭代次数：>
+  <program name:>gravstep</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>ptree</program name:>
+  <迭代次数：>13</迭代次数：>
+  <program name:>testdata</program name:>
+  <迭代次数：>49</迭代次数：>
+  <program name:>uniform_testdata</program name:>
+  <迭代次数：>43</迭代次数：>
+  <program name:>stepsystem</program name:>
+  <迭代次数：>17</迭代次数：>
+  <program name:>old_main</program name:>
+  <迭代次数：>27</迭代次数：>
+  <program name:>my_free</program name:>
+  <迭代次数：>5</迭代次数：>
+  <program name:>ubody_alloc</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>freetree</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>freetree1</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>main</program name:>
+  <迭代次数：>31</迭代次数：>
+  <program name:>Srand</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>old_subindex</program name:>
+  <迭代次数：>6</迭代次数：>
+  <program name:>body_alloc</program name:>
+  <迭代次数：>7</迭代次数：>
+  <program name:>cell_alloc</program name:>
+  <迭代次数：>14</迭代次数：>
+  <program name:>grav</program name:>
+  <迭代次数：>14</迭代次数：>
+  <program name:>hackgrav</program name:>
+  <迭代次数：>26</迭代次数：>
+  <program name:>loadtree</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>expandbox</program name:>
+  <迭代次数：>20</迭代次数：>
+  <program name:>intcoord1</program name:>
+  <迭代次数：>60</迭代次数：>
+  <program name:>ic_test</program name:>
+  <迭代次数：>29</迭代次数：>
+  <program name:>subindex</program name:>
+  <迭代次数：>144</迭代次数：>
+  <program name:>hackcofm</program name:>
+  <迭代次数：>23</迭代次数：>
+  <program name:>dis2_number</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>dis_number</program name:>
+  <迭代次数：>3</迭代次数：>
+  <program name:>printtree</program name:>
+  <迭代次数：>3</迭代次数：>
+  <总迭代次数：>792</总迭代次数：>
+  <平均迭代次数：>22</平均迭代次数：>
+</static_statistics_information>

@@ -1,0 +1,15 @@
+###statistics information of thread size and pslice###
+pslice size: 	3		pslice size: 	7		loop thread size : 	16
+pslice size: 	9		loop thread size : 	19
+pslice size: 	6		loop thread size : 	54
+pslice size: 	6		loop thread size : 	62
+pslice size: 	7		loop thread size : 	109
+pslice size: 	4		pslice size: 	7		loop thread size : 	195
+pslice size: 	3		pslice size: 	5		pslice size: 	7		loop thread size : 	131
+pslice size: 	4		pslice size: 	7		loop thread size : 	44
+pslice size: 	6		loop thread size : 	46
+pslice size: 	6		loop thread size : 	71
+pslice size: 	3		pslice size: 	6		loop thread size : 	24
+pslice size: 	6		loop thread size : 	58
+pslice size: 	6		loop thread size : 	1865
+pslice size: 	3		pslice size: 	8		

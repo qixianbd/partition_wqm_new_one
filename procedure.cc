@@ -15,6 +15,8 @@
 #include "procedure_path.h"
 #include "spmt_utility.h"
 #include "threshold.h"
+#include "spmt_instr.h"
+#include "spawn_pos_trace.h"
 #include <math.h>
 
 
@@ -25,13 +27,13 @@ static void addHeadBlock(std::vector<super_block_path*> *thePathList, super_bloc
 static std::vector<super_block_path*> *addListToTail(std::vector<super_block_path*> *theMain, std::vector<super_block_path*> *theTail);
 static std::vector<super_block_path*> *twoSubPath(super_block *begin, super_block *end);
 static std::vector<super_block_path*> *nonDomToDom(super_block *begin, super_block *end);
-
+static int find_loop_optimal_dependence(loop_block * loop, super_block * likely_path, tnle ** spawn_pos);
 
 
 Procedure* Procedure::currentProcedure = NULL;
+std::vector<ProcPathCount*> * Procedure::procPathStat = NULL;
 static void construct_super_block_relationship(da_cfg* the_cfg, super_block_cfg * sbc);
 static void non_loop_partition(super_block_cfg *scfg);
-static loop_block * partition_loop(cfg_node * loop_entry);
 static cfg_node *peek_node(super_block * sb);
 static void Process_symtab(base_symtab * st, boolean descend, FILE * o_fd);
 
@@ -45,7 +47,21 @@ Procedure* Procedure::getCurrentProcedure(){
 
 
 
+void Procedure::init_thread_block(){
+	findDominatorList();
+	printDominatorList(std::cout);
+	determineThreadSize();
+	printCqipList(std::cout);
+	findMostLikelyPathOfProc();
+	this->likelyPath->printPath(std::cout);
+}
 
+void Procedure::updatePathListStat()const{
+	std::string name(this->cur_psym->name());
+	int count = this->pathList->size();
+	ProcPathCount *theStat = new ProcPathCount(name, count);
+	procPathStat->push_back(theStat);
+}
 void Procedure::init_dacfg(proc_sym *cur_psym) {
 	/*deal with procedure symbol ; make sure its legal*/
 			Process_symtab(cur_psym->block()->proc_syms(), TRUE, stdout);
@@ -101,20 +117,12 @@ void Procedure::init_dacfg(proc_sym *cur_psym) {
 			/*partition loops and construct super block cfg */
 			threads = new std::vector<thread*>();
 			loops = new std::vector<loop_block*>();
+			natual_loop_list = new std::vector<loop_block*>();
 			the_scfg = this->consturct_super_block_cfg();
 			pathList = new std::vector<ProcedurePath*>();
 			dominatorBlockList = new std::vector<super_block*>();
 			cqip_block_list = new std::vector<super_block*>();
-			theBranchBlockList = new std::queue<super_block*>();
-			findDominatorList();
-			printDominatorList(std::cout);
-			determineThreadSize();
-			printCqipList(std::cout);
-			if(strcmp(cur_psym->name(), "subdivp") == 0){
-				std::cout << "当前正在访问函数:" << cur_psym->name() << std::endl;
-			}
-			findMostLikelyPathOfProc();
-			this->likelyPath->printPath(std::cout);
+			theBranchBlockList = new std::vector<super_block*>();
 }
 /**
 * 2011-4-25 注释 by SYJ
@@ -153,9 +161,13 @@ static void Process_symtab(base_symtab * st, boolean descend, FILE * o_fd)
 
 Procedure::Procedure(mproc_symtab* the_cur_psymtab, proc_sym *the_cur_psym) : cur_psym(the_cur_psym), cur_psymtab(the_cur_psymtab), the_cfg(NULL), the_bit_mgr(NULL),
 		the_full_cnl(NULL), the_teller(NULL), the_reach(NULL), the_scfg(NULL),
-		threads(NULL), loops(NULL), pathList(NULL), dominatorBlockList(NULL), likelyPath(NULL), theBranchBlockList(NULL){
+		threads(NULL), loops(NULL),natual_loop_list(NULL),  pathList(NULL), dominatorBlockList(NULL), likelyPath(NULL), theBranchBlockList(NULL){
 	init_dacfg(cur_psym);
 	currentProcedure = this;
+	this->init_thread_block();
+	if(procPathStat == NULL){
+		procPathStat = new std::vector<ProcPathCount*>();
+	}
 }
 
 
@@ -213,6 +225,37 @@ ProcedurePath* Procedure::getProceurePath()const{
 	return this->likelyPath;
 }
 
+static bool super_block_cmp(const super_block* a, const super_block* b){
+	if(a->block_num() <= b->block_num()){
+		return true;
+	}
+	return false;
+}
+
+void Procedure::loop_partition(){
+	int loop_nums = this->natual_loop_list->size();
+	std::cout << "Here has " << loop_nums << "natural loops in the procedure. " << "\n";
+
+	for(int i = 0; i < loop_nums; i++){
+		loop_block* loop = this->natual_loop_list->at(i);
+		 super_block *likely_path = loop->most_likely_path();
+
+		    tnle* spawn_pos;
+		    unsigned int opt_dep = find_loop_optimal_dependence(loop, likely_path, &spawn_pos);
+		    //If content the condition, create thread from loop region
+		    if (opt_dep < threshold::dependence_threshold) {
+			// \brief :
+		    	create_thread_from_loop(loop, likely_path, spawn_pos);
+		    }
+	}
+}
+
+std::vector<super_block *>* Procedure::getTheBranchBlockList()const{
+	sort(theBranchBlockList->begin(), theBranchBlockList->end(), super_block_cmp);
+	printBranchBlockList(std::cout);
+	return this->theBranchBlockList;
+}
+
 
 void Procedure::addToCqipBlockList(super_block* block){
 	this->cqip_block_list->push_back(block);
@@ -250,36 +293,45 @@ static std::vector<super_block_path*> *isImParentAndReturn(super_block *begin, s
 
 	// case 2.  fall=end, taken!= NULL(may be huge)
 	if(begin->fall_succ() == end && begin->take_succ() != NULL){
+		branchBlockQueue->push(begin);
 		super_block_path* subPath = new super_block_path();
 		subPath->add_super_block(begin);
 		thePathList->push_back(subPath);
 
-		std::vector<super_block_path*> *theBranchPathList = nonDomToDom(begin->take_succ(), end);
-		addHeadBlock(theBranchPathList, begin);
-		addListToTail(thePathList, theBranchPathList);
+		if(begin->taken_prob() >=  threshold::branch_probability_lower){
+			std::vector<super_block_path*> *theBranchPathList = nonDomToDom(begin->take_succ(), end);
+			addHeadBlock(theBranchPathList, begin);
+			addListToTail(thePathList, theBranchPathList);
+		}
+
 		return thePathList;
 	}
 
 	// case 3. taken=end, fall != NULL, fall may be very huge.
 	if(begin->take_succ() == end && begin->fall_succ() != NULL){
+		branchBlockQueue->push(begin);
 		super_block_path* subPath = new super_block_path();
 		subPath->add_super_block(begin);
 		thePathList->push_back(subPath);
 
-		std::vector<super_block_path*> *theBranchPathList = nonDomToDom(begin->fall_succ(), end);
-		addHeadBlock(theBranchPathList, begin);
-		addListToTail(thePathList, theBranchPathList);
+		if(begin->fall_prob() >= threshold::branch_probability_lower ){
+			std::vector<super_block_path*> *theBranchPathList = nonDomToDom(begin->fall_succ(), end);
+			addHeadBlock(theBranchPathList, begin);
+			addListToTail(thePathList, theBranchPathList);
+		}
 		return thePathList;
 	}
 
 	assert(begin->fall_succ() != NULL && begin->take_succ() != NULL);
 	// case 4. begin->next->next = end.
 	if(begin->fall_succ()->likely_succ() == end && begin->take_succ()->likely_succ() == end){
+		branchBlockQueue->push(begin);
 		delete thePathList;
 		return twoSubPath(begin, end);
 	}
 
 	// case 5. others return NULL.
+//	assert(0);		//此处有bug.
 	return NULL;
 }
 
@@ -322,13 +374,13 @@ static std::vector<super_block_path*> *twoSubPath(super_block *begin, super_bloc
 //		return thePathList;
 //	}
 
-	if(begin->taken_prob() >= 0.001){
+	if(begin->taken_prob() >= threshold::branch_probability_lower){
 		super_block_path* subPath = new super_block_path();
 		subPath->add_super_block(begin);
 		subPath->add_super_block(begin->take_succ());
 		thePathList->push_back(subPath);
 	}
-	if(begin->fall_prob() >= 0.001){
+	if(begin->fall_prob() >= threshold::branch_probability_lower){
 		super_block_path* subPath = new super_block_path();
 		subPath->add_super_block(begin);
 		subPath->add_super_block(begin->fall_succ());
@@ -448,7 +500,7 @@ std::vector<super_block_path*> * findBlockPath(super_block *begin, super_block *
 	pathList = new std::vector<super_block_path*>();
 	super_block_path* subPath = new super_block_path();
 
-	if(diffProbability  > 0.9995){			// means that there should be only one sub path from the begin to the end.
+	if(diffProbability  > (1-2*threshold::branch_probability_lower) ){			// means that there should be only one sub path from the begin to the end.
 		// find the most likely path  from begin  to end.
 		//subPath->add_super_block(begin);
 		super_block *the_block = begin;
@@ -462,7 +514,7 @@ std::vector<super_block_path*> * findBlockPath(super_block *begin, super_block *
 
 	std::vector<super_block_path*>* thePathList = new std::vector<super_block_path*>();
 	the_branch_pdom = the_branch_block->immed_pdom();
-	branchBlockQueue->push(the_branch_pdom);
+	branchBlockQueue->push(the_branch_block);
 	std::cout << the_branch_pdom->block_num() << std::endl;
 
 	{
@@ -523,9 +575,11 @@ std::vector<super_block_path*> * Procedure::findSubPathInDoms(super_block *dom_b
 	std::cout << "The Branch Queue is as following:" << std::endl;
 	while(!branchBlockQueue->empty()){
 		std::cout << branchBlockQueue->front()->block_num()<< std::endl;
+		this->theBranchBlockList->push_back(branchBlockQueue->front());
 		branchBlockQueue->pop();
 	}
 	std::cout  << std::endl;
+
 	return subPathList;
 }
 
@@ -555,7 +609,6 @@ std::vector<super_block_path*>*  Procedure::findMostLikelySubPathInThreadBlock(s
 
 
 
-
 /**
  * search the possible sub path in the thread block. The path is in the range [begin, end).
  */
@@ -569,17 +622,14 @@ void Procedure::findAllPathInThreadBlock(super_block *begin, super_block *end){
 
 	while(1){
 		while(block != end){
-				if(block->isTakenVisit() == false && block->taken_prob() > 0.25){
-					if(block->taken_prob() < 0.6){
-						block->setTakenVisit(true);
-					}
+				if(block->isTakenVisit() == false && block->taken_prob() > threshold::branch_probability_lower){
+					block->setTakenVisit(true);
 					block = block->take_succ();
 				}
-				else if(block->isFallVisit() == false && block->taken_prob() > 0.25){
+				else if(block->isFallVisit() == false && block->taken_prob() > threshold::branch_probability_lower ){
 					block->setFallVisit(true);
 					block = block->fall_succ();
 				}
-
 
 				if(block != NULL && block != end){
 					subPath->add_super_block(block);
@@ -698,6 +748,9 @@ void Procedure::findAllProcedurePathList(std::ofstream& os){
 	// 剔除重复的部分。  如果代码没有bug, 则重复部分应该都与最可能路径完全相同。 并且如果代码没有bug, 则， 通过上述方式寻找的路径中必然包括最可能路径。
 	os << "The Original All ProcedurePath in the PathList is :" << std::endl;
 	this->printProcedurePathList(os);
+
+	/**
+	 *
 	ProcedurePath *mostLikelyProcedurePath = this->likelyPath;
 	int sameCount = 0;
 	for(int i = 0; i < pathList->size(); i++){
@@ -725,6 +778,8 @@ void Procedure::findAllProcedurePathList(std::ofstream& os){
 //	}
 	std::vector<ProcedurePath*>::iterator pos = remove(pathList->begin(), pathList->end(), (void*)NULL);
 	pathList->erase(pos, pathList->end());
+
+	*/
 	return ;
 }
 
@@ -743,7 +798,7 @@ void Procedure::determineThreadSize(){
 	super_block* pdom = start_block->immed_pdom();
 	super_block_path* likely_path = ThreadPartition::find_most_likely_path(start_block, end_block);
 	std::vector<super_block*> *path = likely_path->getSuperblockVectorList();
-	if(likely_path->size() < 2* threshold::thread_size_lower){		// this path is too short to cut into at least two threads.
+	if(likely_path->size() < (int)(2* threshold::thread_size_lower)){		// this path is too short to cut into at least two threads.
 		return ;
 	}
 
@@ -764,7 +819,7 @@ void Procedure::determineThreadSize(){
 		}
 		pre_thread_size = (pre_thread_size == 0 ? super_block_list_size(&pcur_thread): pre_thread_size);
 		int pfuture_thread_size = likely_path->size() - pre_thread_size;
-		if(path_pos < path->size()  && pfuture_thread_size >= (int)threshold::thread_size_lower){
+		if(path_pos < path->size()  && pfuture_thread_size >= (int)(threshold::thread_size_lower*0.5)){
 			super_block *block = (*path)[path_pos];
 #define DEBUG_THIS
 #ifdef DEBUG_THIS
@@ -809,9 +864,45 @@ void Procedure::findDominatorList(){
 	return ;
 }
 
+static void test_olden_procedure(const char* procedureName){
+	std::cout << "当前正在调试测试的函数:" << procedureName<< std::endl;
+	std::string procName(procedureName);
+	if(procName == "body_alloc"){
+		std::cout << "测试 函数" << procName << std::endl;
+	}
+	else if (procName == "HashLookup"){
+		std::cout << "测试 函数" << procName << std::endl;
+	}
+	else if (procName == "compute_dist"){
+		std::cout << "测试 函数" << procName << std::endl;
+	}
+	else if (procName == "hashfunc"){
+		std::cout << "测试 函数" << procName << std::endl;
+	}
+	else if (procName == "localmalloc"){
+		std::cout << "测试 函数" << procName << std::endl;
+	}
+	else if (procName == "BlueRule"){
+		std::cout << "测试 函数" << procName << std::endl;
+	}
+	else if (procName == "vp"){
+		std::cout << "测试 函数" << procName << std::endl;
+	}
+	else if (procName == "main"){
+		std::cout << "测试 函数" << procName << std::endl;
+	}
+	return ;
+}
 
 
 void Procedure::processProcedure(){
+
+	this->loop_partition();
+	//write the loop info, and insert the loop instructions.
+	for(std::vector<loop_block*>::iterator it = loops->begin(); it != loops->end(); it++){
+		loop_block *loop = *it;
+		loop->write_spawn_info();
+	}
 
 	/**
 	 * The following code are used to debug.
@@ -827,9 +918,8 @@ void Procedure::processProcedure(){
 
 		fprintf(options->getNodeNumTestFilePtr(), "\n当前访问函数:%s:\n", cur_psym->name());
 		std::cout << "当前正在访问函数:" << cur_psym->name() << std::endl;
-		if(strcmp(cur_psym->name(), "ptree") == 0){
-			std::cout << "当前正在访问函数:" << cur_psym->name() << std::endl;
-		}
+		test_olden_procedure(cur_psym->name());
+
 		//this->findAllSuitablePathList();
 		this->findAllProcedurePathList(theDataStream);
 #define CATCH_DATA_
@@ -849,13 +939,13 @@ void Procedure::processProcedure(){
 		for(int i = 0; i < pathList->size(); i++){
 			pathList->at(i)->printPath(std::cout);
 		}
+		this->updatePathListStat();
 		this->printCqipList(std::cout);
-
 		ProcedurePath *theProcPath = NULL;
 		for(int i = 0; i < pathList->size(); i++){
 				theProcPath = (*pathList)[i];
 				ThreadPartition tp(theProcPath);
-				tp.partition_thread();
+				tp.partition_thread_new1();
 		}
 
 		if (options->getVerbose()) {
@@ -874,7 +964,7 @@ super_block_cfg*  Procedure::consturct_super_block_cfg() {
 			if (the_cfg->is_loop_begin(i))	//If cfg_block is loop begin
 			{
 				//partition loop region, then set the loop region to one super block
-				loop_block *loop = partition_loop(the_cfg->node(i));
+				loop_block *loop = constructAndGetLoops(the_cfg->node(i));
 				loop->set_block_num(i);
 				scfg->append(loop);
 				cfg_node *succ_node = loop->find_succ_node(the_cfg);
@@ -1152,14 +1242,212 @@ loop_block *Procedure::construct_loop(cfg_node * loop_entry)
     return loop;
 }
 
+
+/*
+ *create_thread_thread_from_loop() --- create thread from the loop region.
+ */
+loop_block *Procedure::create_thread_from_loop(loop_block * loop,
+				    super_block * spawn_path,
+				    tnle * spawn_pos)
+{
+    Procedure *proc = Procedure::getCurrentProcedure();
+    da_cfg *the_cfg = proc->getTheCfg();
+    reaching_def_problem *the_reach = proc->getTheReach();
+    operand_bit_manager *the_bit_mgr  = proc->getTheBitMgr();
+
+
+//    cfg_block *cqip_block = (cfg_block *)loop->entry_node();
+    cfg_block *cqip_block = (cfg_block *) loop->end_node();
+/*
+    cfg_block *entry_node = (cfg_block *)loop->entry_node();
+    cfg_node_list_iter iter(loop->exit_nodes());
+    cfg_node *exit_node;
+    while(!iter.is_empty())
+    {
+        exit_node = iter.step();
+        if(exit_node == entry_node)
+            continue;
+        else
+            break;
+    }
+    cfg_block *cqip_block = (cfg_block *)exit_node;
+*/
+    //insert cqip point for loop region
+    tnle *cqip_pos = insert_cqip_instr_for_loop(cqip_block, false);
+    label_sym *cqip_pos_num = peek_cqip_pos(cqip_pos);
+
+    //find live-ins and construct pre-compute slice
+    bit_set liveins;		//由当前线程的父线程产生，而当前线程要使用的变量
+
+    // \brief : live-ins in the loop region are wrong!!! modified in 3.13
+    the_cfg->find_liveins_of_loop(loop, the_bit_mgr, &liveins);
+    //the_cfg->find_liveins(spawn_path, the_bit_mgr, &liveins);
+
+    bit_set *ins_dep = new bit_set(0, the_reach->catalog()->num_defs());
+    ThreadPartition::search_pslice_instrs(&liveins, spawn_path, spawn_pos, ins_dep);
+
+    tree_node_list *pslice = new tree_node_list;
+    construct_pslice(ins_dep, cqip_pos_num, pslice);
+
+    cfg_block *spawn_block = spawn_path->in_which_block(spawn_pos);
+
+    //set spawn information for the loop region
+    loop->find_succ_node(the_cfg);
+    printf("loop_succ_node:");
+
+    loop->set_cqip_pos(cqip_pos);
+    loop->set_cqip_block(cqip_block);
+
+    loop->set_spawn_info(spawn_pos, spawn_block, pslice, cqip_pos_num);
+    loops->push_back(loop);
+    return loop;
+}
+
+/*
+ *find_loop_optimal_dependence() --- find the optimal dependence of the loop super block, get the spawn point.
+ */
+int find_loop_optimal_dependence(loop_block * loop,
+				 super_block * likely_path,
+				 tnle ** spawn_pos)
+{
+    Procedure *proc = Procedure::getCurrentProcedure();
+    da_cfg *the_cfg = proc->getTheCfg();
+    reaching_def_problem *the_reach = proc->getTheReach();
+    operand_bit_manager *the_bit_mgr  = proc->getTheBitMgr();
+
+
+    int opt_dep = 0x7FFFFFFF;
+    bit_set live_ins;
+
+    bit_set liveins;
+
+    // \brief: find liveins of loop
+    the_cfg->find_liveins(likely_path, the_bit_mgr, &liveins);
+
+    spawn_pos_trace *pos_trace = new spawn_pos_trace();
+    pos_trace->construct_loop_spawn_pos_trace(likely_path);
+    super_block *spawn_path = likely_path;
+
+    bit_set *original_ins_dep =
+	new bit_set(0, the_reach->catalog()->num_defs());
+    search_latest_define_point(&liveins, spawn_path, original_ins_dep);
+
+    bit_set *related = new bit_set(0, the_reach->catalog()->num_defs());
+    search_related_point(&liveins, spawn_path, related);
+
+    pos_trace->analyze_related_cals(the_reach, related);
+
+    bit_set *ins_dep = new bit_set(0, the_reach->catalog()->num_defs());
+    //If the spawn position trace has the call instruction
+    if (pos_trace->related_cal_num() != 0) {
+	std::vector < machine_instr * >*related_cals =
+	    pos_trace->get_related_cals();
+	std::vector < machine_instr * >::iterator cal_iter;
+	std::vector < machine_instr * >::iterator cal_end =
+	    related_cals->end();
+
+	int cal_pos_count = pos_trace->instr_size();
+	for (cal_iter = related_cals->begin(); cal_iter != cal_end;
+	     cal_iter++) {
+	    int count_end = cal_pos_count;
+
+	    machine_instr *cal_instr = *cal_iter;
+	    cal_pos_count = pos_trace->instr_count(cal_instr);
+	    int count = cal_pos_count + 1;
+	    // \brief: spawn position tries to be after function call
+	    *spawn_pos =
+		pos_trace->instr_access(count)->parent()->list_e();
+
+	    *ins_dep = *original_ins_dep;
+	    ThreadPartition::pruning_instrs_before_spawn(ins_dep, pos_trace, *spawn_pos);
+
+	    while (count >= 0 && count <= count_end) {
+		tree_instr *t_ins = (tree_instr *) (*spawn_pos)->contents;
+		unsigned int spawning_distance =
+				ThreadPartition::compute_spawning_distance(spawn_path,
+					      (machine_instr *) t_ins->
+					      instr());
+
+		if (spawning_distance < threshold::spawning_distance_lower)
+		    goto loop_od_out;
+
+		if (ins_dep->count() < threshold::dependence_threshold) {
+		    opt_dep = ins_dep->count();
+		    goto loop_od_out;
+		}
+		//update the dependence
+		bit_set_iter dep_iter(ins_dep);
+		while (!dep_iter.is_empty()) {
+		    int n = dep_iter.step();
+		    machine_instr *test =
+			(machine_instr *) the_reach->catalog()->lookup(n);
+		    if (test && test->parent()->list_e() == (*spawn_pos))
+			ins_dep->remove(n);
+		}
+		count++;
+		*spawn_pos =
+		    pos_trace->instr_access(count)->parent()->list_e();
+	    }
+	}
+    }
+    //If the spawn position trace doesn't have the call instruction
+    else {
+	int count_end = pos_trace->instr_size();
+	int count = 0;
+//        if(pos_trace->instr_access(count))     ///
+	*spawn_pos = pos_trace->instr_access(count)->parent()->list_e();
+//        *spawn_pos = pos_trace->instr_access(count);
+
+	*ins_dep = *original_ins_dep;
+	ThreadPartition::pruning_instrs_before_spawn(ins_dep, pos_trace, *spawn_pos);
+
+	while (count >= 0 && count <= count_end) {
+	    tree_instr *t_ins = (tree_instr *) (*spawn_pos)->contents;
+	    unsigned int spawning_distance =
+	    		ThreadPartition::compute_spawning_distance(spawn_path,
+					  (machine_instr *) t_ins->
+					  instr());
+
+	    if (spawning_distance < threshold::spawning_distance_lower)
+		goto loop_od_out;
+
+	    if (ins_dep->count() < threshold::dependence_threshold) {
+		opt_dep = ins_dep->count();
+		goto loop_od_out;
+	    }
+
+	    bit_set_iter dep_iter(ins_dep);
+	    while (!dep_iter.is_empty()) {
+		int n = dep_iter.step();
+		machine_instr *test =
+		    (machine_instr *) the_reach->catalog()->lookup(n);
+		if (test && test->parent()->list_e() == (*spawn_pos))
+		    ins_dep->remove(n);
+	    }
+	    count++;
+	    *spawn_pos =
+		pos_trace->instr_access(count)->parent()->list_e();
+	}
+
+    }
+  loop_od_out:
+    delete pos_trace;
+    delete original_ins_dep;
+    delete related;
+    delete ins_dep;
+    return opt_dep;
+}
+
+
 /*
  *partition_loop() --- partition loop region.
  */
-loop_block * Procedure::partition_loop(cfg_node * loop_entry)
+loop_block * Procedure::constructAndGetLoops(cfg_node * loop_entry)
 {
     //construct loop region
     loop_block *loop = construct_loop(loop_entry);
     loop->print();
+    this->natual_loop_list->push_back(loop);
 	return loop;
 }
 
@@ -1205,6 +1493,22 @@ void Procedure::printProcedurePathList(std::ostream& os)const{
 	}
 	return ;
 }
+
+void Procedure::printBranchBlockList(std::ostream& os)const{
+	os << "The Branch Super Block List Has " << this->theBranchBlockList->size() << " #super blocks" << std::endl;
+	for(std::vector<super_block*>::const_iterator cit = this->theBranchBlockList->begin(); cit != this->theBranchBlockList->end(); cit++){
+		os << (*cit)->block_num() << "\t";
+	}
+	os << "\n";
+	return;
+}
+
+void Procedure::printProcPathStat(std::ostream& os){
+	os << "The ProcAcount is as the following:" << std::endl;
+	for(std::vector<ProcPathCount*>::iterator it = procPathStat->begin(); it != procPathStat->end(); it++){
+		os << (*it)->procName << ":" << (*it)->pathCount << "\n";
+	}
+}
 void Procedure::printCqipList(std::ostream& os)const {
 	os << "The cqipList size is : " << cqip_block_list->size() << " .\n";
 	for(std::vector<super_block*>::const_iterator cit = cqip_block_list->begin(); cit != cqip_block_list->end(); cit++){
@@ -1245,7 +1549,7 @@ void Procedure::generate_dot(char *procedureName, PrintGraphFlag suffixFlag)
  * @param fp
  * 依赖的全局变量: 无
  */
-void print_instruction(instruction* in, FILE *fp = stdout)
+void print_instruction(instruction* in, FILE *fp)
 {
 	assert(in);
 

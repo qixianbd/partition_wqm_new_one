@@ -9,7 +9,7 @@ digraph G{
 	Node2 -> {Node3 }
 	Node3 [label = "B3_6\nmove	r11	r9	\nmove	r27	r0	\nsne	r28	r11	r27	\nmove	r5	r0	\nseq	r6	r28	r5	\nbeqz	expandbox.L1\n"];
 	Node3 -> {Node4 Node27 }
-	Node4 [label = "B4_7\nexpandbox.L4:\nli	r7	nd#1325	\naddu	r8	r12	r7	\nl.d	r40	nd#1328	\nli.d	r52	nd#1332	\nli	r9	nd#1334	\nc.lt.d	r40	r52	\nbc1t	expandbox.L15\n"];
+	Node4 [label = "B4_8\nexpandbox.L4:\nspawn	expandbox.L17\nli	r7	nd#1325	\naddu	r8	r12	r7	\nl.d	r40	nd#1328	\nli.d	r52	nd#1332	\nli	r9	nd#1334	\nc.lt.d	r40	r52	\nbc1t	expandbox.L15\n"];
 	Node4 -> {Node5 Node6 }
 	Node5 [label = "B5_1\nmove	r9	r0	\n"];
 	Node5 -> {Node6 }
@@ -53,8 +53,10 @@ digraph G{
 	Node24 -> {Node25 }
 	Node25 [label = "B25_1\nmove	r11	r9	\n"];
 	Node25 -> {Node26 }
-	Node26 [label = "B26_5\nexpandbox.L11:\nmove	r5	r0	\nsne	r6	r11	r5	\nmove	r7	r0	\nseq	r8	r6	r7	\nbnez	expandbox.L4\n"];
+	Node26 [label = "B26_13\nexpandbox.L11:\nmove	r5	r0	\nsne	r6	r11	r5	\nmove	r7	r0	\nseq	r8	r6	r7	\ncqip	expandbox.L17\nexpandbox.L17:\npslice_entry	expandbox.L17\nmove	r11	r9	\nmove	r5	r0	\nsne	r6	r11	r5	\nmove	r7	r0	\nseq	r8	r6	r7	\npslice_exit	expandbox.L17\nbnez	expandbox.L4\n"];
 	Node26 -> {Node27 Node4 }
 	Node27 [label = "B27_1\nexpandbox.L1:\njr	\n"];
 	Node27 -> {Node1 }
+	Node4 [shape = box ,style=filled ,color=red];
+	Node26 [shape = polygon ,style=filled ,color=yellow];
 }

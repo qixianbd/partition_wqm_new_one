@@ -15,11 +15,11 @@
 #include "procedure.h"
 #include "misc.h"
 #include "spmt_instr.h"
+#include "spawn_pos_trace.h"
 
 /**
  * static function set
  */
-static unsigned int find_min_dependence(thread* currentThread, thread* futureThread, tnle* &spawn_ins_pos);
 tree_node_list *construct_pslice(bit_set * ins_dep, label_sym * cqip_pos, tree_node_list * pslice);
 
 ThreadPartition::ThreadPartition(ProcedurePath* theProcPath): threadList(NULL), procPath(theProcPath),
@@ -123,16 +123,63 @@ unsigned int ThreadPartition::find_min_dependence(thread* current_thread, thread
     the_cfg->find_liveins(future_thread->convert_to_super_block(), the_bit_mgr, &liveins);
 
     unsigned int spawning_distance = 0xffffffff;
-    super_block_path* spawn_cqip_path = current_thread;
-    super_block *spawn_blocks = spawn_cqip_path->convert_to_super_block();
 
+    fprintf(stdout, "The current thread is ##");
+    current_thread->printOnlyBlockNum(stdout);
+    super_block *range_end_block = NULL;
+    super_block *range_start_block = this->find_permitted_range_start(current_thread->getSuperblockVectorList(), range_end_block);
+    super_block_path* spawn_cqip_path =this->getRangePath(current_thread->getSuperblockVectorList(), range_start_block, range_end_block);
+    spawn_cqip_path->printOnlyBlockNum(stdout);
+    if(spawn_cqip_path->super_blocks()->is_empty()){
+    	// 如果没有合适的范围供spawn 插入
+    	spawn_ins_pos = NULL;
+    	return spawning_distance;
+    }
+
+    super_block *spawn_blocks = spawn_cqip_path->convert_to_super_block();
     bit_set *original_ins_dep = new bit_set(0, the_reach->catalog()->num_defs());
     search_latest_define_point(&liveins, spawn_blocks, original_ins_dep);
 
     bit_set *ins_dep = new bit_set(0, the_reach->catalog()->num_defs());
+    bit_set *call_related = new bit_set(0, the_reach->catalog()->num_defs());
+    call_related->clear();
+
+
 
     int spawn_pos_end = spawn_blocks->instr_size();
-    for(int counter = 0; counter < spawn_pos_end; counter++){
+    spawn_ins_pos = NULL;
+
+    spawn_pos_trace *spawn_trace = new spawn_pos_trace();
+    spawn_trace->construct_loop_spawn_pos_trace(spawn_blocks);
+    search_related_point(&liveins, spawn_trace, call_related);
+    spawn_trace->analyze_related_cals(the_reach, call_related);
+    spawn_trace->print(stdout);
+    fprintf(stdout, "\n");
+    call_related->print();
+    fprintf(stdout, "\n");
+
+    unsigned int cal_num = spawn_trace->related_cal_num();
+    if(cal_num != 0){
+    	 std::cout << "The thread has call " << cal_num << std::endl;
+    }
+
+	std::vector < machine_instr * >*cal_instrs = spawn_trace->get_related_cals();
+		std::vector < machine_instr * >::reverse_iterator riter;
+
+		int cal_pos_num = spawn_pos_end;
+
+		riter = cal_instrs->rbegin();
+		int counter = 0;
+
+		if (riter == cal_instrs->rend())
+			counter = 0;
+		else {
+			machine_instr *cal_instr = *riter;
+			cal_pos_num = spawn_trace->instr_count(cal_instr);
+			counter = cal_pos_num + 1;
+		}
+
+    for( ; counter < spawn_pos_end; counter++){
     	opt_dep_count = UINT_MAX;
     	machine_instr *spawn_pos_instr = spawn_blocks->instr_access(counter);
     	spawn_ins_pos = spawn_pos_instr->parent()->list_e();
@@ -197,10 +244,12 @@ void ThreadPartition::finish_construction(thread* current_thread, thread* future
 
 		super_block_cfg* the_scfg = Procedure::getCurrentProcedure()->getTheScfg();
 		super_block *spawn_sblock = the_scfg->in_which_super_block(current_thread->get_spawned_pos());
-		spawned_block = (cfg_block *) spawn_sblock->first_block();
+
+		cfg_block* the_spawned_block = (cfg_block *) spawn_sblock->in_which_block(current_thread->get_spawned_pos());
+		assert(the_spawned_block->contains(current_thread->get_spawned_pos()));
 		current_thread->set_cqip_block(cqip_block);
 		current_thread->set_cqip_pos(cqip_pos);
-		current_thread->set_spawned_block(spawned_block);
+		//current_thread->set_spawned_block(spawned_block);
 
 
 		/**
@@ -225,14 +274,148 @@ void ThreadPartition::finish_construction(thread* current_thread, thread* future
 
 	    //3month 8days
 	  //  insert_spawn_instr(spawned_block, spawn_pos, cqip_pos_num);
-		current_thread->set_spawn_info(spawned_block, pslice, cqip_pos_num);
+		current_thread->set_spawn_info(the_spawned_block, pslice, cqip_pos_num);
 		return ;
+}
+
+
+super_block* ThreadPartition::find_permitted_range_start(std::vector<super_block*> *cur_sblock_list, super_block* &end_block){
+	assert(cur_sblock_list != NULL);
+	assert(!cur_sblock_list->empty());
+
+	std::vector<super_block*>* theBranchBlockList = Procedure::getCurrentProcedure()->getTheBranchBlockList();
+	if(theBranchBlockList->empty()){
+		end_block = cur_sblock_list->front()->immed_pdom();
+		return cur_sblock_list->front();
+	}
+	for(int i = cur_sblock_list->size() - 1; i >= 0; i-- ){
+		std::cout << cur_sblock_list->at(i)->block_num() << std::endl;
+		for(int j = theBranchBlockList->size() -1; j >= 0; j--){
+			if(cur_sblock_list->at(i)->block_num() == theBranchBlockList->at(j)->block_num()){
+				if(i+1 < cur_sblock_list->size()){
+					end_block =cur_sblock_list->at(i)->immed_pdom();
+					return cur_sblock_list->at(i+1);
+				}
+				else{
+					end_block = cur_sblock_list->front()->immed_pdom();
+					return cur_sblock_list->front();
+				}// end else
+
+			}// end else
+		}// end inner for
+	}// end outer for
+
+	end_block = cur_sblock_list->front()->immed_pdom();
+	return cur_sblock_list->front();
+}
+
+super_block_path* ThreadPartition::getRangePath(std::vector<super_block*> *cur_sblock_list, super_block* start_block, super_block* range_end_block){
+	assert(cur_sblock_list != NULL);
+	assert(!cur_sblock_list->empty());
+	assert(start_block != NULL);
+
+	for(int i = 0; i < cur_sblock_list->size(); i++){
+		std::cout << cur_sblock_list->at(i)->block_num() << std::endl;
+	}
+	super_block_path* rangePath = new super_block_path();
+	super_block *end_block = range_end_block;
+	bool inTheRange = false;
+	for(int i = 0; i < cur_sblock_list->size(); i++){
+		if(cur_sblock_list->at(i) == start_block){
+			inTheRange = true;
+			//continue;
+		}
+		if(inTheRange){
+			if(cur_sblock_list->at(i) == end_block){
+				break;
+			}
+			rangePath->add_super_block(cur_sblock_list->at(i));
+		}
+	}
+
+	return rangePath;
+}
+
+
+void ThreadPartition::partition_thread_new1(){
+	if(this->procPath->getCqipNumber() < 1){			// the path is too short so that we can not partition it into more threads (>=2). we need no partition here.
+		return ;
+	}
+	int keyThreadBlockNum = this->procPath->getKeyThreadBlock();
+
+	procPath->printThreadBlock(std::cout);
+	if(keyThreadBlockNum == procPath->getCqipNumber()){			// The last thread block of this procedure, then we should not insert spawn instruction in this areas.
+		return ;
+	}
+
+
+
+
+
+
+	int threadNum = keyThreadBlockNum;
+	//////// The key code, which are the same with the partition_thread.
+	std::vector<super_block*> *cur_sblock_list, *future_sblock_list;
+	cur_sblock_list = procPath->getThreadList()->at(threadNum);
+	future_sblock_list = procPath->getThreadList()->at(threadNum+1);
+
+//	super_block *range_start = find_permitted_range_start(cur_sblock_list);
+//	super_block *range_end = range_start->immed_pdom();
+
+	thread *cur_thread = NULL, *future_thread = NULL;
+	cur_thread = new thread();
+	future_thread = new thread();
+	cur_thread->add_super_block_vector(cur_sblock_list);
+	future_thread->add_super_block_vector(future_sblock_list);
+
+	if (cur_thread->size() < threshold::thread_size_lower){				// The current thread in this procedure path is too short, and we should not partition it.
+		return ;
+	}
+	if(cur_thread->size() > threshold::thread_size_upper){		// The current thread is too large, we need to partition it to two thread.
+
+	}
+	//1. find the optional dependence count between the current thread the future threads.
+	tnle* spawn_ins_pos = NULL;
+	unsigned int opt_dep_count = find_min_dependence(cur_thread, future_thread, spawn_ins_pos);
+	if(opt_dep_count >= threshold::dependence_threshold){
+		// we should not thread this thread. That means we should not insert the spawn and pslice segment.
+		// then how about the cqip instruction? For it seems to produce no harm for us to execute a cqip, so we hold the cqip instruction.
+		return ;
+	}
+
+	//2. the dep is suitable, then the spawn_ins_pos becomes available and legal to use.
+	cur_thread->set_spawned_pos(spawn_ins_pos);
+	cur_thread->set_thread_type(thread::NONSPECULATIVE);
+	fprintf(stdout, "The optional dependences count is : %u\n", opt_dep_count);
+	cur_thread->printSpawnPosition(std::cout);
+
+	//3. Then we should found out the pslice segment.
+	finish_construction(cur_thread, future_thread);
+
+	//4. After found out the spawn pos, pslice segment, then write the infomation to the cfg lowlevel representation.
+#define PRINT_DEBUG
+#ifdef PRINT_DEBUG
+		/**
+		 * The following code are mainly debug information.
+		 */
+		std::cout << "This path can be partitioned like the following:***********" << std::endl << procPath->getThreadList()->size() << " Threads" << std::endl;
+		procPath->printThreadBlock(std::cout);
+		char *procName = Procedure::getCurrentProcedure()->getCurPsym()->name();
+		if(strcmp(procName, "body_alloc") == 0){
+			cur_thread->printSuperBlocks(std::cout);
+		}
+		cur_thread->printSuperBlocks(std::cout);
+#endif
+	cur_thread->write_spawn_info();
+
 }
 
 void ThreadPartition::partition_thread() {
 	if(this->procPath->getCqipNumber() < 1){			// the path is too short so that we can not partition it into more threads (>=2). we need no partition here.
 		return ;
 	}
+
+	int threadBlock = this->procPath->getKeyThreadBlock();
 
 	procPath->printThreadBlock(std::cout);
 

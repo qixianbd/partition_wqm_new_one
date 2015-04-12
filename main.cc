@@ -62,6 +62,7 @@ static void readAndProcessFiles(){
 	delete fileset;
 }
 
+
 int main(int argc, char** argv)
 {
 	start_suif(argc, argv);

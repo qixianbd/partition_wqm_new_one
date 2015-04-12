@@ -67,6 +67,7 @@ public:
 	~ProcedurePath();
 	void addSuperBlock(super_block* );
 	unsigned int  blockNumber();
+	int getKeyThreadBlock()const;
 	unsigned int size();
 
 	unsigned int getCqipNumber()const;
@@ -76,6 +77,7 @@ public:
 		return thread_list;
 	}
 	static bool isDominator(super_block* block);
+
 
 /**
  * debug information. print out the object's content.

@@ -1,0 +1,19 @@
+digraph G{
+	label = "main"	style = "dashed";
+	color = purple;
+	Node0 [label = "Begin"];
+	Node0 -> {Node2 }
+	Node1 [label = "End"];
+	Node1 -> {}
+	Node2 [label = "B2_5\nspawn	main.L2\nla	r19	nd#131	\nmove	r4	r2	\nfst	r2	\njalr	\n"];
+	Node2 -> {Node3 }
+	Node3 [label = "B3_7\nla	r19	nd#137	\nla	r5	nd#139	\nlw	r6	nd#141	\nlw	r7	nd#143	\nmove	r4	r2	\nfst	r2	\njalr	\n"];
+	Node3 -> {Node4 }
+	Node4 [label = "B4_8\ncqip	main.L2\nmain.L2:\npslice_entry	main.L2\npslice_exit	main.L2\nspawn	main.L3\nla	r19	nd#149	\nmove	r4	r2	\nfst	r2	\njalr	\n"];
+	Node4 -> {Node5 }
+	Node5 [label = "B5_5\ncqip	main.L3\nmain.L3:\npslice_entry	main.L3\npslice_exit	main.L3\nmove	r9	r0	\njr	\n"];
+	Node5 -> {Node1 }
+	Node2 [shape = box ,style=filled ,color=red];
+	Node4 [shape = ellipse ,style=filled ,color=blue];
+	Node5 [shape = polygon ,style=filled ,color=yellow];
+}

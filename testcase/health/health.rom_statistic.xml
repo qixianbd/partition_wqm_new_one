@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding='ISO-8859-1' standalone='yes' ?>
+<statistic_report report_time="2015-03-09 10:25:05 ">
+  <settings>
+    <setting_file>/usr/local/etc/inst_cost.ini</setting_file>
+    <version>1.0</version>
+    <program>/home/keyming/Prophet/testcase/health/health.rom</program>
+  </settings>
+  <statistic cpu_id="0">
+    <total_inst>27648</total_inst>
+    <total_clock>27648</total_clock>
+    <spawned_thread>1019</spawned_thread>
+    <commited_thread>831</commited_thread>
+    <failed_thread total="307">
+      <OnDDV>0</OnDDV>
+      <OnInstruction>0</OnInstruction>
+      <OnRegisterVerification>72</OnRegisterVerification>
+      <OnMemoryVerification>0</OnMemoryVerification>
+      <OnLowPriority>60</OnLowPriority>
+      <OnControlVoilate>175</OnControlVoilate>
+      <OnReset>0</OnReset>
+      <OnHalt>0</OnHalt>
+      <OnQuit>0</OnQuit>
+      <OnException>0</OnException>
+      <OnUnknown>0</OnUnknown>
+    </failed_thread>
+  </statistic>
+  <statistic cpu_id="1">
+    <total_inst>24969</total_inst>
+    <total_clock>24969</total_clock>
+    <spawned_thread>1015</spawned_thread>
+    <commited_thread>829</commited_thread>
+    <failed_thread total="301">
+      <OnDDV>5</OnDDV>
+      <OnInstruction>0</OnInstruction>
+      <OnRegisterVerification>56</OnRegisterVerification>
+      <OnMemoryVerification>0</OnMemoryVerification>
+      <OnLowPriority>66</OnLowPriority>
+      <OnControlVoilate>174</OnControlVoilate>
+      <OnReset>0</OnReset>
+      <OnHalt>0</OnHalt>
+      <OnQuit>0</OnQuit>
+      <OnException>0</OnException>
+      <OnUnknown>0</OnUnknown>
+    </failed_thread>
+  </statistic>
+  <statistic cpu_id="2">
+    <total_inst>30290</total_inst>
+    <total_clock>30290</total_clock>
+    <spawned_thread>1057</spawned_thread>
+    <commited_thread>1014</commited_thread>
+    <failed_thread total="221">
+      <OnDDV>1</OnDDV>
+      <OnInstruction>0</OnInstruction>
+      <OnRegisterVerification>57</OnRegisterVerification>
+      <OnMemoryVerification>0</OnMemoryVerification>
+      <OnLowPriority>43</OnLowPriority>
+      <OnControlVoilate>120</OnControlVoilate>
+      <OnReset>0</OnReset>
+      <OnHalt>0</OnHalt>
+      <OnQuit>0</OnQuit>
+      <OnException>0</OnException>
+      <OnUnknown>0</OnUnknown>
+    </failed_thread>
+  </statistic>
+  <statistic cpu_id="3">
+    <total_inst>28413</total_inst>
+    <total_clock>28413</total_clock>
+    <spawned_thread>1020</spawned_thread>
+    <commited_thread>940</commited_thread>
+    <failed_thread total="226">
+      <OnDDV>1</OnDDV>
+      <OnInstruction>0</OnInstruction>
+      <OnRegisterVerification>65</OnRegisterVerification>
+      <OnMemoryVerification>0</OnMemoryVerification>
+      <OnLowPriority>50</OnLowPriority>
+      <OnControlVoilate>110</OnControlVoilate>
+      <OnReset>0</OnReset>
+      <OnHalt>0</OnHalt>
+      <OnQuit>0</OnQuit>
+      <OnException>0</OnException>
+      <OnUnknown>0</OnUnknown>
+    </failed_thread>
+  </statistic>
+  <analysis>
+    <sequential_time>94406</sequential_time>
+    <parallel_time>66635</parallel_time>
+    <speed_up>1.416763</speed_up>
+    <total_spawned>4111</total_spawned>
+    <success_ratio>0.743371</success_ratio>
+    <fail_stat total_failed="1055">
+      <TOnDDV total="7">0.006635</TOnDDV>
+      <TOnInstruction total="0">0.000000</TOnInstruction>
+      <TOnRegV total="250">0.236967</TOnRegV>
+      <TOnMMV total="0">0.000000</TOnMMV>
+      <TOnLowPriority total="219">0.207583</TOnLowPriority>
+      <TOnControl total="579">0.548815</TOnControl>
+      <TOnReset total="0">0.000000</TOnReset>
+      <TOnHalt total="0">0.000000</TOnHalt>
+      <TOnQuit total="0">0.000000</TOnQuit>
+      <TOnException total="0">0.000000</TOnException>
+      <TOnUnknown total="0">0.000000</TOnUnknown>
+    </fail_stat>
+  </analysis>
+</statistic_report>

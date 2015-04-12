@@ -61,12 +61,14 @@ digraph G{
 	Node28 -> {Node29 }
 	Node29 [label = "B29_12\nsubindex.L6:\nla	r25	nd#1556	\nli.d	r32	nd#1558	\nmul.d	r34	r32	r42	\ncvt.w.d	r36	r34	\nmfc1	r26	r36	\nmtc1	r38	r26	\ncvt.d.w	r52	r38	\ncvt.w.d	r54	r52	\nmfc1	r27	r54	\nsw	nd#1567	r27	\nmove	r9	r0	\nmove	r28	r0	\n"];
 	Node29 -> {Node30 }
-	Node30 [label = "B30_10\nsubindex.L13:\nla	r5	nd#1576	\nli	r6	nd#1578	\nmult	r28	r6	\nmflo	r7	\naddu	r8	r5	r7	\nlw	r25	nd#1583	\nand	r24	r25	r11	\nmove	r10	r0	\nsne	r10	r24	r10	\nbeqz	subindex.L9\n"];
+	Node30 [label = "B30_11\nsubindex.L13:\nspawn	subindex.L23\nla	r5	nd#1576	\nli	r6	nd#1578	\nmult	r28	r6	\nmflo	r7	\naddu	r8	r5	r7	\nlw	r25	nd#1583	\nand	r24	r25	r11	\nmove	r10	r0	\nsne	r10	r24	r10	\nbeqz	subindex.L9\n"];
 	Node30 -> {Node31 Node32 }
 	Node31 [label = "B31_5\nli	r19	nd#1591	\nli	r20	nd#1593	\naddu	r26	r28	r20	\nsra	r21	r19	r26	\naddu	r9	r9	r21	\n"];
 	Node31 -> {Node32 }
-	Node32 [label = "B32_5\nsubindex.L9:\nli	r22	nd#1599	\naddu	r28	r28	r22	\nli	r23	nd#1602	\nsle	r24	r23	r28	\nbeqz	subindex.L13\n"];
+	Node32 [label = "B32_12\nsubindex.L9:\nli	r22	nd#1599	\naddu	r28	r28	r22	\nli	r23	nd#1602	\nsle	r24	r23	r28	\ncqip	subindex.L23\nsubindex.L23:\npslice_entry	subindex.L23\nli	r22	nd#0	\naddu	r28	r28	r22	\nli	r23	nd#0	\nsle	r24	r23	r28	\npslice_exit	subindex.L23\nbeqz	subindex.L13\n"];
 	Node32 -> {Node33 Node30 }
 	Node33 [label = "B33_1\njr	\n"];
 	Node33 -> {Node1 }
+	Node30 [shape = box ,style=filled ,color=red];
+	Node32 [shape = polygon ,style=filled ,color=yellow];
 }

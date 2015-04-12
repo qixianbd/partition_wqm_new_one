@@ -1,0 +1,559 @@
+*********************************************************************************
+Procedure dealwithargs:
+length:24  ,8 ,3
+block:2,block size:3
+block:3,block size:5
+block:4,block size:6
+block:5,block size:8
+block:6,block size:2
+			position:1.500000
+			position:5.500000
+			position:11.000000
+			position:18.000000
+			position:23.000000
+
+iteration: 1
+thread: 0;blocks_size: 24;thread p_slice: 0,cur_thread size:24;pos0:24
+parallel instrn:&&&&&&&&&&&&  24.000000  &&&&&&&&&&
+maxthread size:1
+
+super block 2 : contain: <2 >fall:3 take:5 dom:0 pdom:5 
+super block 3 : contain: <3 >fall:4 take: nildom:2 pdom:4 
+super block 4 : contain: <4 >fall:5 take: nildom:3 pdom:5 
+super block 5 : contain: <5 >fall:6 take: nildom:2 pdom:6 
+super block 6 : contain: <6 >fall:1 take: nildom:5 pdom:1 
+
+iteration: 2
+thread: 0;blocks_size: 14;thread p_slice: 0,cur_thread size:14;pos0:14
+thread: 1;blocks_size: 10;thread p_slice: 2,cur_thread size:27;pos1:14
+parallel instrn:&&&&&&&&&&&&  27.000000  &&&&&&&&&&
+super block 2 : contain: <2 >fall:3 take:5 dom:0 pdom:5 
+super block 3 : contain: <3 >fall:4 take: nildom:2 pdom:4 
+super block 4 : contain: <4 >fall:5 take: nildom:3 pdom:5 
+
+super block 5 : contain: <5 >fall:6 take: nildom:2 pdom:6 
+super block 6 : contain: <6 >fall:1 take: nildom:5 pdom:1 
+
+iteration: 3
+thread: 0;blocks_size: 8;thread p_slice: 0,cur_thread size:8;pos0:8
+thread: 1;blocks_size: 6;thread p_slice: 2,cur_thread size:18;pos1:7
+thread: 2;blocks_size: 10;thread p_slice: 2,cur_thread size:20;pos2:7
+parallel instrn:&&&&&&&&&&&&  20.000000  &&&&&&&&&&
+maxthread size:3
+
+super block 2 : contain: <2 >fall:3 take:5 dom:0 pdom:5 
+super block 3 : contain: <3 >fall:4 take: nildom:2 pdom:4 
+
+super block 4 : contain: <4 >fall:5 take: nildom:3 pdom:5 
+
+super block 5 : contain: <5 >fall:6 take: nildom:2 pdom:6 
+super block 6 : contain: <6 >fall:1 take: nildom:5 pdom:1 
+
+*********************************************************************************
+Procedure my_rand:
+length:27  ,20 ,2
+block:2,block size:20
+block:3,block size:2
+block:4,block size:5
+			position:10.000000
+			position:21.000000
+			position:24.500000
+
+iteration: 1
+thread: 0;blocks_size: 27;thread p_slice: 0,cur_thread size:27;pos0:27
+parallel instrn:&&&&&&&&&&&&  27.000000  &&&&&&&&&&
+maxthread size:1
+
+super block 2 : contain: <2 >fall:3 take:4 dom:0 pdom:4 
+super block 3 : contain: <3 >fall:4 take: nildom:2 pdom:4 
+super block 4 : contain: <4 >fall:1 take: nildom:2 pdom:1 
+
+iteration: 2
+thread: 0;blocks_size: 20;thread p_slice: 0,cur_thread size:20;pos0:20
+thread: 1;blocks_size: 7;thread p_slice: 2,cur_thread size:30;pos1:20
+parallel instrn:&&&&&&&&&&&&  30.000000  &&&&&&&&&&
+super block 2 : contain: <2 >fall:3 take:4 dom:0 pdom:4 
+
+super block 3 : contain: <3 >fall:4 take: nildom:2 pdom:4 
+super block 4 : contain: <4 >fall:1 take: nildom:2 pdom:1 
+
+*********************************************************************************
+Procedure generate_patient:
+length:69  ,32 ,3
+block:2,block size:8
+block:3,block size:14
+block:4,block size:1
+block:5,block size:1
+block:6,block size:5
+block:7,block size:16
+			position:16.000000
+			position:39.000000
+			position:46.500000
+			position:47.500000
+			position:50.500000
+			position:61.000000
+
+iteration: 1
+thread: 0;blocks_size: 69;thread p_slice: 0,cur_thread size:69;pos0:69
+parallel instrn:&&&&&&&&&&&&  69.000000  &&&&&&&&&&
+maxthread size:1
+
+super block 2 : contain: <2 >fall:3 take: nildom:0 pdom:3 
+super block 3 : contain: <3 >fall:4 take:5 dom:2 pdom:5 
+super block 4 : contain: <4 >fall:5 take: nildom:3 pdom:5 
+super block 5 : contain: <5 >fall:6 take:8 dom:3 pdom:1 
+super block 6 : contain: <6 >fall:7 take: nildom:5 pdom:7 
+super block 7 : contain: <7 >fall:1 take: nildom:6 pdom:1 
+
+iteration: 2
+thread: 0;blocks_size: 32;thread p_slice: 0,cur_thread size:32;pos0:32
+thread: 1;blocks_size: 37;thread p_slice: 2,cur_thread size:72;pos1:32
+parallel instrn:&&&&&&&&&&&&  72.000000  &&&&&&&&&&
+super block 2 : contain: <2 >fall:3 take: nildom:0 pdom:3 
+
+super block 3 : contain: <3 >fall:4 take:5 dom:2 pdom:5 
+super block 4 : contain: <4 >fall:5 take: nildom:3 pdom:5 
+super block 5 : contain: <5 >fall:6 take:8 dom:3 pdom:1 
+super block 6 : contain: <6 >fall:7 take: nildom:5 pdom:7 
+super block 7 : contain: <7 >fall:1 take: nildom:6 pdom:1 
+
+iteration: 3
+thread: 0;blocks_size: 32;thread p_slice: 0,cur_thread size:32;pos0:32
+thread: 1;blocks_size: 16;thread p_slice: 2,cur_thread size:52;pos1:23
+thread: 2;blocks_size: 21;thread p_slice: 2,cur_thread size:47;pos2:23
+parallel instrn:&&&&&&&&&&&&  52.000000  &&&&&&&&&&
+maxthread size:3
+
+super block 2 : contain: <2 >fall:3 take: nildom:0 pdom:3 
+
+super block 3 : contain: <3 >fall:4 take:5 dom:2 pdom:5 
+super block 4 : contain: <4 >fall:5 take: nildom:3 pdom:5 
+super block 5 : contain: <5 >fall:6 take:8 dom:3 pdom:1 
+
+super block 6 : contain: <6 >fall:7 take: nildom:5 pdom:7 
+super block 7 : contain: <7 >fall:1 take: nildom:6 pdom:1 
+
+*********************************************************************************
+Procedure put_in_hosp:
+length:74  ,45 ,2
+block:2,block size:15
+block:3,block size:15
+block:4,block size:13
+block:6,block size:1
+			position:7.500000
+			position:37.500000
+			position:66.500000
+			position:73.500000
+
+iteration: 1
+thread: 0;blocks_size: 74;thread p_slice: 0,cur_thread size:74;pos0:74
+parallel instrn:&&&&&&&&&&&&  74.000000  &&&&&&&&&&
+maxthread size:1
+
+super block 2 : contain: <2 >fall:3 take:5 dom:0 pdom:6 
+super block 3 : contain: <3 >fall:4 take: nildom:2 pdom:4 
+super block 4 : contain: <4 >fall:6 take: nildom:3 pdom:6 
+super block 6 : contain: <6 >fall:1 take: nildom:2 pdom:1 
+
+iteration: 2
+thread: 0;blocks_size: 60;thread p_slice: 0,cur_thread size:60;pos0:60
+thread: 1;blocks_size: 14;thread p_slice: 2,cur_thread size:77;pos1:60
+parallel instrn:&&&&&&&&&&&&  77.000000  &&&&&&&&&&
+super block 2 : contain: <2 >fall:3 take:5 dom:0 pdom:6 
+super block 3 : contain: <3 >fall:4 take: nildom:2 pdom:4 
+
+super block 4 : contain: <4 >fall:6 take: nildom:3 pdom:6 
+super block 6 : contain: <6 >fall:1 take: nildom:2 pdom:1 
+
+*********************************************************************************
+Procedure addList:
+length:38  ,14 ,3
+block:2,block size:5
+block:3,block size:7
+block:4,block size:5
+block:5,block size:14
+			position:2.500000
+			position:8.500000
+			position:14.500000
+			position:24.000000
+
+iteration: 1
+thread: 0;blocks_size: 31;thread p_slice: 0,cur_thread size:31;pos0:31
+parallel instrn:&&&&&&&&&&&&  31.000000  &&&&&&&&&&
+maxthread size:1
+
+super block 2 : contain: <2 >fall:3 take:4 dom:0 pdom:4 
+super block 3 : contain: <3 >fall:4 take: nildom:2 pdom:4 
+super block 4 : contain: <4 >fall:5 take: nildom:2 pdom:5 
+super block 5 : contain: <5 >fall:1 take: nildom:4 pdom:1 
+
+iteration: 2
+thread: 0;blocks_size: 12;thread p_slice: 0,cur_thread size:12;pos0:12
+thread: 1;blocks_size: 19;thread p_slice: 3,cur_thread size:35;pos1:12
+parallel instrn:&&&&&&&&&&&&  35.000000  &&&&&&&&&&
+super block 2 : contain: <2 >fall:3 take:4 dom:0 pdom:4 
+super block 3 : contain: <3 >fall:4 take: nildom:2 pdom:4 
+
+super block 4 : contain: <4 >fall:5 take: nildom:2 pdom:5 
+super block 5 : contain: <5 >fall:1 take: nildom:4 pdom:1 
+
+iteration: 3
+thread: 0;blocks_size: 12;thread p_slice: 0,cur_thread size:12;pos0:12
+thread: 1;blocks_size: 5;thread p_slice: 2,cur_thread size:21;pos1:6
+thread: 2;blocks_size: 14;thread p_slice: 2,cur_thread size:23;pos2:6
+parallel instrn:&&&&&&&&&&&&  23.000000  &&&&&&&&&&
+maxthread size:3
+
+super block 2 : contain: <2 >fall:3 take:4 dom:0 pdom:4 
+super block 3 : contain: <3 >fall:4 take: nildom:2 pdom:4 
+
+super block 4 : contain: <4 >fall:5 take: nildom:2 pdom:5 
+
+super block 5 : contain: <5 >fall:1 take: nildom:4 pdom:1 
+
+*********************************************************************************
+Procedure removeList:
+length:46  ,15 ,4
+block:2,block size:5
+block:3,block size:8
+block:4,block size:15
+block:5,block size:9
+block:6,block size:1
+			position:2.500000
+			position:9.000000
+			position:20.500000
+			position:32.500000
+			position:37.500000
+
+iteration: 1
+thread: 0;blocks_size: 38;thread p_slice: 0,cur_thread size:38;pos0:38
+parallel instrn:&&&&&&&&&&&&  38.000000  &&&&&&&&&&
+maxthread size:1
+
+super block 2 : contain: <2 >fall:3 take:4 dom:0 pdom:4 
+super block 3 : contain: <3 >fall:4 take: nildom:2 pdom:4 
+super block 4 : contain: <4 >fall:5 take:6 dom:2 pdom:6 
+super block 5 : contain: <5 >fall:6 take: nildom:4 pdom:6 
+super block 6 : contain: <6 >fall:1 take: nildom:4 pdom:1 
+
+iteration: 2
+thread: 0;blocks_size: 13;thread p_slice: 0,cur_thread size:13;pos0:13
+thread: 1;blocks_size: 25;thread p_slice: 2,cur_thread size:41;pos1:13
+parallel instrn:&&&&&&&&&&&&  41.000000  &&&&&&&&&&
+super block 2 : contain: <2 >fall:3 take:4 dom:0 pdom:4 
+super block 3 : contain: <3 >fall:4 take: nildom:2 pdom:4 
+
+super block 4 : contain: <4 >fall:5 take:6 dom:2 pdom:6 
+super block 5 : contain: <5 >fall:6 take: nildom:4 pdom:6 
+super block 6 : contain: <6 >fall:1 take: nildom:4 pdom:1 
+
+iteration: 3
+thread: 0;blocks_size: 13;thread p_slice: 0,cur_thread size:13;pos0:13
+thread: 1;blocks_size: 15;thread p_slice: 2,cur_thread size:32;pos1:16
+thread: 2;blocks_size: 10;thread p_slice: 2,cur_thread size:29;pos2:16
+parallel instrn:&&&&&&&&&&&&  32.000000  &&&&&&&&&&
+maxthread size:3
+
+super block 2 : contain: <2 >fall:3 take:4 dom:0 pdom:4 
+super block 3 : contain: <3 >fall:4 take: nildom:2 pdom:4 
+
+super block 4 : contain: <4 >fall:5 take:6 dom:2 pdom:6 
+
+super block 5 : contain: <5 >fall:6 take: nildom:4 pdom:6 
+super block 6 : contain: <6 >fall:1 take: nildom:4 pdom:1 
+
+iteration: 4
+thread: 0;blocks_size: 5;thread p_slice: 0,cur_thread size:5;pos0:5
+thread: 1;blocks_size: 8;thread p_slice: 2,cur_thread size:17;pos1:9
+thread: 2;blocks_size: 15;thread p_slice: 2,cur_thread size:28;pos2:17
+thread: 3;blocks_size: 10;thread p_slice: 2,cur_thread size:30;pos3:17
+parallel instrn:&&&&&&&&&&&&  30.000000  &&&&&&&&&&
+maxthread size:4
+
+super block 2 : contain: <2 >fall:3 take:4 dom:0 pdom:4 
+
+super block 3 : contain: <3 >fall:4 take: nildom:2 pdom:4 
+
+super block 4 : contain: <4 >fall:5 take:6 dom:2 pdom:6 
+
+super block 5 : contain: <5 >fall:6 take: nildom:4 pdom:6 
+super block 6 : contain: <6 >fall:1 take: nildom:4 pdom:1 
+
+*********************************************************************************
+Procedure sim:
+length:6  ,4 ,2
+block:2,block size:4
+block:3,block size:2
+			position:2.000000
+			position:5.000000
+
+iteration: 1
+thread: 0;blocks_size: 6;thread p_slice: 0,cur_thread size:6;pos0:6
+parallel instrn:&&&&&&&&&&&&  6.000000  &&&&&&&&&&
+maxthread size:1
+
+super block 2 : contain: <2 >fall:3 take:4 dom:0 pdom:1 
+super block 3 : contain: <3 >fall:1 take: nildom:2 pdom:1 
+
+iteration: 2
+thread: 0;blocks_size: 4;thread p_slice: 0,cur_thread size:4;pos0:4
+thread: 1;blocks_size: 2;thread p_slice: 2,cur_thread size:9;pos1:4
+parallel instrn:&&&&&&&&&&&&  9.000000  &&&&&&&&&&
+super block 2 : contain: <2 >fall:3 take:4 dom:0 pdom:1 
+
+super block 3 : contain: <3 >fall:1 take: nildom:2 pdom:1 
+
+*********************************************************************************
+Procedure check_patients_inside:
+length:151  ,100 ,2
+block:2,block size:5
+block:3,block size:45
+block:7,block size:1
+			position:2.500000
+			position:55.000000
+			position:105.500000
+
+iteration: 1
+thread: 0;blocks_size: 106;thread p_slice: 0,cur_thread size:106;pos0:106
+parallel instrn:&&&&&&&&&&&&  106.000000  &&&&&&&&&&
+maxthread size:1
+
+super block 2 : contain: <2 >fall:3 take:7 dom:0 pdom:7 
+super block 3 : contain: <3 4 5 6 >fall:7 take: nildom:2 pdom:7 
+super block 7 : contain: <7 >fall:1 take: nildom:2 pdom:1 
+
+iteration: 2
+thread: 0;blocks_size: 5;thread p_slice: 0,cur_thread size:5;pos0:5
+thread: 1;blocks_size: 101;thread p_slice: 4,cur_thread size:111;pos1:5
+parallel instrn:&&&&&&&&&&&&  111.000000  &&&&&&&&&&
+super block 2 : contain: <2 >fall:3 take:7 dom:0 pdom:7 
+
+super block 3 : contain: <3 4 5 6 >fall:7 take: nildom:2 pdom:7 
+super block 7 : contain: <7 >fall:1 take: nildom:2 pdom:1 
+
+*********************************************************************************
+Procedure check_patients_assess:
+length:297  ,186 ,2
+block:2,block size:6
+block:3,block size:103
+block:17,block size:2
+			position:3.000000
+			position:99.000000
+			position:193.000000
+
+iteration: 1
+thread: 0;blocks_size: 194;thread p_slice: 0,cur_thread size:194;pos0:194
+parallel instrn:&&&&&&&&&&&&  194.000000  &&&&&&&&&&
+maxthread size:1
+
+super block 2 : contain: <2 >fall:3 take:17 dom:0 pdom:17 
+super block 3 : contain: <3 4 5 6 7 8 9 10 11 12 13 14 15 16 >fall:17 take: nildom:2 pdom:17 
+super block 17 : contain: <17 >fall:1 take: nildom:2 pdom:1 
+
+iteration: 2
+thread: 0;blocks_size: 6;thread p_slice: 0,cur_thread size:6;pos0:6
+thread: 1;blocks_size: 188;thread p_slice: 5,cur_thread size:200;pos1:6
+parallel instrn:&&&&&&&&&&&&  200.000000  &&&&&&&&&&
+super block 2 : contain: <2 >fall:3 take:17 dom:0 pdom:17 
+
+super block 3 : contain: <3 4 5 6 7 8 9 10 11 12 13 14 15 16 >fall:17 take: nildom:2 pdom:17 
+super block 17 : contain: <17 >fall:1 take: nildom:2 pdom:1 
+
+*********************************************************************************
+Procedure check_patients_waiting:
+length:186  ,122 ,2
+block:2,block size:5
+block:3,block size:58
+block:9,block size:1
+			position:2.500000
+			position:66.000000
+			position:127.500000
+
+iteration: 1
+thread: 0;blocks_size: 128;thread p_slice: 0,cur_thread size:128;pos0:128
+parallel instrn:&&&&&&&&&&&&  128.000000  &&&&&&&&&&
+maxthread size:1
+
+super block 2 : contain: <2 >fall:3 take:9 dom:0 pdom:9 
+super block 3 : contain: <3 4 5 6 7 8 >fall:9 take: nildom:2 pdom:9 
+super block 9 : contain: <9 >fall:1 take: nildom:2 pdom:1 
+
+iteration: 2
+thread: 0;blocks_size: 5;thread p_slice: 0,cur_thread size:5;pos0:5
+thread: 1;blocks_size: 123;thread p_slice: 4,cur_thread size:133;pos1:5
+parallel instrn:&&&&&&&&&&&&  133.000000  &&&&&&&&&&
+super block 2 : contain: <2 >fall:3 take:9 dom:0 pdom:9 
+
+super block 3 : contain: <3 4 5 6 7 8 >fall:9 take: nildom:2 pdom:9 
+super block 9 : contain: <9 >fall:1 take: nildom:2 pdom:1 
+
+*********************************************************************************
+Procedure get_results:
+length:29  ,15 ,2
+block:2,block size:14
+block:3,block size:15
+			position:7.000000
+			position:21.500000
+
+iteration: 1
+thread: 0;blocks_size: 29;thread p_slice: 0,cur_thread size:29;pos0:29
+parallel instrn:&&&&&&&&&&&&  29.000000  &&&&&&&&&&
+maxthread size:1
+
+super block 2 : contain: <2 >fall:3 take:4 dom:0 pdom:1 
+super block 3 : contain: <3 >fall:1 take: nildom:2 pdom:1 
+
+iteration: 2
+thread: 0;blocks_size: 14;thread p_slice: 0,cur_thread size:14;pos0:14
+thread: 1;blocks_size: 15;thread p_slice: 3,cur_thread size:33;pos1:14
+parallel instrn:&&&&&&&&&&&&  33.000000  &&&&&&&&&&
+super block 2 : contain: <2 >fall:3 take:4 dom:0 pdom:1 
+
+super block 3 : contain: <3 >fall:1 take: nildom:2 pdom:1 
+
+*********************************************************************************
+Procedure alloc_tree:
+length:10  ,8 ,2
+block:2,block size:8
+block:3,block size:2
+			position:4.000000
+			position:9.000000
+
+iteration: 1
+thread: 0;blocks_size: 10;thread p_slice: 0,cur_thread size:10;pos0:10
+parallel instrn:&&&&&&&&&&&&  10.000000  &&&&&&&&&&
+maxthread size:1
+
+super block 2 : contain: <2 >fall:3 take:4 dom:0 pdom:1 
+super block 3 : contain: <3 >fall:1 take: nildom:2 pdom:1 
+
+iteration: 2
+thread: 0;blocks_size: 8;thread p_slice: 0,cur_thread size:8;pos0:8
+thread: 1;blocks_size: 2;thread p_slice: 2,cur_thread size:13;pos1:8
+parallel instrn:&&&&&&&&&&&&  13.000000  &&&&&&&&&&
+super block 2 : contain: <2 >fall:3 take:4 dom:0 pdom:1 
+
+super block 3 : contain: <3 >fall:1 take: nildom:2 pdom:1 
+
+*********************************************************************************
+Procedure main:
+length:4494  ,1857 ,4
+block:2,block size:4
+block:3,block size:9
+block:4,block size:6
+block:5,block size:5
+block:6,block size:4
+block:7,block size:1
+block:8,block size:22
+block:12,block size:1
+block:14,block size:6
+block:15,block size:11
+block:16,block size:8
+block:17,block size:8
+block:18,block size:8
+block:19,block size:2
+			position:8.500000
+			position:623.500000
+			position:1233.000000
+			position:1238.500000
+			position:1243.000000
+			position:1245.500000
+			position:2174.500000
+			position:3103.500000
+			position:3769.500000
+			position:4440.500000
+			position:4450.000000
+			position:4458.000000
+			position:4466.000000
+			position:4471.000000
+
+iteration: 1
+thread: 0;blocks_size: 4472;thread p_slice: 0,cur_thread size:4472;pos0:4472
+parallel instrn:&&&&&&&&&&&&  4472.000000  &&&&&&&&&&
+maxthread size:1
+
+super block 2 : contain: <2 >fall:3 take: nildom:0 pdom:3 
+super block 3 : contain: <3 >fall:4 take: nildom:2 pdom:4 
+super block 4 : contain: <4 >fall:5 take: nildom:3 pdom:5 
+super block 5 : contain: <5 >fall:6 take: nildom:4 pdom:6 
+super block 6 : contain: <6 >fall:7 take:13 dom:5 pdom:14 
+super block 7 : contain: <7 >fall:8 take: nildom:6 pdom:8 
+super block 8 : contain: <8 9 10 11 >fall:12 take: nildom:7 pdom:12 
+super block 12 : contain: <12 >fall:14 take: nildom:8 pdom:14 
+super block 14 : contain: <14 >fall:15 take: nildom:6 pdom:15 
+super block 15 : contain: <15 >fall:16 take: nildom:14 pdom:16 
+super block 16 : contain: <16 >fall:17 take: nildom:15 pdom:17 
+super block 17 : contain: <17 >fall:18 take: nildom:16 pdom:18 
+super block 18 : contain: <18 >fall:19 take: nildom:17 pdom:19 
+super block 19 : contain: <19 >fall:1 take: nildom:18 pdom:1 
+
+iteration: 2
+thread: 0;blocks_size: 3103;thread p_slice: 0,cur_thread size:3103;pos0:3103
+thread: 1;blocks_size: 1369;thread p_slice: 3,cur_thread size:4476;pos1:3103
+parallel instrn:&&&&&&&&&&&&  4476.000000  &&&&&&&&&&
+super block 2 : contain: <2 >fall:3 take: nildom:0 pdom:3 
+super block 3 : contain: <3 >fall:4 take: nildom:2 pdom:4 
+super block 4 : contain: <4 >fall:5 take: nildom:3 pdom:5 
+super block 5 : contain: <5 >fall:6 take: nildom:4 pdom:6 
+super block 6 : contain: <6 >fall:7 take:13 dom:5 pdom:14 
+super block 7 : contain: <7 >fall:8 take: nildom:6 pdom:8 
+super block 8 : contain: <8 9 10 11 >fall:12 take: nildom:7 pdom:12 
+
+super block 12 : contain: <12 >fall:14 take: nildom:8 pdom:14 
+super block 14 : contain: <14 >fall:15 take: nildom:6 pdom:15 
+super block 15 : contain: <15 >fall:16 take: nildom:14 pdom:16 
+super block 16 : contain: <16 >fall:17 take: nildom:15 pdom:17 
+super block 17 : contain: <17 >fall:18 take: nildom:16 pdom:18 
+super block 18 : contain: <18 >fall:19 take: nildom:17 pdom:19 
+super block 19 : contain: <19 >fall:1 take: nildom:18 pdom:1 
+
+iteration: 3
+thread: 0;blocks_size: 1246;thread p_slice: 0,cur_thread size:1246;pos0:1246
+thread: 1;blocks_size: 1858;thread p_slice: 4,cur_thread size:3110;pos1:1885
+thread: 2;blocks_size: 1368;thread p_slice: 2,cur_thread size:3256;pos2:1885
+parallel instrn:&&&&&&&&&&&&  3256.000000  &&&&&&&&&&
+maxthread size:3
+
+super block 2 : contain: <2 >fall:3 take: nildom:0 pdom:3 
+super block 3 : contain: <3 >fall:4 take: nildom:2 pdom:4 
+super block 4 : contain: <4 >fall:5 take: nildom:3 pdom:5 
+super block 5 : contain: <5 >fall:6 take: nildom:4 pdom:6 
+super block 6 : contain: <6 >fall:7 take:13 dom:5 pdom:14 
+super block 7 : contain: <7 >fall:8 take: nildom:6 pdom:8 
+
+super block 8 : contain: <8 9 10 11 >fall:12 take: nildom:7 pdom:12 
+super block 12 : contain: <12 >fall:14 take: nildom:8 pdom:14 
+
+super block 14 : contain: <14 >fall:15 take: nildom:6 pdom:15 
+super block 15 : contain: <15 >fall:16 take: nildom:14 pdom:16 
+super block 16 : contain: <16 >fall:17 take: nildom:15 pdom:17 
+super block 17 : contain: <17 >fall:18 take: nildom:16 pdom:18 
+super block 18 : contain: <18 >fall:19 take: nildom:17 pdom:19 
+super block 19 : contain: <19 >fall:1 take: nildom:18 pdom:1 
+
+iteration: 4
+thread: 0;blocks_size: 1230;thread p_slice: 0,cur_thread size:1230;pos0:1230
+thread: 1;blocks_size: 16;thread p_slice: 2,cur_thread size:1250;pos1:17
+thread: 2;blocks_size: 1858;thread p_slice: 4,cur_thread size:1881;pos2:1863
+thread: 3;blocks_size: 1368;thread p_slice: 2,cur_thread size:3234;pos3:1863
+parallel instrn:&&&&&&&&&&&&  3234.000000  &&&&&&&&&&
+maxthread size:4
+
+super block 2 : contain: <2 >fall:3 take: nildom:0 pdom:3 
+super block 3 : contain: <3 >fall:4 take: nildom:2 pdom:4 
+
+super block 4 : contain: <4 >fall:5 take: nildom:3 pdom:5 
+super block 5 : contain: <5 >fall:6 take: nildom:4 pdom:6 
+super block 6 : contain: <6 >fall:7 take:13 dom:5 pdom:14 
+super block 7 : contain: <7 >fall:8 take: nildom:6 pdom:8 
+
+super block 8 : contain: <8 9 10 11 >fall:12 take: nildom:7 pdom:12 
+super block 12 : contain: <12 >fall:14 take: nildom:8 pdom:14 
+
+super block 14 : contain: <14 >fall:15 take: nildom:6 pdom:15 
+super block 15 : contain: <15 >fall:16 take: nildom:14 pdom:16 
+super block 16 : contain: <16 >fall:17 take: nildom:15 pdom:17 
+super block 17 : contain: <17 >fall:18 take: nildom:16 pdom:18 
+super block 18 : contain: <18 >fall:19 take: nildom:17 pdom:19 
+super block 19 : contain: <19 >fall:1 take: nildom:18 pdom:1 
+

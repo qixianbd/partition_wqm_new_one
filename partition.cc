@@ -31,7 +31,8 @@ void processFile(file_set_entry * fse) {
 		Write_machine_proc(cur_psym, fse);		/*write procedure with expressioni trees */
 		delete cur_psymtab;
 	}
-
+	//print the stat information
+	Procedure::printProcPathStat(std::cout);
 	return ;
 }
 

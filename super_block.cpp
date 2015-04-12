@@ -435,6 +435,13 @@ void super_block::print(FILE * fp)
 	    fprintf(stderr, "access NULL\n");
 	    exit(1);
 	}
+    cfg_node_instr_iter cnii(node);
+		    while (!cnii.is_empty()) {
+				instruction *in = cnii.step()->instr();
+				//in->instruction::print(fp, 1, 1);
+
+				print_instruction(in, fp);
+		    }
 	node->print(fp);
     }
 }

@@ -1,0 +1,65 @@
+Target machine parameters:
+  Little endian
+  Size of addressable units = 8
+  Default char type is signed
+  char type:       size = 8, align = 8
+  short type:      size = 16, align = 16
+  int type:        size = 32, align = 32
+  long type:       size = 32, align = 32
+  longlong type:   size = 32, align = 32
+  float type:      size = 32, align = 32
+  double type:     size = 64, align = 64
+  longdouble type: size = 64, align = 64
+  ptr type:        size = 32, align = 32
+  Array alignment = 8
+  Structure alignment = 8
+  Pointer difference type = 2 (see C_types enum)
+
+Runtime Statistics
+--------------Instructions-----------
+	NEG            : 0
+	NOT            : 0
+	ADD            : 2295
+	MUL            : 0
+	AND            : 0
+	IOR            : 0
+	XOR            : 0
+	SUB            : 510
+	DIV            : 765
+	REM            : 0
+	ASR            : 0
+	LSR            : 0
+	LSL            : 0
+	SEQ            : 1022
+	SNE            : 0
+	SL             : 2
+	SLE            : 0
+	CPY            : 0
+	LOD            : 765
+	STR            : 765
+	MEMCPY         : 0
+	LDC            : 6142
+	BFALSE         : 1022
+	BTRUE          : 2
+	JMP            : 0
+	CVT            : 255
+	CAL            : 1283
+	RET            : 1023
+
+----------------Functions-------------
+	malloc         : 255       N/A
+	exit           : 1         N/A
+	TreeAlloc      : 511       35 (code size)   	39 (dynamic cycles)
+	dealwithargs   : 1         9 (code size)   	9 (dynamic cycles)
+	TreeAdd        : 511       21 (code size)   	24 (dynamic cycles)
+	main           : 1         24 (code size)   	15851 (dynamic cycles)
+	myprintf       : 2         N/A
+	myprintf1      : 1         N/A
+	myprintf2      : 1         N/A
+
+ # total number of instructions executed : 15851
+ # total number of instructions in program text(code) : 89
+ # total number of branches executed : 1024
+ # total number of condition branches executed : 1024
+ # total number of branch takens : 510
+ # total probability of branch taken occured(takens/branches) : 0.498047

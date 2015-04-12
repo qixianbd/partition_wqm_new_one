@@ -89,14 +89,27 @@ tnle *insert_cqip_instr(cfg_block *cqip_block, bool before_label)
 //    if(before_label)
 //        cqip_block->push(new_tnle);
 //    else
-        cqip_block->insert_before(new_tnle, cqip_block->first_non_label());
-        //cqip_block->insert_before(new_tnle, cqip_block->first_active_op());
-        //cqip_block->push(new_tnle);
 
-    tree_node_list_e *new_tnle_label = new tree_node_list_e(new tree_instr(mi));
-    cqip_block->insert_after(new_tnle_label, new_tnle);
+	 cqip_block->insert_before(new_tnle, cqip_block->first_non_label());
 
-    return new_tnle;
+    //cqip_block->insert_before(new_tnle, cqip_block->first_active_op());
+    //cqip_block->push(new_tnle);
+	tree_node_list_e *new_tnle_label = new tree_node_list_e(new tree_instr(mi));
+	cqip_block->insert_after(new_tnle_label, new_tnle);
+	return new_tnle;
+
+//    tree_node_list_e *first_ins = cqip_block->first_non_label();
+//    tree_instr *t_ins = (tree_instr *)first_ins->contents;
+//    machine_instr* ins = (machine_instr*)t_ins->instr();
+//    std::cout << ins->op_string() << std::endl;
+//    if(strcmp(ins->op_string(), "cqip") != 0){
+//
+//    }
+//    else{
+//        tree_node_list_e *new_tnle_label = new tree_node_list_e(new tree_instr(mi));
+//        cqip_block->insert_after(new_tnle_label, first_ins);
+//        return new_tnle_label;
+//    }
 }
 
 tnle *insert_cqip_instr_for_loop(cfg_block *cqip_block, bool before_label)

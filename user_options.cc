@@ -8,6 +8,7 @@
 #include <iostream>
 #include "common.h"
 #include "user_options.h"
+#include "threshold.h"
 
 
 extern UserOptions *userOptions;
@@ -114,6 +115,7 @@ void UserOptions::parseOptions(int argc, char** argv) {
 	setStatisticsFile();
 	setUseXml();		//!!!NotCompleted, need to be completed.
 	setNodeNumTestFilePtr();
+	threshold::print();
 	return ;
 }
 
@@ -121,6 +123,7 @@ UserOptions* UserOptions::getUserOptions(){
 	assert(instance);
 	return instance;
 }
+
 
 UserOptions::UserOptions(int argc, char** argv):programName(NULL), debugLevel(0), verbose(false),
 			statistics(false), generateDotGraph(false), useXml(false), inputFileName(NULL), outputFileName(NULL),
